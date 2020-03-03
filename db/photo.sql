@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `photo`
 --
-
+CREATE DATABASE IF NOT EXISTS `photo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `photo`;
 -- --------------------------------------------------------
 
 --
