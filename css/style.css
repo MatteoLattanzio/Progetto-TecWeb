@@ -4,6 +4,13 @@
 	font-family: 'Roboto';
 }
 
+a{
+  	text-decoration: none;
+	text-decoration-line: none;
+    text-decoration-style: solid;
+  	text-decoration-color: currentcolor;
+}
+
 /*---Footer---*/
 
 #footer{
@@ -66,5 +73,134 @@
 
 #topUp:hover{
 	background-color: #6b6a6a;
+}
+
+
+
+/*---menuHamburger---*/
+
+.sx-logo{
+  float:left;
+  width: 90%;
+}
+
+.nav{
+	width: 100%;
+	float: left;
+	background: #2e2c2c;
+}
+
+.logo-pulsante{
+	font-size: 2em;
+	color:white;
+	background: #2e2c2c;
+	border: #2e2c2c;
+	margin-left: 3%;
+ }
+
+ul {
+	list-style-type: none;
+}
+
+/*---questo va messo dentro a un media---*/
+
+
+.icon-menu{
+	background:white;
+	height: 0.2em;
+	width: 1.5em;
+	border-radius: 0.5em;
+}
+
+.pos1-icon{
+	margin-left:14%;
+	margin-top:12%;
+}
+.pos2-icon{
+	margin-left:14%;
+	margin-top:18%;
+}
+.pos3-icon{
+	margin-left:14%;
+	margin-top:23%;
+}
+
+
+.topnav a{
+	display: none;
+	margin-left: 2%;
+	color:white;
+	
+
+}
+
+#nav-link a{
+	padding: 0.8em;
+	text-align: center;
+	margin-right: 2%;
+
+}
+
+.topnav a.icon {
+	float: right;
+	display: block;
+	position: absolute;
+	background: #2e2c2c;
+	height: 2em;
+	width: 2em;
+	right: 2%;
+	top: 2%;
+}
+
+
+.topnav a.link:hover{
+	background-color: #ff9900;
+	color: white;
+}
+
+
+.topnav a.link:focus{
+	background-color: #ff9900;
+	color: white;
+	
+}
+
+.topnav a.menu:hover{
+	background-color: #2e2c2c;
+	color: white;
+}
+
+
+.topnav a.menu:focus{
+	background-color: #2e2c2c;
+	color: white;
+}
+
+.topnav a.active{
+	background-color: #ff9900;
+	color: white;
+}
+
+.topnav.responsive a.icon{
+	position: absolute;
+	height: 2em;
+	width: 2em;
+	top: 2%;
+}
+
+
+
+.topnav.responsive a{
+	float: none;
+	display: block;
+}
+
+div.end {
+    clear:both;
+}
+
+
+li{
+	float:none;
 }
 

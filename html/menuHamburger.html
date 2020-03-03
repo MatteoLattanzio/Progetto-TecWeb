@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style.css"/> 
+  </head>
+
+
+  <body>
+    <div class="nav">
+      <div class="sx-logo">
+        <h1><a href="#"><span id="Pchar">P</span>hoto<span id="Schar">S</span>tock</a></h1>
+      </div>
+
+
+      <div class="topnav" id="myTopnav">
+
+        <a href="javascript:void(0);" class="icon menu" onclick="myFunction()"> 
+                <div class="icon-menu pos1-icon"></div>
+                <div class="icon-menu pos2-icon"></div>
+                <div class="icon-menu pos3-icon"></div>
+        </a>
+
+        <div class='end'> </div>
+
+        <div id="nav-link">
+          <ul>
+             <li><a href="#voce1" class="active"> voce1</a></li>
+             <li><a href="#voce2" class="link"> voce2 </a></li>
+             <li><a href="#voce3" class="link"> voce3 </a></li>
+             <li><a href="#voce4" class="link"> voce4 </a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
+    </script>
+  </body>
+</html>
