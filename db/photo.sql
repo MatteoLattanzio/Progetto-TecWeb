@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 03, 2020 alle 17:10
+-- Creato il: Mar 03, 2020 alle 17:42
 -- Versione del server: 10.4.10-MariaDB
 -- Versione PHP: 7.3.12
 
@@ -81,6 +81,10 @@ CREATE TABLE `preferiti` (
 --
 
 CREATE TABLE `utenti` (
+  `nome` varchar(255) NOT NULL,
+  `cognome` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `indirizzo` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
