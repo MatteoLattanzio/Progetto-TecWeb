@@ -1,0 +1,70 @@
+*{
+	padding: 0em;
+	margin: 0em;
+	font-family: 'Roboto';
+}
+
+/*---Footer---*/
+
+#footer{
+	padding: 1em 0 1em 0;
+	bottom: 0;
+	background-color: #2e2c2c;
+	position: absolute;
+	width: 100%;
+}
+
+#footer p{
+	color:white;
+	font-size: 1.1em;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+}
+
+#socialContainer{
+	position: relative;
+	display: flex; 
+	justify-content: center;
+}
+
+.socialButton{
+	position: relative;
+	margin: 1em 0.5em;
+	font-size: 1.5em;
+}
+
+.socialButton .fa{
+	text-decoration: none;
+	color:white;
+	font-size: 1.2em;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.fa-facebook:hover{ color: #3B5998; }
+.fa-twitter:hover	{ color: #55ACEE; }
+.fa-linkedin:hover{ color: #007BB5; }
+.fa-instagram:hover{ color: #125688; }
+.fa-pinterest:hover{ color: #CB2027; }
+
+#topUp{
+	z-index: 99;
+	/*display: none;        da inserire con l'inserimento dello script*/ 
+	position: fixed;
+	font-size: 22px;
+	bottom:40px;
+	right: 40px;
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	border:none;
+	color:white;
+	background-color: #808080;
+}
+
+#topUp:hover{
+	background-color: #6b6a6a;
+}
+
