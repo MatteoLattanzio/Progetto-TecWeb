@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 03, 2020 alle 16:46
+-- Creato il: Mar 03, 2020 alle 17:10
 -- Versione del server: 10.4.10-MariaDB
 -- Versione PHP: 7.3.12
 
@@ -55,6 +55,7 @@ CREATE TABLE `foto` (
   `id` int(11) NOT NULL,
   `venditore` varchar(255) NOT NULL,
   `prezzo` double NOT NULL,
+  `stato` varchar(255) NOT NULL,
   `categoria` int(11) NOT NULL,
   `tag1` varchar(255) NOT NULL,
   `tag2` varchar(255) NOT NULL,
