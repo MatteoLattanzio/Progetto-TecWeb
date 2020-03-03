@@ -93,7 +93,7 @@ $errors= array();
 	    	elseif($password==$password_2){
 		          $query = "INSERT INTO `utenti` ( nome, cognome, data, indirizzo, username, password, email, tipo) 
 		                  VALUES('$nome','$cognome', '$data', '$indirizzo', '$username', '$password', '$email', 'user')";
-		          echo $query;
+		          
 		            mysqli_query($db, $query) or die(mysql_error());
 		            $_SESSION['usernameU']=$username;
 		            $_SESSION['isLoggedU']=true;	            
