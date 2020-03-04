@@ -9,16 +9,19 @@
 	function listaCategorie(){
 		global $connessione;
 		$output='';
-		if(!$categorie = $connessione->query("SELECT * FROM categorie AS C JOIN foto AS F on C.id=F.categoria WHERE F.stato='approvata';")){
+		if(!$categorie = $connessione->query("SELECT DISTINCT C.id AS catId, nome FROM categorie AS C JOIN foto AS F on C.id=F.categoria WHERE F.stato='approvata';")){
 			header("Location: home.php");
 			exit();
 		}
 		while($categoria=$categorie->fetch_assoc()){
+			$idCat=$categoria["catId"];
 			$nomeCat=$categoria["nome"];
-			$idImg=$categoria["id"];
+			$trovate=$connessione->query("SELECT * FROM foto WHERE categoria='$idCat' ORDER BY data DESC LIMIT 1;");
+			$trovate=$trovate->fetch_assoc();
+			$idImg=$trovate["id"];
 			$output.="<div class=\"catImg\"><p>".$nomeCat."</p>
-				<a href=\"catGallery.php?photo=".urlencode($nomeCat)."\">
-					<img class=\"transiction\" src=\"images/".$idImg.".jpg\" alt=\"".$nomeCat."\"/>
+				<a href=\"catGallery.php?photo=".urlencode($idCat)."\">
+					<img class=\"transiction\" src=\"upload/".$idImg.".jpg\" alt=\"".$nomeCat."\"/>
 				</a></div>";
 		}
 		return $output;
