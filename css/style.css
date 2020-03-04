@@ -7,6 +7,15 @@
 	outline: none;
 }
 
+a{
+	text-decoration: none;
+	color: #de8500;
+}
+
+a:visited{
+	color: #8a1111;
+}
+
 .page-container{
 	position: relative;
 	min-height: 100vh;
@@ -15,6 +24,11 @@
 #content{
 	padding-bottom: 7em;
 	font-family: 'Roboto';
+}
+
+#content h1{
+	text-align: center;
+	margin-top:1em;
 }
 
 /*---Header---*/
@@ -61,7 +75,7 @@
 #navbar li a{
 	text-decoration: none;
 	color: white;
-	padding:0 2em 0 2em;
+	padding:0 1.25em 0 1.25em;
 	font-size: 1.3em;
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
@@ -259,6 +273,21 @@
   li{
 	  float:none;
   }
+
+
+/*---Breadcrumb---*/
+
+#breadcrumb{
+	background-color: #e3e3e3;
+	font-family: 'Roboto';
+	padding: 0.5em;
+}
+
+#breadcrumb p{
+	margin-left: 0.5em;
+	font-size: 1.1em;
+	color: 
+}
 
 /*---Home---*/
 
