@@ -101,7 +101,7 @@
 
 	//CARICAMENTO IMMAGINE
 	if (isset($_POST['carica_img'])) {
-		
+		echo "prova";
 		$categoria = $_POST['selectCategoria'];
 		$prezzo = $_POST['prezzo'];
 		$tag1 = $_POST['tag1'];
@@ -129,22 +129,18 @@
 			$errors['categoria']="Categoria richiesta";
 		} 
 		else{
-			$query = "SELECT id FROM `categorie` WHERE nome = '$categoria' ";
-			$result = mysqli_query($db, $query);
-			$ris=mysqli_fetch_assoc($result);
-			$idcategoria=$ris['id'];
-			
-			//TO DO QUI BISOGNA METTERE $use= $_SESSION['usernameU'];
-			$user= "user";
+			$query = "SELECT ID FROM `categorie` WHERE nome = '$categoria' ";
+			$result = mysqli_query($db, $sql);
+			$idcategoria=mysqli_fetch_assoc($result);
+			$user= $_SESSION['usernameU'];
 			$query = "INSERT INTO foto (venditore, prezzo, stato, categoria, tag1, tag2, tag3) 
 			      VALUES('$user','$prezzo', 'in attesa', '$idcategoria', '$tag1', '$tag2', '$tag3')";
-			
 
 			mysqli_query($db, $query);
-			$query = "SELECT id FROM `foto` WHERE venditore='$user' ORDER BY ID DESC LIMIT 1 ";
-			$result= mysqli_query($db, $query);
+			$sql = "SELECT ID FROM `foto` WHERE venditore='$user' ORDER BY ID DESC LIMIT 1 ";
+			$result= mysqli_query($db, $sql);
 			$ris=mysqli_fetch_assoc($result);
-			$name = $ris['id'].'.' . pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
+			$name = $ris['ID'].'.' . pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
 			if(isset($name)){
 				if(!empty($name)){      
 					$location = 'upload/';      
