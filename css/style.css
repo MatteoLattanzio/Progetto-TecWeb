@@ -3,7 +3,7 @@
 *{
 	padding: 0em;
 	margin: 0em;
-	font-family: 'Titillium Web';
+	font-family: 'Roboto';
 	outline: none;
 }
 
@@ -265,26 +265,26 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	opacity: 0.4;
+	opacity: 0.5;
 }
 
 #searchForm{
 	position: relative;
-	margin-top: -30em;
+	top:50%;
 	left:50%;
-	right: 50%;
 	width:100%;
 	max-width:50em;
 	transform: translate(-50%, -50%);
 	padding: 1em;
 	display: flex;
 	border-radius: 1em;
-	justify-content: center;
+	/*justify-content: space-between;*/
 }
 
 #searchForm input[type=text]{
 	width: 70%;
 	padding: 1em 1em;
+	font-weight: bold;
 	font-size: 1.1em;
 	border: 1px solid gray;
 	border-radius: 0.5em;
@@ -293,12 +293,11 @@
 
 #searchForm button{
 	background: #ff9900;
-	width:7.5%;
+	width:10%;
 	position: relative;
 	cursor: pointer;
 	border-radius: 0.5em;
 	margin-left: 1em;
-	font-size: 1.25em;
 }
 
 #searchForm button .fa{
@@ -309,8 +308,4 @@
 	font-size: 1em;
 }
 
-#presentation{
-	font-size: 2em;
-	text-align: center;
-}
 
