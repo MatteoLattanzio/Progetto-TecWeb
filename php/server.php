@@ -101,18 +101,17 @@
 
 	//CARICAMENTO IMMAGINE
 	if (isset($_POST['carica_img'])) {
-		
+		$titolo = $_POST['titolo']; 
 		$categoria = $_POST['selectCategoria'];
 		$prezzo = $_POST['prezzo'];
 		$tag1 = $_POST['tag1'];
 		$tag2 = $_POST['tag2'];
 		$tag3 = $_POST['tag3'];
 		$temp_name  = $_FILES['file']['tmp_name'];
-
-
-  
-		
-		
+		$data = date('m/d/Y');
+		if(empty($titolo)){
+			$errors['titolo']="Titolo richiesto";
+		}
 		if(empty($tag1)){
 			$tag1="no";
 		}
@@ -134,11 +133,11 @@
 			$ris=mysqli_fetch_assoc($result);
 			$idcategoria=$ris['id'];
 			
-			//TO DO QUI BISOGNA METTERE $use= $_SESSION['usernameU'];
+			//TO DO QUI BISOGNA METTERE $user= $_SESSION['usernameU'];
 			$user= "user";
-			$query = "INSERT INTO foto (venditore, prezzo, stato, categoria, tag1, tag2, tag3) 
-			      VALUES('$user','$prezzo', 'in attesa', '$idcategoria', '$tag1', '$tag2', '$tag3')";
-			
+			$query = "INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
+			      VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3')";
+			echo $query;
 
 			mysqli_query($db, $query);
 			$query = "SELECT id FROM `foto` WHERE venditore='$user' ORDER BY ID DESC LIMIT 1 ";
@@ -155,6 +154,11 @@
 			}  
 			//header("Location: area_riservata_utente.php");
 	    }
+	}
+	function getTitoloError($errors){
+		if(isset($errors['titolo'])){
+			echo $errors['titolo'];
+		}
 	}
 	function getPrezzoError($errors){
 		if(isset($errors['prezzo'])){

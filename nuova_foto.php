@@ -6,16 +6,23 @@
 
 	<head>
 		<?php 
-	        include_once 'php/server.php'; 
+	        require_once 'php/server.php'; 
+	       
 	    ?>      
 	</head>
 	<body>
 		<form method="post" action="nuova_foto.php" enctype="multipart/form-data" name="carica_img">						
 			<div >
+				<label for="titolo">Titolo</label>
+				<input type="text" name="titolo" placeholder="Inserire titolo" >
+				<p class="error"><?php getTitoloError($errors); ?></p>
+			</div>
+			<div >
 				<label for="prezzo">Prezzo</label>
 				<input type="text" name="prezzo" placeholder="Inserire prezzo" >
 				<p class="error"><?php getPrezzoError($errors); ?></p>
 			</div>
+
 			<h1>inserire tag (facoltativi)</h1>
 			<div >
 				<label for="tag1">Tag 1</label>
