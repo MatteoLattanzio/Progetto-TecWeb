@@ -260,7 +260,7 @@
 /*---Home---*/
 
 #backgroundContent{
-	background-image: url(./images/backgroundImage2.jpg);
+	background-image: url(../images/backgroundImage2.jpg);
 	height: 50em;
 	background-position: center;
 	background-repeat: no-repeat;
