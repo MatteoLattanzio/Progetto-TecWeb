@@ -341,3 +341,76 @@ a:visited{
 }
 
 
+/*---Login---*/
+
+.box-login{
+	background: #2e2c2c;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 10%;
+	font size:1.3em;
+	width: 50%;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+
+
+.input-field{
+	color:black;
+	padding: 0.8em;
+	margin-top: 2%;
+	margin-bottom: 3%;
+	display:block;
+  	width:70%;
+  	border:0.1em solid #ff9900;
+  	text-align: center;
+  	border-radius:0.5em;
+  	transition:border-color .25s ease, box-shadow .25s ease;
+}
+
+.inputWithIcon input[type="text"] {
+  padding-left: 1em;
+}
+
+
+.inputWithIcon {
+  position: relative;
+  margin-left: 20%;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0.3em;
+  top: 0.3em;
+  padding: 0.3em 0.2em;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+
+.label-login{
+	margin-left: 45%;
+	color:#ff9900;
+	margin-bottom: 3%;
+ }
+
+#button-login {
+	border-radius:0.5em;
+	margin-top:3%;
+	width:40%;
+	margin-left: 30%;
+	margin-right: 30%;
+	font-size:1em;
+	height: 2em;
+	letter-spacing:0.1em;
+	background:#ff9900;
+	color:white;
+	cursor:pointer;
+}
+
+#title-color{
+	color: #ff9900;
+	margin-left: 45%;
+	margin-bottom: 5%;
+}
