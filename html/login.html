@@ -1,32 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-  <head>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/style.css"/> 
-    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/> 
-  </head>
-  <body>
-    <div class="box-login">
-      <h1 id="title-color"> Login </h1>
-      <label class="label-login" for="username">Username</label>  
-
-      <div class="inputWithIcon">
-        <input class="input-field" type="text" name="username" placeholder="Inserisci username"> 
-        <i class="fa fa-user fa-lg fa-fw"></i>
-      </div>
-
-
-      <label class="label-login" for="Password" class="label password"> Password </label>
-
-      <div class="inputWithIcon">
-        <input  class="input-field" type="password" name="password" placeholder="********">
-        <i class="fa fa-eye fa-lg fa-fw"></i>
-      </div>
-
-      <button id="button-login" type="submit" name="Login">Login</button>
-
-    </div>
-  </body>
+	<head>
+		<title>Login - PhotoStock</title>
+		<meta name="title" content="Login - PhotoStock" />
+		<meta name="description" content="Pagina di login di PhotoStock" />
+		<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/> 
+		<meta/>
+    </head>
+	<body>
+		<div id="header"></div>
+			<div id="content">
+				<div class="box-login">
+					<h1 id="title-color">Login</h1>
+					<h2 class="error">%err%</h2>
+					<form action="login.php" method="post" name="login">
+						<div class="inputWithIcon">
+							<input class="input-field" type="text" name="username" placeholder="Username"> 
+							<i class="fa fa-user fa-lg fa-fw"></i>
+						</div>
+						<div class="inputWithIcon">
+							<input class="input-field" type="password" name="password" placeholder="Password">
+							<i class="fa fa-eye fa-lg fa-fw"></i>
+						</div>
+						<button id="button-login" type="submit" name="Login">Login</button>
+					</form>
+				</div>
+			</div>
+		<div id="register">
+			<h1>Registrati <a href='registrazione.php'>qui</a></h1>
+		</div>
+		<div id="footer"></div>
+	</body>
 </html>
 
 
