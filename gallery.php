@@ -9,8 +9,8 @@
 	function listaCategorie(){
 		global $connessione;
 		$output='';
-		if(!$categorie = $connessione->query("SELECT DISTINCT C.id AS catId, nome FROM categorie AS C JOIN foto AS F on C.id=F.categoria WHERE F.stato='approvata';")){
-			header("Location: home.php");
+		if(!$categorie = $connessione->query("SELECT DISTINCT C.id AS catId, nome FROM categorie AS C JOIN foto AS F on C.id=F.categoria WHERE F.stato='approvata' ORDER BY nome;")){
+			header("Location: 404.php");
 			exit();
 		}
 		while($categoria=$categorie->fetch_assoc()){
@@ -19,9 +19,16 @@
 			$trovate=$connessione->query("SELECT * FROM foto WHERE categoria='$idCat' ORDER BY data DESC LIMIT 1;");
 			$trovate=$trovate->fetch_assoc();
 			$idImg=$trovate["id"];
+			if(file_exists("upload/".$idImg.'.png')){
+				$url="upload/".$idImg.'.png';
+			}else if(file_exists("upload/".$idImg.'.jpg')){
+				$url="upload/".$idImg.'.jpg';
+			}else if(file_exists("upload/".$idImg.'.jpeg')){
+				$url="upload/".$idImg.'.jpeg';
+			}
 			$output.="<div class=\"catImg\"><p>".$nomeCat."</p>
 				<a href=\"catGallery.php?photo=".urlencode($idCat)."\">
-					<img class=\"transiction\" src=\"upload/".$idImg.".jpg\" alt=\"".$nomeCat."\"/>
+					<img class=\"transiction\" src=\"".$url."\" alt=\"".$nomeCat."\"/>
 				</a></div>";
 		}
 		return $output;
