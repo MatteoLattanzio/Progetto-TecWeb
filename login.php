@@ -1,35 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-
-
-
-	<head>
-		<?php 
-	        include_once 'php/server.php'; 
-	    ?>      
-	</head>
-	<body>
-		<div>
-			<div>
-				<form action="login.php" method="post" name="login">
-					<div class="input">
-						<label for="username">Username</label>
-						<input type="text" name="username" placeholder="Inserisci username">
-						<p><?php getUsernameError($errors); ?></p>
-					</div>
-					<div class="input password">
-						<label for="Password" class="label password"> Password</label>
-						<input type="password" name="password" placeholder="********">
-						<p><?php getPasswordError($errors); ?></p>
-					</div>
-					<button type="submit" name="Login">Login</button>
-				</form>
-			</div>
-		</div>
-		<div>
-			<h1>Registrati <a href='registrazione.php'>qui</a></h1>
-		</div>
-	</body>
-</html>
-
+<?php
+	require_once "php/header.php";
+	require_once "php/footer.php";
+	require_once "php/dbhandler.php";
+	require_once "php/server.php";
+	$connessione=connessione();
+	if(!isset($_SESSION))
+		session_start();
+	
+	$output=file_get_contents("html/login.html");
+	$output=str_replace("<meta/>",file_get_contents("html/meta.html"),$output);
+	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
+	$output=str_replace("<div id=\"footer\"></div>", Footer::build(), $output);
+	$output=str_replace("%err%",getError($errors),$output);
+	
+	echo $output;
+?>
