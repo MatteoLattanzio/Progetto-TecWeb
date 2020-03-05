@@ -293,7 +293,7 @@ a:visited{
 
 #backgroundContent{
 	background-image: url(../images/backgroundImage2.jpg);
-	height: 50em;
+	height: 40em;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -302,21 +302,17 @@ a:visited{
 
 #searchForm{
 	position: relative;
-	top:50%;
-	left:50%;
 	width:100%;
-	max-width:50em;
-	transform: translate(-50%, -50%);
 	padding: 1em;
+	margin-top: -25em;
 	display: flex;
 	border-radius: 1em;
-	/*justify-content: space-between;*/
+	justify-content: center;
 }
 
 #searchForm input[type=text]{
-	width: 70%;
+	width: 50%;
 	padding: 1em 1em;
-	font-weight: bold;
 	font-size: 1.1em;
 	border: 1px solid gray;
 	border-radius: 0.5em;
@@ -325,7 +321,7 @@ a:visited{
 
 #searchForm button{
 	background: #ff9900;
-	width:10%;
+	width:4em;
 	position: relative;
 	cursor: pointer;
 	border-radius: 0.5em;
