@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<title>%titolo% - %cat% - PhotoStock</title>
+		<meta name="title" content="%titolo%"/>
+		<meta name="description" content="Immagine %titolo% nella categoria %cat%"/>
+		<meta/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="breadcrumb">
+			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; <a href="gallery.php">Galleria</a> &#124; <a href="catGallery.php?photo=%idCat%">%cat%</a> &#124; %titolo% </p>
+		</div>
+			<div id="content">
+				<h2>%titolo%</h2>
+				<img class="descriptionImage" src="%url%" alt="%titolo%"/>
+				<dl class="description">
+					<dt>Titolo:</dt>
+					<dd>%titolo%</dd>
+					<dt>Autore:</dt>
+					<dd>%vend%</dd>
+					<dt>Prezzo di vendita:</dt>
+					<dd>%prezzo%&euro;</dd>
+					<dt>Data di inserimento:</dt>
+					<dd>%data%</dd>
+					<dt>Categoria:</dt>
+					<dd>%cat%</dd>
+					<dt>Tag inseriti dall'autore:</dt>
+					<dd>%tag%</dd>
+				</dl>
+			</div>
+		<div id="footer"></div>
+	</body>
+</html>
