@@ -8,10 +8,10 @@
 		$username = mysqli_real_escape_string($connessione,sanitizeString($_POST['username']));
 		$password = mysqli_real_escape_string($connessione,sanitizeString($_POST['password']));
 		if(empty($username)){
-			$errors['username']="Username richiesto";
+			$errors['usernameL']="Username richiesto";
 		}
 		if(empty($password)){
-			$errors['password']="Password richiesta";
+			$errors['passwordL']="Password richiesta";
 		}
 		if(count($errors)==0){
 			$result=$connessione->query("SELECT * FROM `utenti` WHERE Username='$username' and Password='$password';");
@@ -84,8 +84,8 @@
 				$query="INSERT INTO `utenti` (nome, cognome, data, indirizzo, username, password, email, tipo) 
 					VALUES('$nome','$cognome', '$data', '$indirizzo', '$username', '$password', '$email', 'user')";
 				$connessione->query($query);
-				$_SESSION['usernameU']=$username;
-				$_SESSION['isLoggedU']=true;	            
+				$_SESSION['username']=$username;
+				$_SESSION['type']='user';	            
 				header("Location: profile.php");
 			}
 		}
@@ -94,29 +94,32 @@
 	function sanitizeString($string){
 		return filter_var(trim($string), FILTER_SANITIZE_STRING);
 	}
-
-	function getError($errors){
-		if(isset($errors['titolo']))
-			return $errors['titolo'];
-		if(isset($errors['prezzo']))
-			return $errors['prezzo'];
-		if(isset($errors['categoria']))
-			return $errors['categoria'];
-		if(isset($errors['nome']))
-			return $errors['nome'];
-		if(isset($errors['cognome']))
-			return $errors['cognome'];
-		if(isset($errors['data']))
-			return $errors['data'];
-		if(isset($errors['indirizzo']))
-			return $errors['indirizzo'];
-		if(isset($errors['email']))
-			return $errors['email'];
-		if(isset($errors['username']))
-			return $errors['username'];
-		if(isset($errors['password']))
-			return $errors['password'];
+	
+	function getErrorLogin($errors){
+		$temp="<h2 class=\"error\">";
+		if(isset($errors['usernameL']))
+			return $temp.=$errors['usernameL']."</h2>";
+		if(isset($errors['passwordL']))
+			return $temp.=$errors['passwordL']."</h2>";
 		if(isset($errors['noUser']))
-			return $errors['noUser'];
+			return $temp.=$errors['noUser'];
+	}
+
+	function getErrorReg($errors){
+		$temp="<h2 class=\"error\">";
+		if(isset($errors['nome']))
+			return $temp.=$errors['nome']."</h2>";
+		if(isset($errors['cognome']))
+			return $temp.=$errors['cognome']."</h2>";
+		if(isset($errors['data']))
+			return $temp.=$errors['data']."</h2>";
+		if(isset($errors['indirizzo']))
+			return $temp.=$errors['indirizzo']."</h2>";
+		if(isset($errors['email']))
+			return $temp.=$errors['email']."</h2>";
+		if(isset($errors['username']))
+			return $temp.=$errors['username']."</h2>";
+		if(isset($errors['password']))
+			return $temp.=$errors['password']."</h2>";
 	}
 ?>
