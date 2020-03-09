@@ -339,13 +339,26 @@ a:visited{
 
 /*---Login---*/
 
+#login{
+	flex: 50%;
+}
+
+#register{
+	flex: 50%;
+}
+
+#gridLogin{
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .box-login{
 	background: #2e2c2c;
 	display: block;
-	margin: 4em auto 4em auto;
+	margin: 4em auto 5em auto;
 	font-size:1.1em;
 	width: 40em;
-	border-radius: 0.5em;
+	border-radius: 0.35em;
 	padding: 1em 0em 1em 0em;
 }
 
@@ -368,21 +381,22 @@ a:visited{
 	padding: 0.6em;
 	text-align: center;
 	display: inline-block;
-	border-radius:0.5em;
+	border-radius:0.35em;
 }
 
 label{color:#ff9900;}
 
 #button-login{
-	border-radius:0.5em;
+	border-radius:0.35em;
 	width:6em;
 	margin: 3em auto 1em auto;
 	display: block;
 	font-size:1em;
-	background:#ff9900;
-	color:white;
+	background:#2e2c2c;
+	color:#ff9900;
 	cursor:pointer;
 	padding:0.3em;
+	border: 1px solid #ff9900;
 }
 
 #title-color{
@@ -397,4 +411,14 @@ label{color:#ff9900;}
 #register h2{
 	margin-top:3em;
 	text-align: center;
+}
+
+@media screen and (max-width: 600px){
+	#login{
+		width: 100%;
+	}
+	
+	#register{
+		width: 100%;
+	}
 }
