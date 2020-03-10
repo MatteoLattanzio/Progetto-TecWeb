@@ -13,63 +13,67 @@
 			<p><a href="home.php"><span xml:lang="en">Home</a> &#124; Login </span></p>
 		</div>
 			<div id="content">
-				<div class="box-login">
-					<h1 id="title-color" xml:lang="en">Login</h1>
-					%err%
-					<form action="login.php" method="post" name="login">
-						<div class="inputBox">
-							<label for="username">Username</label>
-							<input type="text" name="username" placeholder="Username"> 
+				<div id="gridLogin">
+					<div id="login">
+					<div class="box-login">
+						<h1 id="title-color" xml:lang="en">Login</h1>
+						%err%
+						<form action="login.php" method="post" name="login">
+							<div class="inputBox">
+								<label for="username">Username</label>
+								<input type="text" name="username" placeholder="Username"> 
+							</div>
+							<div class="inputBox">
+								<label for="password">Password</label>
+								<input type="password" name="password" placeholder="Password">
+							</div>
+							<button id="button-login" type="submit" name="Login">Login</button>
+						</form>
 						</div>
-						<div class="inputBox">
-							<label for="password">Password</label>
-							<input type="password" name="password" placeholder="Password">
+					</div>
+					<div id="register">
+						<!--<h2>Se non possiedi ancora un account: </h2>-->
+						<div class="box-login">
+							<h1 id="title-color">Registrati</h1>
+							%err2%
+							<form method="post" action="login.php">						
+								<div class="inputBox">
+									<label for="nome">Nome</label>
+									<input type="text" name="nome" placeholder="Nome">
+								</div>
+								<div class="inputBox">
+									<label for="cognome">Cognome</label>
+									<input type="text" name="cognome" placeholder="Cognome">
+								</div>
+								<div class="inputBox">
+									<label for="data">Data di nascita</label>
+									<input type="text" name="data" placeholder="Data di nascita">
+								</div>
+								<div class="inputBox">
+									<label for="indirizzo">Indirizzo</label>
+									<input type="text" name="indirizzo" placeholder="Indirizzo">
+								</div>
+								<div class="inputBox">
+									<label for="email">E-Mail</label>
+									<input class="input-field" type="email" name="email" placeholder="E-mail">
+								</div>
+								<div class="inputBox">
+									<label for="username">Username</label>
+									<input class="input-field" type="text" name="username" placeholder="Username">			
+								</div>
+								<div class="inputBox">
+									<label for="password">Password</label>
+									<input class="input-field" type="password" name="password" placeholder="Password">
+								</div>
+								<div class="inputBox">
+									<label for="passwordR">Ripeti Password</label>
+									<input class="input-field" type="password" name="passwordR" placeholder="Ripeti password">
+								</div>
+								<button id="button-login" type="submit" name="registrazione">Registrati</button>
+							</form>
 						</div>
-						<button id="button-login" type="submit" name="Login">Login</button>
-					</form>
-				</div>
-			<div id="register">
-				<h2>Se non possiedi ancora un account: </h2>
-				<div class="box-login">
-					<h1 id="title-color">Registrati</h1>
-					%err2%
-					<form method="post" action="login.php">						
-						<div class="inputBox">
-							<label for="nome">Nome</label>
-							<input type="text" name="nome" placeholder="Nome">
-						</div>
-						<div class="inputBox">
-							<label for="cognome">Cognome</label>
-							<input type="text" name="cognome" placeholder="Cognome">
-						</div>
-						<div class="inputBox">
-							<label for="data">Data di nascita</label>
-							<input type="text" name="data" placeholder="Data di nascita">
-						</div>
-						<div class="inputBox">
-							<label for="indirizzo">Indirizzo</label>
-							<input type="text" name="indirizzo" placeholder="Indirizzo">
-						</div>
-						<div class="inputBox">
-							<label for="email">E-Mail</label>
-							<input class="input-field" type="email" name="email" placeholder="E-mail">
-						</div>
-						<div class="inputBox">
-							<label for="username">Username</label>
-							<input class="input-field" type="text" name="username" placeholder="Username">			
-						</div>
-						<div class="inputBox">
-							<label for="password">Password</label>
-							<input class="input-field" type="password" name="password" placeholder="Password">
-						</div>
-						<div class="inputBox">
-							<label for="passwordR">Ripeti Password</label>
-							<input class="input-field" type="password" name="passwordR" placeholder="Ripeti password">
-						</div>
-						<button id="button-login" type="submit" name="registrazione">Registrati</button>
-					</form>
-				</div>
-			</div>
+					</div>
+		</div>
 		</div>
 		<div id="footer"></div>
 	</body>
