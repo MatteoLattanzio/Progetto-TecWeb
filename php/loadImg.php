@@ -46,12 +46,11 @@
 				if(!empty($name)){      
 					$location = 'upload/';      
 					if(move_uploaded_file($temp_name, $location.$name)){
-					  echo 'File uploaded successfully';
+					  //echo 'File uploaded successfully';
 					}
 					else{
 						$idfoto=$ris['id'];
 						$connessione->query("DELETE FROM foto WHERE id='$idfoto';");
-						echo "DELETE FROM foto WHERE ID='$idfoto';"; 
 					}
 				}       
 			}  
