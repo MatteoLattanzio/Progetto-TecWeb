@@ -3,3 +3,4 @@ Fare controllo sulla data (registrazione utente)
 controllo estensioni e dimensioni immagini
 inserire create table
 aggiungere immagine profilo per utenti
+errori nuova foto
