@@ -50,7 +50,7 @@
 				$connessione->query($query);
 				$_SESSION['username']=$username;
 				$_SESSION['type']='user';	            
-				//header("Location: profile.php");
+				header("Location: profile.php");
 			}
 		}
 	}//registrazione

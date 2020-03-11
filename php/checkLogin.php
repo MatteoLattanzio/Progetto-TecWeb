@@ -26,7 +26,7 @@
 					header("Location: admin.php");
 				}else
 					$_SESSION['type']='user';
-				//header("Location: user.php");
+				header("Location: profile.php");
 			}
 		}
 	}//login
