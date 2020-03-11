@@ -12,15 +12,16 @@ class Header{
 	
 	public static function navbar(){
 		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php', 'Vendi' => 'vendi.php','Contatti' => 'contacts.php');
-		if(isset($_SESSION["user"])){
-			$nav['Esci']='logout.php';
-		}
-		if(isset($_SESSION["user"]) && $_SESSION["user"]=="user") {
+		
+		if(isset($_SESSION["username"]) && $_SESSION["type"]=="user") {
 			$nav['Profilo']='profile.php';
-		}else if(isset($_SESSION["userType"]) && $_SESSION["userType"] == "admin") {
+		}else if(isset($_SESSION["username"]) && $_SESSION["type"] == "admin") {
 			$nav['Gestione']='admin.php';
 		}else{
 			$nav['Accedi']='login.php';
+		}
+		if(isset($_SESSION["username"])){
+			$nav['Esci']='logout.php';
 		}
 		$output="<div id=\"navbar\"><ul>";
 		foreach($nav as $element => $link){
