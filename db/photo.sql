@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 04, 2020 alle 16:59
+-- Creato il: Mar 11, 2020 alle 11:14
 -- Versione del server: 10.4.10-MariaDB
 -- Versione PHP: 7.3.12
 
@@ -64,12 +64,35 @@ CREATE TABLE `foto` (
   `titolo` varchar(255) NOT NULL,
   `venditore` varchar(255) NOT NULL,
   `prezzo` double NOT NULL,
-  `stato` varchar(255) NOT NULL,
+  `stato` enum('in attesa','approvata','rifiutata','') NOT NULL,
   `categoria` int(11) NOT NULL,
   `data` date NOT NULL,
   `tag1` varchar(255) NOT NULL,
   `tag2` varchar(255) NOT NULL,
   `tag3` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `foto`
+--
+
+INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`, `data`, `tag1`, `tag2`, `tag3`) VALUES
+(27, 'aa', 'user', 1, 'approvata', 1, '0000-00-00', 'aa', 'aa', 'aa'),
+(28, 'aa', 'user', 1, 'in attesa', 1, '0000-00-00', 'aa', 'aa', 'aa');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `messaggi`
+--
+
+CREATE TABLE `messaggi` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `oggetto` text NOT NULL,
+  `testo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -118,6 +141,7 @@ CREATE TABLE `utenti` (
 
 INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `password`, `email`, `tipo`) VALUES
 ('aa', 'aa', '0000-00-00', 'aa', 'aaa', 'aaaa', 'aa@aa', 'user'),
+('gg', 'gg', '0000-00-00', 'gg', 'gg', 'gggg', 'gg@gg', 'user'),
 ('user', 'user', '2020-03-10', 'user', 'user', 'user', 'user', 'user');
 
 --
@@ -145,6 +169,13 @@ ALTER TABLE `foto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `venditore` (`venditore`),
   ADD KEY `categoria` (`categoria`);
+
+--
+-- Indici per le tabelle `messaggi`
+--
+ALTER TABLE `messaggi`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user` (`user`);
 
 --
 -- Indici per le tabelle `piaciuti`
@@ -187,7 +218,13 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT per la tabella `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT per la tabella `messaggi`
+--
+ALTER TABLE `messaggi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `preferiti`
@@ -212,6 +249,12 @@ ALTER TABLE `carrello`
 ALTER TABLE `foto`
   ADD CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`venditore`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `foto_ibfk_2` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`id`);
+
+--
+-- Limiti per la tabella `messaggi`
+--
+ALTER TABLE `messaggi`
+  ADD CONSTRAINT `messaggi_ibfk_1` FOREIGN KEY (`user`) REFERENCES `utenti` (`username`);
 
 --
 -- Limiti per la tabella `piaciuti`
