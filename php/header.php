@@ -11,7 +11,7 @@ class Header{
 	}
 	
 	public static function navbar(){
-		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php', 'Vendi' => 'vendi.php','Contatti' => '#');
+		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php', 'Vendi' => 'vendi.php','Contatti' => 'contacts.php');
 		if(isset($_SESSION["user"])){
 			$nav['Esci']='logout.php';
 		}
