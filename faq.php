@@ -1,6 +1,9 @@
 <?php
 	require_once "php/header.php";
 	require_once "php/footer.php";
+	if (!isset($_SESSION)) {
+		session_start();
+	}
 
 	$output=file_get_contents("html/faq.html");
 	$output=str_replace("<meta/>", file_get_contents("html/meta.html"), $output);

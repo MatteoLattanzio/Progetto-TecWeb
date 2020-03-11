@@ -3,6 +3,9 @@
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
 	$connessione=connessione();
+	if (!isset($_SESSION)) {
+		session_start();
+	}
 	if(!isset($_GET["photo"])){
 		header("Location: 404.php");
 		exit();
