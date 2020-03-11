@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<title>Area personale - PhotoStock</title>
+		<meta name="title" content="Area personale"/>
+		<meta name="description" content="Pagina utente"/>
+		<meta name="keywords" content="Pagina personale di PhotoStock"/>
+		<meta/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="breadcrumb">
+			<p><a href="index.php"><span xml:lang="en">Home</span></a> &#124; Area personale</p>
+		</div>
+		<div id="content">
+			<h2 error/>
+			<h1>I tuoi dati</h1>
+			<h2>Benvenuto, %username%</h2>
+			<form method="post" action="setprofile.php" id="profile">
+				<div>
+					<label><span xml:lang="en">Username</span>:</label>
+						<input type="text" name="user" readonly="readonly" value="%username%"/><br/>
+					<label><span xml:lang="en">Password</span>:</label>
+						<input type="password" name="password"/><br/>
+					<label>Nome:</label>
+						<input type="text" name="name" value="%nome%"/><br/>
+					<label>Cognome:</label>
+						<input type="text" name="surname" value="%cognome%"/><br/>
+					<label>Email:</label>
+						<input type="text" name="email" readonly="readonly" value="%email%"/><br/>
+					<input type="submit" name="modifica" value="Modifica i dati"/>
+				</div>
+			</form>
+			<div class="foto"/>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
