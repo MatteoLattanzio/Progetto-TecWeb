@@ -563,3 +563,82 @@ textarea{
 	list-style-type: square;
 	list-style-position: inside;
 }
+
+
+/*---Vendi-simple---*/
+
+#backgroundVendi-simple{
+	background-image: url(../images/vendiCollage.jpg);
+	height: 40em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.9;
+	margin-bottom: 2%;
+}
+
+#vendiSample{
+	width:100%;
+	position: absolute;
+	justify-content: center;
+}
+
+#vendiSample h1{
+	width: 100%;
+	margin-top: 7%;
+	font-size: 3em;
+	text-align: center;
+	color: white;
+}
+
+#vendiSample p{
+	margin-top: 2%;
+	width: 100%;
+	font-size: 1.8em;
+	text-align: center;
+	color:white;
+}
+
+#vendiSample button{
+	background: #ff9900;
+	margin-top: 4%;
+	width:6em;
+	height: 3em;
+	font-size: 1.5em;
+	position: relative;
+	cursor: pointer;
+	border-radius: 0.5em;
+	margin-left: 45%;
+	border:none;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	color:white;
+}
+
+
+#vendiSample2{
+	position: relative;
+	display: flex;
+	width:100%;
+	background: white;
+	justify-content: center;
+	margin-bottom: 4%;
+	
+}
+
+#vendiSample2 h1{
+	font-size: 1.5em;
+}
+
+#vendiSample2 p{
+	margin-top: 1%;
+	font-size: 1em;
+}
+
+
+#vendiSample2>div {
+  width: 30%;
+  margin: 2em;
+  padding: 1em;
+  text-align: center;
+}
