@@ -565,49 +565,50 @@ textarea{
 }
 
 
-/*---Vendi-simple---*/
+/*---Vendi_sample---*/
 
-#backgroundVendi-simple{
+#backgroundVendi-sample{
 	background-image: url(../images/vendiCollage.jpg);
-	height: 40em;
+	height: 50em;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	opacity: 0.9;
 	margin-bottom: 2%;
+	opacity: 0.9;
 }
 
 #vendiSample{
 	width:100%;
 	position: absolute;
 	justify-content: center;
+	display: block;
+	margin-top: 12em;
 }
 
 #vendiSample h1{
 	width: 100%;
-	margin-top: 7%;
 	font-size: 3em;
 	text-align: center;
 	color: white;
+	margin-bottom: 0.5em;
 }
 
 #vendiSample p{
-	margin-top: 2%;
 	width: 100%;
 	font-size: 1.8em;
 	text-align: center;
 	color:white;
+	margin-bottom: 1em;
 }
 
 #vendiSample button{
 	background: #ff9900;
-	margin-top: 4%;
-	width:6em;
-	height: 3em;
-	font-size: 1.5em;
+	width:5em;
+	height: 2.5em;
+	font-size: 1.7em;
 	position: relative;
 	cursor: pointer;
-	border-radius: 0.5em;
+	border-radius: 0.25em;
 	margin-left: 45%;
 	border:none;
 	-webkit-transition-duration: 0.2s;
@@ -615,30 +616,31 @@ textarea{
 	color:white;
 }
 
+#vendiSample button:hover{
+	background-color: #ffb340;
+}
 
-#vendiSample2{
+#vendiSampleText{
 	position: relative;
 	display: flex;
 	width:100%;
 	background: white;
 	justify-content: center;
-	margin-bottom: 4%;
-	
+	margin-bottom: 10em;
 }
 
-#vendiSample2 h1{
-	font-size: 1.5em;
+#vendiSampleText h1{
+	font-size: 1.75em;
 }
 
-#vendiSample2 p{
-	margin-top: 1%;
-	font-size: 1em;
+#vendiSampleText p{
+	margin-top: 1em;
+	font-size: 1.1em;
 }
 
-
-#vendiSample2>div {
-  width: 30%;
-  margin: 2em;
+#vendiSampleText>div{
+  width: 33%;
+  margin: 1em;
   padding: 1em;
   text-align: center;
 }
