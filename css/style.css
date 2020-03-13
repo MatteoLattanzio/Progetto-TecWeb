@@ -303,10 +303,10 @@ a:visited{
 #searchForm{
 	position: relative;
 	width:100%;
-	margin-top: -25em;
 	display: flex;
 	border-radius: 1em;
 	justify-content: center;
+	padding-top: 15em;
 }
 
 #searchForm input[type=text]{
@@ -340,6 +340,31 @@ a:visited{
 	left:50%;
 	transform: translate(-50%, -50%);
 	font-size: 1em;
+}
+
+#homeText{
+	position: relative;
+	display: flex;
+	width:100%;
+	background: white;
+	justify-content: center;
+	margin-bottom: 10em;
+}
+
+#homeText h1{
+	font-size: 1.75em;
+}
+
+#homeText p{
+	margin-top: 1em;
+	font-size: 1.1em;
+}
+
+#homeText>div{
+  	width: 33%;
+	margin: 1em;
+  	padding: 1em;
+  	text-align: center;
 }
 
 
@@ -573,7 +598,6 @@ textarea{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin-bottom: 2%;
 	opacity: 0.9;
 }
 
@@ -609,7 +633,9 @@ textarea{
 	position: relative;
 	cursor: pointer;
 	border-radius: 0.25em;
-	margin-left: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 	border:none;
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
