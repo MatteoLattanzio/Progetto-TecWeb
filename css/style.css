@@ -353,6 +353,7 @@ a:visited{
 
 #homeText h1{
 	font-size: 1.75em;
+	font-family: 'Nova Square';
 }
 
 #homeText p{
@@ -596,12 +597,12 @@ textarea{
 /*---Vendi_sample---*/
 
 #backgroundVendi-sample{
-	background-image: url(../images/vendiCollage.jpg);
+	background-image: url(../images/vendiCollage2.jpg);
 	height: 50em;
+	opacity: 0.9;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	opacity: 0.9;
 }
 
 #vendiSample{
@@ -645,6 +646,10 @@ textarea{
 	color:white;
 }
 
+#vendiSample a{
+	text-decoration: none;
+}
+
 #vendiSample button:hover{
 	background-color: #ffb340;
 }
@@ -672,6 +677,7 @@ textarea{
 
 #vendiContainer h1{
 	font-size: 1.75em;
+	font-family: 'Nova Square';
 }
 
 #vendiContainer p{
@@ -742,3 +748,76 @@ textarea{
 	outline:none;
 }
 
+/*---Profilo---*/
+
+#profile{
+	margin-bottom: 10em;
+}
+
+#profile h2{
+	margin:1em;
+	text-align: center;
+}
+
+#profile>div{
+	margin:1em 1em 1em 3em;
+}
+
+#profile>div input{
+	width: 25%;
+	display:inline-block;
+	border-radius: 0.2em;
+	padding: 0.5em;
+	margin: 1em 0 1em 0;
+	border: 1px solid black;
+}
+
+#profile>div label{
+	width: 15%;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+#profile>div input[type=submit]{
+	margin-right: 8em;
+	margin-bottom: 1em;
+	float: right;
+	width:8em;
+}
+
+.foto .imgElement{
+	max-width:30em;
+	height:auto;
+	display: block;
+	margin: 3em auto 3em auto;
+}
+
+.foto p{
+	text-align: center;
+	line-height: 1.5em;
+}
+
+/*---Acquista---*/
+
+#categoryContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.catImg {
+	padding: 1.5em;
+	flex: 25%;
+}
+
+.catImg img {
+	display:block;
+	margin: auto;
+	width: 20em;
+	height: 13em;
+}
+
+.catImg p {
+	padding: 1em 0em;
+	font-size: 1.5em;
+	text-align: center;
+}
