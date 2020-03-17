@@ -45,19 +45,15 @@
 			//QUANTITA' VENDUTE
 			//MI PIACE RICEVUTI
 			//VOLTE IN CUI E' STATA MESSA TRA I PREFERITI
-			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a>
-				<div id=\"parag\">
-						<p><strong>Titolo: </strong>".$titoloImg."</p>
-						<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-						<p>	<strong>Stato: </strong>".$statoImg."</p>
-				</div>
-				
-			</li>";
+			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a><p>
+				<strong>Titolo: </strong>".$titoloImg."<br/>
+				<strong>Prezzo: </strong>".$prezzoImg." &euro;<br/>
+				<strong>Stato: </strong>".$statoImg."<br/>
+				</p></li>";
 		}
 		$img.="</ul></div>";
 		return $img;
 	}
-
 	
 	$output=file_get_contents("html/profile.html");
 	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
