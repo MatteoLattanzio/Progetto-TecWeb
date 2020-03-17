@@ -2,6 +2,7 @@
 	require_once "php/header.php";
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
+	
 	if (!isset($_SESSION)) {
 		session_start();
 	}
@@ -13,7 +14,7 @@
 		header("Location: admin.php");
 		exit();
 	}
-	$connessione = connessione();
+	$connessione=connessione();
 	$username=$_SESSION["username"];
 	$result=$connessione->query("SELECT * FROM utenti WHERE username='$username';");
 	$imgUser=$connessione->query("SELECT * FROM foto JOIN utenti ON venditore=username WHERE venditore='$username';");
@@ -64,5 +65,9 @@
 	$output=str_replace("%nome%",$nome,$output);
 	$output=str_replace("%cognome%",$cognome,$output);
 	$output=str_replace("%email%",$email,$output);
+	if(isset($_GET["correct"]))
+		$output=str_replace("<h3 done/>","Modifiche effettuate correttamente",$output);
+	else
+		$output=str_replace("<h3 done/>",'',$output);
 	
 	echo $output;

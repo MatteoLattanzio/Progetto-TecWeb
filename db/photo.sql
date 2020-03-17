@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 11, 2020 alle 11:14
--- Versione del server: 10.4.10-MariaDB
--- Versione PHP: 7.3.12
+-- Creato il: Mar 16, 2020 alle 11:39
+-- Versione del server: 10.4.11-MariaDB
+-- Versione PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `photo`
 --
+CREATE DATABASE IF NOT EXISTS `photo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `photo`;
 
 -- --------------------------------------------------------
 
@@ -28,6 +30,7 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `carrello`
 --
 
+DROP TABLE IF EXISTS `carrello`;
 CREATE TABLE `carrello` (
   `Id` int(11) NOT NULL,
   `cliente` varchar(255) NOT NULL,
@@ -40,6 +43,7 @@ CREATE TABLE `carrello` (
 -- Struttura della tabella `categorie`
 --
 
+DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL
@@ -50,8 +54,10 @@ CREATE TABLE `categorie` (
 --
 
 INSERT INTO `categorie` (`id`, `nome`) VALUES
-(1, '1'),
-(2, '2');
+(1, 'Ritratti'),
+(2, 'Paesaggi'),
+(3, 'Animali'),
+(4, 'Macro');
 
 -- --------------------------------------------------------
 
@@ -59,6 +65,7 @@ INSERT INTO `categorie` (`id`, `nome`) VALUES
 -- Struttura della tabella `foto`
 --
 
+DROP TABLE IF EXISTS `foto`;
 CREATE TABLE `foto` (
   `id` int(11) NOT NULL,
   `titolo` varchar(255) NOT NULL,
@@ -77,8 +84,10 @@ CREATE TABLE `foto` (
 --
 
 INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`, `data`, `tag1`, `tag2`, `tag3`) VALUES
-(27, 'aa', 'user', 1, 'approvata', 1, '0000-00-00', 'aa', 'aa', 'aa'),
-(28, 'aa', 'user', 1, 'in attesa', 1, '0000-00-00', 'aa', 'aa', 'aa');
+(1, 'Venezia di notte', 'user', 20, 'approvata', 2, '2020-03-02', '', '', ''),
+(2, 'Compleanno', 'user', 10, 'in attesa', 1, '2020-01-12', 'bambini', '', ''),
+(3, 'Animali selvatici', 'user', 10, 'approvata', 3, '2018-02-04', 'fenicottero', 'zoo', ''),
+(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno');
 
 -- --------------------------------------------------------
 
@@ -86,6 +95,7 @@ INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`,
 -- Struttura della tabella `messaggi`
 --
 
+DROP TABLE IF EXISTS `messaggi`;
 CREATE TABLE `messaggi` (
   `id` int(11) NOT NULL,
   `user` varchar(255) NOT NULL,
@@ -101,6 +111,7 @@ CREATE TABLE `messaggi` (
 -- Struttura della tabella `piaciuti`
 --
 
+DROP TABLE IF EXISTS `piaciuti`;
 CREATE TABLE `piaciuti` (
   `foto` int(11) NOT NULL,
   `utente` varchar(255) NOT NULL
@@ -112,6 +123,7 @@ CREATE TABLE `piaciuti` (
 -- Struttura della tabella `preferiti`
 --
 
+DROP TABLE IF EXISTS `preferiti`;
 CREATE TABLE `preferiti` (
   `Id` int(11) NOT NULL,
   `cliente` varchar(255) NOT NULL,
@@ -124,6 +136,7 @@ CREATE TABLE `preferiti` (
 -- Struttura della tabella `utenti`
 --
 
+DROP TABLE IF EXISTS `utenti`;
 CREATE TABLE `utenti` (
   `nome` varchar(255) NOT NULL,
   `cognome` varchar(255) NOT NULL,
@@ -132,7 +145,7 @@ CREATE TABLE `utenti` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL
+  `tipo` enum('user','admin','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -140,9 +153,9 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `password`, `email`, `tipo`) VALUES
-('aa', 'aa', '0000-00-00', 'aa', 'aaa', 'aaaa', 'aa@aa', 'user'),
-('gg', 'gg', '0000-00-00', 'gg', 'gg', 'gggg', 'gg@gg', 'user'),
-('user', 'user', '2020-03-10', 'user', 'user', 'user', 'user', 'user');
+('admin', 'admin', '1995-01-01', 'via amministratore', 'admin', 'admin', 'admin@photostock.com', 'admin'),
+('user', 'user', '1997-11-30', 'via prova', 'user', 'user', 'user@photostock.com', 'user'),
+('userBuy', 'userBuy', '1987-12-18', 'via acquisti', 'userBuy', 'buy', 'userBuy@photostock.com', 'user');
 
 --
 -- Indici per le tabelle scaricate
@@ -212,7 +225,7 @@ ALTER TABLE `carrello`
 -- AUTO_INCREMENT per la tabella `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT per la tabella `foto`
