@@ -34,4 +34,16 @@
 		if(isset($errors['password']))
 			return $temp.=$errors['password']."</h2>";
 	}
+	
+	function getErrorLoad($errors){
+		$temp="<h2 class=\"error\">";
+		if(isset($errors['titolo']))
+			return $temp.=$errors['titolo']."</h2>";
+		if(isset($errors['prezzo']))
+			return $temp.=$errors['prezzo']."</h2>";
+		if(isset($errors['categoria']))
+			return $temp.=$errors['categoria']."</h2>";
+		if(isset($errors['file']))
+			return $temp.=$errors['file']."</h2>";
+	}
 ?>
