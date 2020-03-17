@@ -27,9 +27,7 @@
 		
 			$result=$connessione->query("INSERT INTO messaggi (email, data, oggetto, testo, nome,cognome) 
                               VALUES('$email','$data', '$oggetto', '$mess', '$nome', '$cognome')");
-			$query="INSERT INTO messaggi (email, data, oggetto, testo, nome,cognome) 
-			VALUES('$email','$data', '$oggetto', '$mess', '$nome', '$cognome')";
-			echo $query;
+			
 			
 		
 		
