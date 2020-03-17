@@ -2,7 +2,7 @@
 	require_once "php/header.php";
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
-		$connessione=connessione();
+	$connessione=connessione();
 
 	require_once "php/checkContacts.php";
 
