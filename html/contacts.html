@@ -18,43 +18,47 @@
 				</p>
 				<div id="contactForm">
 					<h1>Contattaci!</h1>
-					<div id="contact-container">
+					<form method="post" action="contacts.php">						
+						<div id="contact-container">
 							<div class="contactcol1">
 								<div class="inputContactwide">
-									<input type="text" placeholder="Nome e Cognome" />
+									<input type="text" name="email" value="%email%" placeholder="Email" />
 								</div>
 							</div>
 							<div class="contactcol2">
 								<div class="styled-input">
-									<input type="text" placeholder="Email" />
+									<input type="text" name="nome" value="%nome%" placeholder="Nome" />
 								</div>
 							</div>
-							<div class="contactcol2">
-								<div class="styled-input" style="float:right;">
-									<input type="text" placeholder="Telefono" />
+							<div class>
+								<div class="contactcol2">
+									<div class="styled-input" style="float:right;">
+										<input type="text" name="cognome" value="%cognome%" placeholder="Cognome" />
+									</div>
+								</div>
+								<div class="contactcol2">
+									<div class="inputContactwide">
+										<select id="objectContact" name="oggetto">
+											<option value="" disabled selected>Oggetto del messaggio</option>
+											<option value="informazioni ordine" name="info">Informazioni su ordini effettuati</option>
+											<option value="problemi con un acquisto" name="acquisto">Problemi con un acquisto</option>
+											<option value="problemi con una vendita" name="vendita">Problemi con una vendita</option>
+											<option value="segnalazione utenti" name="segnalazione">Segnalazione utenti</option>
+											<option value="altro" name="altro">Altro</option>
+										  </select>
+									</div>
+								</div>
+								<div class="contactcol1">
+									<div class="inputContactwide">
+										<textarea name="mess" placeholder="Scrivi qui il tuo messaggio!"></textarea>
+									</div>
+								</div>
+								<div class="contactcol1">
+									<button id="submitButton" type="submit" name="invia">Invia</button>
 								</div>
 							</div>
-							<div class="contactcol2">
-								<div class="inputContactwide">
-									<select id="objectContact">
-										<option value="" disabled selected>Oggetto del messaggio</option>
-										<option value="informazioni ordine">Informazioni su ordini effettuati</option>
-										<option value="problemi con un acquisto">Problemi con un acquisto</option>
-										<option value="problemi con una vendita">Problemi con una vendita</option>
-										<option value="segnalazione utenti">Segnalazione utenti</option>
-										<option value="altro">Altro</option>
-									  </select>
-								</div>
-							</div>
-							<div class="contactcol1">
-								<div class="inputContactwide">
-									<textarea placeholder="Scrivi qui il tuo messaggio!"></textarea>
-								</div>
-							</div>
-							<div class="contactcol1">
-								<button id="submitButton" type="submit" name="invia">Invia</button>
-							</div>
-					</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		<div id="footer"></div>

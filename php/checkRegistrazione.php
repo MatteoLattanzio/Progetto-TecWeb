@@ -44,6 +44,7 @@
 			$rows=mysqli_num_rows($result);
 			if($rows>0){
 				$errors['username']="Username non disponibile";
+			
 			}else if($password==$password_2){
 				$query="INSERT INTO `utenti` (nome, cognome, data, indirizzo, username, password, email, tipo) 
 					VALUES('$nome','$cognome', '$data', '$indirizzo', '$username', '$password', '$email', 'user')";
