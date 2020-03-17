@@ -39,7 +39,7 @@
 		if(empty($username)){
 			$errors['username']="Username richiesto";
 		}
-		else{
+		if(count($errors)==0){
 			$result=$connessione->query("SELECT * FROM `utenti` WHERE Username='$username';");
 			$rows=mysqli_num_rows($result);
 			if($rows>0){
