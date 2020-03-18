@@ -2,7 +2,7 @@
 	function connessione(){
 		$host = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "root";
 		$db_name = "photo";
 
 		$connessione = new mysqli($host, $username, $password, $db_name);

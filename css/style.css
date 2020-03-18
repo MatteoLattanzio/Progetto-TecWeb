@@ -670,13 +670,14 @@ textarea{
 }
 
 #box{
-	width: 40%;
+	width: 100%;
 	height: auto;
-	margin-left: 25%;
+	margin-left:25%;
+	float:left;
 }
 
 #profile>div input{
-	width: 55%;
+	width: 25%;
 	display:inline-block;
 	border-radius: 0.2em;
 	padding: 0.5em;
@@ -685,7 +686,7 @@ textarea{
 }
 
 #profile>div label{
-	width: 35%;
+	width: 15%;
 	display: inline-block;
 	margin-left: 1em;
 }
@@ -705,6 +706,7 @@ textarea{
 
 div .foto li{
 	float: left;
+	width: 20%;
 	margin: 2% 5% 2% 5%;
 }
 
@@ -719,13 +721,13 @@ div .foto li{
 	height: 4em;
 	background: #DCDCDC;
 	color: #2e2c2c;
+	width: 100%;
 
 }
 .foto p{
 	float: left;
 	width: 100%;
 }
-
 
 
 /*impostato per comodità perchè non riesco a capire come risolvere*/
