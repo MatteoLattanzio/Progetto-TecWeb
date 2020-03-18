@@ -14,7 +14,6 @@
 		global $connessione;
 		$list="<select name=\"selectCategoria\">";
 		$result=$connessione->query("SELECT * FROM categorie;");
-		$list.="<option value=\"\" disabled selected>Seleziona categoria</option>"; 
 		while($cat=$result->fetch_assoc()){
 			$list.="<option name=\"".$cat["nome"]."\" value=\"".$cat["id"]."\">".$cat["nome"]."</option>";
 		}
