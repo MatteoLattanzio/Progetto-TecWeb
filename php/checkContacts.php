@@ -3,7 +3,6 @@ require_once "dbhandler.php";
 	if (!isset($_SESSION)) {
 		session_start();
 	}
-require_once "server.php";
 //MESSAGE
 	if(isset($_POST['invia'])){
 		$nome = mysqli_real_escape_string($connessione,sanitizeString($_POST['nome']));
@@ -29,11 +28,12 @@ require_once "server.php";
 		if(empty($mess)){
 			$errors['mess']="Inserisci un testo";
 		}
-		
+		if(count($errors)==0){
+
 			$result=$connessione->query("INSERT INTO messaggi (email, data, oggetto, testo, nome,cognome) 
                               VALUES('$email','$data', '$oggetto', '$mess', '$nome', '$cognome')");
 			
-			
+		}	
 		
 		
 	}
