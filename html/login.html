@@ -17,7 +17,7 @@
 					<div id="login">
 						<h1 id="title-color" xml:lang="en">Login</h1>
 						%err%
-						<div class="formLogin">
+						<form class="formLogin" action="login.php" method="post" name="login">
 							<div class="inputContactwide">
 								<input type="text" name="username" placeholder="Username"> 
 							</div>
@@ -25,12 +25,12 @@
 								<input type="password" name="password" placeholder="Password">
 							</div>
 							<button id="submitButton" type="submit" name="Login">Login</button>
-						</div>
+						</form>
 					</div>
 					<div id="register">
 							<h1 id="title-color">Registrati</h1>
 							%err2%
-							<div class="formLogin">						
+							<form class="formLogin" method="post" action="login.php">						
 								<div class="inputContactwide">
 									<input type="text" name="nome" placeholder="Nome"/>
 								</div>
@@ -56,7 +56,7 @@
 									<input type="password" name="passwordR" placeholder="Ripeti password"/>
 								</div>
 								<button id="submitButton" type="submit" name="registrazione">Registrati</button>
-							</div>
+							</form>
 						</div>
 			</div>
 		</div>
