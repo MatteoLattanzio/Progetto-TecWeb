@@ -2,6 +2,8 @@
 	require_once "php/header.php";
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
+	require_once "php/server.php";
+
 	$connessione=connessione();
 
 	require_once "php/checkContacts.php";

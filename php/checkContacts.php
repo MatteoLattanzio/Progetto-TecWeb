@@ -1,11 +1,16 @@
 <?php
+require_once "dbhandler.php";
+	if (!isset($_SESSION)) {
+		session_start();
+	}
+require_once "server.php";
 //MESSAGE
 	if(isset($_POST['invia'])){
-		$nome = $_POST['nome'];
-		$email = $_POST['email'];
-		$oggetto = $_POST['oggetto'];
-		$mess = $_POST['mess'];
-		$cognome = $_POST['cognome'];
+		$nome = mysqli_real_escape_string($connessione,sanitizeString($_POST['nome']));
+		$email = mysqli_real_escape_string($connessione,sanitizeString($_POST['email']));
+		$oggetto = mysqli_real_escape_string($connessione,sanitizeString($_POST['oggetto']));
+		$mess = mysqli_real_escape_string($connessione,sanitizeString($_POST['mess']));
+		$cognome = mysqli_real_escape_string($connessione,sanitizeString($_POST['cognome']));
 		$data = date('m/d/Y');
 
 
