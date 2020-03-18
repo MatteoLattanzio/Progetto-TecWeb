@@ -10,25 +10,32 @@
     <div id="header"></div>
 		<div id="content">
 			<div id="backgroundContent">
-        <div id="searchForm">
-          <input type="text" id="inputSearch" placeholder="Che cosa stai cercando?" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-      <div id="homeText">
-        <div class="homeParagraph">
-          <h1>Crea e condividi</h1>
-          <p>Dai sfogo alla tua fantasia e condividi il tuo lavoro con la community di PhotoStock.</p>
-        </div>
-        <div class="homeParagraph">
-          <h1>Acquista</h1>
-          <p>Stai cercando immagini per il tuo sito o per la tua azienda? Sfoglia il nostro catalogo e scopri tantissime immagini originali, con contenuti caricati quotidianamente.</p>
-        </div>
-        <div class="homeParagraph">
-          <h1>Vendi</h1>
-          <p>Sei un artista, un grafico o un fotografo? Vendi i tuoi contenuti su PhotoStock!</p>
-        </div>
-      </div>
+				<form action="search.php" method="post">
+					<div id="searchForm">
+						<input type="text" id="inputSearch" placeholder="Che cosa stai cercando?" name="search">
+						<select name="searchType">
+							<option name="immagini" value="imm">Immagini</option>
+							<option name="utenti" value="user">Utenti</option>
+							<option name="categorie" value="cat">Categorie e Tag</option>
+						</select>
+						<button type="submit" name="submit"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+			</div>
+			<div id="homeText">
+				<div class="homeParagraph">
+					<h1>Crea e condividi</h1>
+					<p>Dai sfogo alla tua fantasia e condividi il tuo lavoro con la community di PhotoStock.</p>
+				</div>
+				<div class="homeParagraph">
+					<h1>Acquista</h1>
+					<p>Stai cercando immagini per il tuo sito o per la tua azienda? Sfoglia il nostro catalogo e scopri tantissime immagini originali, con contenuti caricati quotidianamente.</p>
+				</div>
+				<div class="homeParagraph">
+					<h1>Vendi</h1>
+					<p>Sei un artista, un grafico o un fotografo? Vendi i tuoi contenuti su PhotoStock!</p>
+				</div>
+			</div>
     <div id="footer"></div>
   </body>
 </html>
