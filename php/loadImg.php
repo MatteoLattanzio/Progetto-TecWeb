@@ -34,9 +34,7 @@
 			$user=$_SESSION['username'];
 			$connessione->query("INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
 				  VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3');");
-			$query="INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
-				  VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3')";
-			echo $query;
+			
 			$result=$connessione->query("SELECT id FROM foto WHERE venditore='$user' ORDER BY id DESC LIMIT 1;");
 			$ris=mysqli_fetch_assoc($result);
 			$name=$ris['id'].'.'.pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
