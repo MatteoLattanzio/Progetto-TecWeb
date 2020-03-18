@@ -3,10 +3,7 @@
 	if (!isset($_SESSION)) {
 		session_start();
 	}
-	if (!isset($_SESSION["username"])) {
-		header("Location: login.php");
-		exit();
-	}
+	
 //CARICAMENTO IMMAGINE
 	if(isset($_POST['carica_img'])){
 		$titolo=mysqli_real_escape_string($connessione,sanitizeString($_POST['titolo'])); 
@@ -37,6 +34,9 @@
 			$user=$_SESSION['username'];
 			$connessione->query("INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
 				  VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3');");
+			$query="INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
+				  VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3')";
+			echo $query;
 			$result=$connessione->query("SELECT id FROM foto WHERE venditore='$user' ORDER BY id DESC LIMIT 1;");
 			$ris=mysqli_fetch_assoc($result);
 			$name=$ris['id'].'.'.pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
@@ -49,7 +49,7 @@
 					}
 				}       
 			}
-			header("Location: fotoOk.php");
+			//header("Location: fotoOk.php");
 		}
 	}
 ?>
