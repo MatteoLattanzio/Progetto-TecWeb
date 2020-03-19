@@ -17,30 +17,34 @@
 			<h1>I tuoi dati</h1>
 			<form method="post" action="php/alterProfile.php" id="profile">
 				<h2>Benvenuto, %username%</h2>
-				<div id="box">
-					<h3 done/>
+				<h3 done/>
+				<div class="inputContactwide">
 					<label><span xml:lang="en">Username</span>:</label>
-						<input type="text" name="user" readonly="readonly" value="%username%"/>
-						<div class="end"></div>
-					<label><span xml:lang="en">Password</span>:</label>
-						<input type="password" name="password"/>
-						<div class="end"></div>
-					<label>Nome:</label>
-						<input type="text" name="name" value="%nome%"/>
-						<div class="end"></div>
-					<label>Cognome:</label>
-						<input type="text" name="surname" value="%cognome%"/>
-						<div class="end"></div>
-					<label>Email:</label>
-						<input type="text" name="email" readonly="readonly" value="%email%"/>
+					<input type="text" name="user" readonly="readonly" value="%username%"/>
 				</div>
-				<input type="submit" name="modifica" value="Modifica i dati"/>
-				<div class="end"></div>
+				<div class="inputContactwide">
+					<label><span xml:lang="en">Password</span>:</label>
+					<input type="password" name="password"/>
+				</div>
+				<div class="inputContactwide">
+					<label>Nome:</label>
+					<input type="text" name="name" value="%nome%"/>
+				</div>
+				<div class="inputContactwide">
+					<label>Cognome:</label>
+					<input type="text" name="surname" value="%cognome%"/>
+				</div>
+				<div class="inputContactwide">
+					<label>Email:</label>
+					<input type="text" name="email" readonly="readonly" value="%email%"/>
+				</div>
+				<button class="submitButton" type="submit" name="modifica dati">Modifica i dati</button>
 			</form>
 			<h2 id="pro">Le tue immagini</h2>
-			<div class="foto"/>
-			
-		</div>
+			<div id="fotoContainer">
+				<div class="foto"/>
+			</div>
+			</div>
 		<div id="footer"></div>
 	</body>
 </html>
