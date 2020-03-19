@@ -23,10 +23,17 @@
 				$_SESSION['username']=$username;
 				if($tipo=='admin'){
 					$_SESSION['type']='admin';
-					header("Location: admin.php");
-				}else
+					if(isset($_SESSION["currPage"]))
+						header("Location: ".$_SESSION["currPage"]);
+					else
+						header("Location: admin.php");
+				}else{
 					$_SESSION['type']='user';
-				header("Location: profile.php");
+					if(isset($_SESSION["currPage"]))
+						header("Location: ".$_SESSION["currPage"]);
+					else
+						header("Location: profile.php");
+				}
 			}
 		}
 	}//login

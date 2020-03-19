@@ -50,8 +50,11 @@
 					VALUES('$nome','$cognome', '$data', '$indirizzo', '$username', '$password', '$email', 'user')";
 				$connessione->query($query);
 				$_SESSION['username']=$username;
-				$_SESSION['type']='user';	            
-				header("Location: profile.php");
+				$_SESSION['type']='user';
+				if(isset($_SESSION["currPage"]))
+					header("Location: ".$_SESSION["currPage"]);
+				else	            
+					header("Location: profile.php");
 			}
 		}
 	}//registrazione
