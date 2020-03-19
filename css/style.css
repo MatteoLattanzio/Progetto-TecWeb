@@ -661,22 +661,22 @@ textarea{
 	margin:0 auto 5em auto;
 }
 
-#profile h2{
+.formStyle h2{
 	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
-#profile{
+.formStyle{
 	width: 100%;
 }
 
-#profile .inputContactwide{
+.formStyle .inputContactwide{
 	display: block;
 	margin:0 auto 0 auto;
 }
 
-#profile .inputContactwide input{
+.formStyle .inputContactwide input{
 	border-radius: 0.2em;
 	padding: 1.25em;
 	margin: 1em 1em 1em 1em;
@@ -685,19 +685,36 @@ textarea{
 	display:inline-block;
 }
 
-#profile .inputContactwide label{
+.formStyle .inputContactwide label{
 	width: 6em;
 	margin-left: 1em;
 	display: inline-block;
 	text-align: center;
 }
 
-#profile .submitButton{
+.formStyle .submitButton{
 	margin-top: 1em;
 	padding:0.6em;
 	margin-right: 2.5em;
 }
 
+.formStyle select{
+	border-radius: 0.2em;
+	padding: 1.25em;
+	margin: 1em 1em 1em 1em;
+	box-sizing: border-box;
+	width: 32em;
+	display:inline-block;
+}
+
+.formStyle input[type=file]{
+	border-radius: 0.2em;
+	padding: 1.25em;
+	margin: 1em 1em 0em 1em;
+	box-sizing: border-box;
+	width: 32em;
+	display:inline-block;
+}
 
 /*---Acquista---*/
 
@@ -793,4 +810,12 @@ textarea{
 	#register{
 		width: 100%;
 	}
+}
+
+/*---Nuova foto---*/
+
+#boxNuovaFoto{
+	width:40em;
+	display: block;
+	margin:2em auto 9em auto;
 }
