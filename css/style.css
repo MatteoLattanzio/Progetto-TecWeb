@@ -886,6 +886,7 @@ textarea{
 /*---imgDet---*/
 
 #detailsContainer{
+	margin-top:3em;
 	flex-wrap: wrap;
 	display: flex;
 }
