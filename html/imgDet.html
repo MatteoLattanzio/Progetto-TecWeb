@@ -13,21 +13,19 @@
 		</div>
 			<div id="content">
 				<h2>%titolo%</h2>
-				<img class="descriptionImage" src="%url%" alt="%titolo%"/>
-				<dl class="description">
-					<dt>Titolo:</dt>
-					<dd>%titolo%</dd>
-					<dt>Autore:</dt>
-					<dd>%vend%</dd>
-					<dt>Prezzo di vendita:</dt>
-					<dd>%prezzo%&euro;</dd>
-					<dt>Data di inserimento:</dt>
-					<dd>%data%</dd>
-					<dt>Categoria:</dt>
-					<dd>%cat%</dd>
-					<dt>Tag inseriti dall'autore:</dt>
-					<dd>%tag%</dd>
-				</dl>
+				<div id="detailsContainer">
+					<div id="detailsImageContainer">
+						<img class="descriptionImage" src="%url%" alt="%titolo%"/>
+					</div>
+					<dl class="description">
+						<div class="descriptionParagraph"><dt>Titolo: </dt><dd>%titolo%</dd></div>
+						<div class="descriptionParagraph"><dt>Autore: </dt><dd>%vend%</dd></div>
+						<div class="descriptionParagraph"><dt>Prezzo di vendita: </dt><dd>%prezzo%&euro;</dd></div>
+						<div class="descriptionParagraph"><dt>Data di inserimento: </dt><dd>%data%</dd></div>
+						<div class="descriptionParagraph"><dt>Categoria: </dt><dd>%cat%</dd></div>
+						<div class="descriptionParagraph"><dt>Tag inseriti dall'autore: </dt><dd>%tag%</dd></div>
+					</dl>
+				</div>
 			</div>
 		<div id="footer"></div>
 	</body>
