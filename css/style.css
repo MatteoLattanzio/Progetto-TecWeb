@@ -7,6 +7,10 @@
 	line-height: 1.25em;
 }
 
+html{
+	background-image: url(../images/photography.png);
+}
+
 a{
 	color: #de8500;
 }
@@ -351,7 +355,6 @@ a:visited{
 	position: relative;
 	display: flex;
 	width:100%;
-	background: white;
 	justify-content: center;
 	margin-bottom: 10em;
 }
@@ -371,9 +374,6 @@ a:visited{
 	margin: 3em 1em 1em 1em;
   	padding: 1em 1em 3em 1em;
 	text-align: center;
-	/*background-image: linear-gradient(to bottom right, #f5f5f5, #d9d9d9);
-	background-color: #f5f5f5;
-	box-shadow: 0 0 0.5em #777; */
 }
 
 /*---Contatti---*/
@@ -566,7 +566,6 @@ textarea{
 
 #vendiSampleText{
 	width:100%;
-	background: white;
 	justify-content: center;
 	margin-bottom: 5em;
 }
@@ -813,7 +812,7 @@ textarea{
 
 .formLogin .inputContactwide input{
 	width: 100%;
-	padding:2em;
+	padding:1.5em;
 	box-sizing: border-box;
 }
 
@@ -824,7 +823,7 @@ textarea{
 
 .formLogin .styled-input input{
 	width:100%;
-	padding:2em;
+	padding:1.5em;
 	box-sizing: border-box;
 	margin-bottom: 0;
 }
