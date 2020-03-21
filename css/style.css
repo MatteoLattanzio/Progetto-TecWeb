@@ -579,7 +579,6 @@ textarea{
 	position: relative;
 	display: flex;
 	width:100%;
-	background: white;
 	justify-content: center;
 	margin-bottom: 4em;
 }
