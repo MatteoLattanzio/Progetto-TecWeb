@@ -14,7 +14,7 @@
 		if(isset($errors['passwordL']))
 			return $temp.=$errors['passwordL']."</h2>";
 		if(isset($errors['noUser']))
-			return $temp.=$errors['noUser'];
+			return $temp.=$errors['noUser']."</h2>";
 	}
 
 	function getErrorReg($errors){
