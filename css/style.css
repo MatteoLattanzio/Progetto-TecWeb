@@ -925,3 +925,9 @@ dt{
   
 dd{ margin-left: 0em;}
 
+/*---Errori---*/
+
+.error{
+	font-size:1.2em;
+	color:red;
+}
