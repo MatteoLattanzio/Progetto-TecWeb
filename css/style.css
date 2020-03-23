@@ -676,13 +676,12 @@ textarea{
 
 .formStyle .inputContactwide{
 	display: block;
-	margin:0 auto 0 auto;
+	margin:1em auto 1em auto;
 }
 
 .formStyle .inputContactwide input{
 	border-radius: 0.2em;
-	padding: 1.25em;
-	margin: 1em 1em 1em 1em;
+	padding: 1.5em;
 	box-sizing: border-box;
 	width: 32em;
 	display:inline-block;
@@ -696,15 +695,13 @@ textarea{
 }
 
 .formStyle .submitButton{
-	margin-top: 1em;
 	padding:0.6em;
-	margin-right: 2.5em;
+	margin-right: 3.3em;
 }
 
 .formStyle select{
 	border-radius: 0.2em;
-	padding: 1.25em;
-	margin: 1em 1em 1em 1em;
+	padding: 1.5em;
 	box-sizing: border-box;
 	width: 32em;
 	display:inline-block;
@@ -712,8 +709,7 @@ textarea{
 
 .formStyle input[type=file]{
 	border-radius: 0.2em;
-	padding: 1.25em;
-	margin: 1em 1em 0em 1em;
+	padding: 1.5em;
 	box-sizing: border-box;
 	width: 32em;
 	display:inline-block;
