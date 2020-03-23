@@ -25,7 +25,7 @@ a:visited{
 }
 
 #content{
-	padding-bottom: 7em;
+	padding-bottom: 10em;
 	font-family: 'Roboto';
 	font-size: 1.1em;
 }
@@ -38,6 +38,10 @@ a:visited{
 #content h2{
 	text-align: center;
 	margin: 1em 0;
+}
+
+#content p{
+	margin:1em;
 }
 
 /*---Header---*/
@@ -496,6 +500,15 @@ textarea{
 	font-weight: bold;
 }
 
+#faqRules{
+	font-weight: bold;
+	color:red;
+}
+
+#faqList{
+	margin-bottom: 3em;
+}
+
 #faqList li{
 	margin: 1em 1em 1em 1em;
 	text-align: left;
@@ -828,7 +841,6 @@ textarea{
 
 #title-color{
 	margin-bottom: 1em;
-	color: #ff9900;
 	text-align: center;
 	font-size: 1.5em;
 }
@@ -853,10 +865,6 @@ textarea{
 	width:40em;
 	display: block;
 	margin:2em auto 9em auto;
-}
-
-#boxNuovaFoto label{
-	color: #ff9900;
 }
 
 /*---CatGallery---*/
