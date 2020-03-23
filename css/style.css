@@ -146,22 +146,26 @@ a:visited{
 .fa-pinterest:hover{ color: #CB2027; }
 
 #topUp{
+	outline: none;
 	z-index: 99;
 	/*display: none;        da inserire con l'inserimento dello script*/ 
 	position: fixed;
-	font-size: 22px;
-	bottom:40px;
-	right: 40px;
-	width:50px;
-	height:50px;
+	font-size: 1.5em;
+	bottom:2em;
+	right: 2em;
+	width:2.5em;
+	height:2.5em;
 	border-radius: 50%;
 	border:none;
 	color:white;
-	background-color: #808080;
+	background-color: #ff9900;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	cursor: pointer;
 }
 
 #topUp:hover{
-	background-color: #6b6a6a;
+	background-color: #ffb340;
 }
 
 /*---menuHamburger---*/
