@@ -40,10 +40,6 @@ a:visited{
 	margin: 1em 0;
 }
 
-#content p{
-	margin:1em;
-}
-
 /*---Header---*/
 
 #header{
@@ -142,7 +138,7 @@ a:visited{
 .fa-facebook:hover{ color: #3B5998; }
 .fa-twitter:hover	{ color: #55ACEE; }
 .fa-linkedin:hover{ color: #007BB5; }
-.fa-instagram:hover{ color: #125688; }
+.fa-instagram:hover{ color: #e4405f; }
 .fa-pinterest:hover{ color: #CB2027; }
 
 #topUp{
@@ -152,7 +148,7 @@ a:visited{
 	position: fixed;
 	font-size: 1.5em;
 	bottom:2em;
-	right: 2em;
+	right: 0.75em;
 	width:2.5em;
 	height:2.5em;
 	border-radius: 50%;
@@ -364,7 +360,6 @@ a:visited{
 	display: flex;
 	width:100%;
 	justify-content: center;
-	margin-bottom: 10em;
 }
 
 #homeText h1{
@@ -377,11 +372,24 @@ a:visited{
 	font-size: 1.2em;
 }
 
-#homeText>div{
+.homeParagraph{
 	width: 33%;
 	margin: 3em 1em 1em 1em;
   	padding: 1em 1em 3em 1em;
 	text-align: center;
+}
+
+@media all and (max-width:768px){
+	#homeText{
+		flex-wrap: wrap;
+		display: flex;
+	}
+
+	.homeParagraph{
+		width: 100%;
+		margin-top:0;
+		margin-bottom: 0;
+	}
 }
 
 /*---Contatti---*/
@@ -498,6 +506,17 @@ textarea{
 	background-color: #ffb340;
 }
 
+@media all and (max-width:768px){
+	#contact-container {
+		width: 30em;
+		max-width: 30em;
+		margin: 1.5em auto 2em auto;
+	}
+	.styled-input{
+		width: 14.5em;
+	}
+}
+
 /*---FAQ---*/
 
 .faqQuestion{
@@ -518,6 +537,10 @@ textarea{
 	text-align: left;
 	list-style-type: square;
 	list-style-position: inside;
+}
+
+#faqContact{
+	margin: 2em 1em 1em 1em;
 }
 
 
@@ -606,15 +629,55 @@ textarea{
 }
 
 #vendiContainer p{
-	margin-top: 1em;
 	font-size: 1.1em;
 }
 
-#vendiContainer>div{
+.vendiParagraph{
   width: 33%;
   margin: 3em 1.5em 0em 1.5em;
   padding: 1em 1em 2em 1em;
   text-align: center;
+}
+
+@media all and (max-width:768px){
+	#backgroundVendi-sample{
+		height: 30em;
+	}
+
+	#vendiSample{
+		margin-top:5em;
+	}
+
+	#vendiSample h1{
+		font-size: 2.3em;
+	}
+
+	#vendiSample p{
+		font-size: 1.5em;
+	}
+
+	#vendiSampleText p{
+		margin: 1em;
+		margin-bottom: 0;
+	}
+
+	#vendiContainer{
+		flex-wrap: wrap;
+		display: flex;
+		margin:0;
+	}
+
+	.vendiParagraph{
+		width: 100%;
+		margin:0;
+	}
+
+	#vendiSample button{
+		background: #ff9900;
+		width: 4.5em;
+		height: 2.25em;
+		font-size: 1.5em;
+	}
 }
 
 /*---Vendi---*/
