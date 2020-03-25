@@ -313,34 +313,54 @@ a:visited{
 	opacity: 0.9;
 }
 
+#homeContent{
+	width:100%;
+	position: absolute;
+	justify-content: center;
+	display: block;
+	margin-top: 5em;
+}
+
+#homeContent h1{
+	margin-bottom: 2em;
+	color:white;
+	font-size: 2.5em;
+}
+
 #searchForm{
 	position: relative;
 	width:100%;
 	display: flex;
-	border-radius: 1em;
 	justify-content: center;
-	padding-top: 15em;
 }
 
 #searchForm input[type=text]{
+	outline: none;
 	width: 50%;
 	padding: 1em 1em;
 	font-size: 1.1em;
 	border:none;
 	border: 1px solid gray;
 	border-radius: 0.15em;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+#searchForm input[type=text]:hover{
+	background-color: #e8e8e8;
 }
 
 #searchForm button{
 	background: #ff9900;
-	width:4em;
+	font-size: 1.25em;
+	color:white;
+	width:3em;
 	position: relative;
 	cursor: pointer;
-	border-radius: 0.15em;
-	margin-left: 0.5em;
+	margin-left: 0.05em;
 	border:none;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
 #searchForm button:hover{
@@ -353,6 +373,21 @@ a:visited{
 	left:50%;
 	transform: translate(-50%, -50%);
 	font-size: 1em;
+}
+
+#searchForm select{
+	outline: none;
+	font-size:1.025em;
+	color:#4A4A4A;
+	font-weight:bold;
+	padding:0.25em 0 0 0.5em;
+	cursor: pointer;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+#searchForm select:hover{
+	background:#e8e8e8;
 }
 
 #homeText{
