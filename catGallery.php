@@ -13,7 +13,7 @@
 	
 	$output='';
 	$id=mysqli_real_escape_string($connessione,urldecode($_GET["photo"]));
-	if(!$immagini=$connessione->query("SELECT * FROM foto WHERE categoria='$id' ORDER BY data DESC;")){
+	if(!$immagini=$connessione->query("SELECT * FROM foto WHERE categoria='$id' AND stato='approvata' ORDER BY data DESC;")){
 		header("Location: 404.php");
 		exit();
 	}
