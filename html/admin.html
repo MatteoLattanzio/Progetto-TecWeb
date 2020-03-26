@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<title>Amministrazione - PhotoStock</title>
+		<meta name="title" content="Amministrazione - PhotoStock"/>
+		<meta name="description" content="Pagina di amministrazione di PhotoStock"/>
+		<meta/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="breadcrumb">
+			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; Amministrazione </p>
+		</div>
+		<div id="content">
+			<h1>Pagina di amministrazione</h1>
+			<h2>Totale incassi dalle vendite: %tot%&euro;</h2>
+			<form class="addCatForm" method="post" action="admin.php">
+				<div id="addCat">
+					<h3>Aggiunta categorie</h3>
+					<label for="newCat">Aggiungi una nuova categoria:</label>
+					<input type="text" name="newCat"/>
+					<button class="newC" type="submit" name="add">Aggiungi categoria</button> 
+				</div>
+				<div catList/>
+			</form>
+			<h3>Immagini da approvare<h3>
+			<div listImgApp/>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+	
