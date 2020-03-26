@@ -5,14 +5,18 @@
 		<meta name="title" content="%titolo%"/>
 		<meta name="description" content="Immagine %titolo% nella categoria %cat%"/>
 		<meta/>
+		<script src="js/like.js"></script>	
 	</head>
 	<body>
+		
 		<div id="header"></div>
 		<div id="breadcrumb">
 			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; <a href="gallery.php">Galleria</a> &#124; <a href="catGallery.php?photo=%idCat%">%cat%</a> &#124; %titolo% </p>
 		</div>
 			<div id="content">
 				<h2>%titolo%</h2>
+				%like% 
+				<p id="count-like">%count-like%</p>
 				<div id="detailsContainer">
 					<div id="detailsImageContainer">
 						<img class="descriptionImage" src="%url%" alt="%titolo%"/>
@@ -28,5 +32,7 @@
 				</div>
 			</div>
 		<div id="footer"></div>
+
 	</body>
+
 </html>

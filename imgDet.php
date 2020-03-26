@@ -46,7 +46,15 @@
 	}else if(file_exists("upload/".$idImg.'.jpeg')){
 		$url="upload/".$idImg.'.jpeg';
 	}
-	
+
+	require_once "php/checkButton.php";
+	require_once "php/countLike.php";
+
+	$like=setLikeButton($idImg);
+	$countLike=countLike($idImg);
+		
+
+
 	$output=file_get_contents("html/imgDet.html");
 	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
 	$output=str_replace("<div id=\"footer\"></div>", Footer::build(), $output);
@@ -60,6 +68,8 @@
 	$output=str_replace("%idCat%",$idCat,$output);
 	$output=str_replace("%idImg%",$idImg,$output);
 	$output=str_replace("%url%",$url,$output);
+	$output=str_replace("%like%",$like,$output);
+	$output=str_replace("%count-like%",$countLike,$output);
 
 	echo $output;
 ?>
