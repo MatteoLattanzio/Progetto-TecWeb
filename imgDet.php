@@ -53,6 +53,7 @@
 	$like=setLikeButton($idImg);
 	$countLike=countLike($idImg);
 	$preferiti=setPreferitiButton($idImg);
+	$acquisto=setAcquistoButton($idImg);
 		
 
 
@@ -72,6 +73,6 @@
 	$output=str_replace("%like%",$like,$output);
 	$output=str_replace("%count-like%",$countLike,$output);
 	$output=str_replace("%preferiti%",$preferiti,$output);
-
+	$output=str_replace("%acquisto%",$acquisto,$output);
 	echo $output;
 ?>

@@ -10,7 +10,7 @@ require_once "dbhandler.php";
 		$oggetto = mysqli_real_escape_string($connessione,sanitizeString($_POST['oggetto']));
 		$mess = mysqli_real_escape_string($connessione,sanitizeString($_POST['mess']));
 		$cognome = mysqli_real_escape_string($connessione,sanitizeString($_POST['cognome']));
-		$data = date('m/d/Y');
+		$data = date("Y-m-d");
 
 
 		if(empty($nome)){
