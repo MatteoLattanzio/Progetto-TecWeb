@@ -11,7 +11,7 @@ require_once "dbhandler.php";
     $user=$_SESSION['username'];
 
 
-    if($action=="like")
+    if($action=="aggiungi-like")
         $result=$connessione->query("INSERT INTO `piaciuti` (foto, utente) VALUES('$idImg','$user')");
     else
         $result=$connessione->query("DELETE FROM `piaciuti` WHERE foto='$idImg' AND utente='$user' ");

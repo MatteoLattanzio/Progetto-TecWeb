@@ -52,6 +52,7 @@
 
 	$like=setLikeButton($idImg);
 	$countLike=countLike($idImg);
+	$preferiti=setPreferitiButton($idImg);
 		
 
 
@@ -70,6 +71,7 @@
 	$output=str_replace("%url%",$url,$output);
 	$output=str_replace("%like%",$like,$output);
 	$output=str_replace("%count-like%",$countLike,$output);
+	$output=str_replace("%preferiti%",$preferiti,$output);
 
 	echo $output;
 ?>

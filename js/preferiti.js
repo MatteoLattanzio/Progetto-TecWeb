@@ -1,43 +1,41 @@
 var xmlHttp;
 
-function like(str)
+function preferiti(str)
 { 
-    xmlHttp=GetXmlHttpObjectLike();
+    xmlHttp=GetXmlHttpObjectPreferiti();
     if (xmlHttp==null)
     {
         alert ("Browser does not support HTTP Request");
         return;
     }
-    var url="php/like.php";
+    var url="php/preferiti.php";
     url=url+"?id="+str;
-    var action=document.getElementById("like-button").value;
+    var action=document.getElementById("preferiti-button").value;
     url=url+"&action="+action;
-    xmlHttp.onreadystatechange=stateChangedLike;
+    xmlHttp.onreadystatechange=stateChangedPreferiti;
     xmlHttp.open("GET",url,true);
     xmlHttp.send(null);
 
 }
 
-function stateChangedLike() 
+function stateChangedPreferiti() 
 { 
     
 
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
     { 
-        if((document.getElementById("like-button").value)=="aggiungi-like"){
-            document.getElementById("like-button").value="rimuovi-like";
-            document.getElementById("like-button").innerHTML="<i class=\"fa fa-thumbs-up\"></i>";
+        if((document.getElementById("preferiti-button").value)=="aggiungi-preferiti"){
+            document.getElementById("preferiti-button").value="rimuovi-preferiti";
+            document.getElementById("preferiti-button").innerHTML="<i class=\"fa fa-heart\"></i>";
         }
         else{
-            document.getElementById("like-button").value="aggiungi-like";
-            document.getElementById("like-button").innerHTML="<i class=\"fa fa-thumbs-o-up\"></i>";
+            document.getElementById("preferiti-button").value="aggiungi-preferiti";
+            document.getElementById("preferiti-button").innerHTML="<i class=\"fa fa-heart-o\"></i>";
         }
-
-        document.getElementById("count-like").innerHTML=xmlHttp.responseText;
     } 
 }
 
-function GetXmlHttpObjectLike()
+function GetXmlHttpObjectPreferiti()
 {
     var xmlHttp=null;
     try

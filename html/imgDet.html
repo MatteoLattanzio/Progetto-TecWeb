@@ -5,7 +5,8 @@
 		<meta name="title" content="%titolo%"/>
 		<meta name="description" content="Immagine %titolo% nella categoria %cat%"/>
 		<meta/>
-		<script src="js/like.js"></script>	
+		<script src="js/like.js"></script>
+		<script src="js/preferiti.js"></script>	
 	</head>
 	<body>
 		
@@ -29,8 +30,11 @@
 						<div class="descriptionParagraph"><dt>Categoria: </dt><dd>%cat%</dd></div>
 						<div class="descriptionParagraph"><dt>Tag inseriti dall'autore: </dt><dd>%tag%</dd></div>
 						<div class="descriptionParagraph"><dt>Persone a cui piace: </dt><dd id="count-like">%count-like%</dd></div> 
-				%like%
+					%like%	
+					%preferiti%
+
 					</dl>
+					
 				</div>
 			</div>
 		<div id="footer"></div>
