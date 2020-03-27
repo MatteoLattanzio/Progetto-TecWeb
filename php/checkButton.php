@@ -8,7 +8,7 @@ require_once "dbhandler.php";
 	function setLikeButton($idImg){
 		
 		$connessione=connessione();
-			
+		$output="";	
 		if(isset($_SESSION['username'])){
 			$user=$_SESSION['username'];
 			$result=$connessione->query("SELECT * FROM piaciuti WHERE foto='$idImg' AND utente='$user' ;");
@@ -23,7 +23,7 @@ require_once "dbhandler.php";
 								<button id=\"like-button\" type=\"button\" onclick=\"like(".$idImg.")\">noLike</button>
 							</form>";
 			}
-		}else $output="devi accedere prima";
+		}
 		return $output;	
 	}
 ?>
