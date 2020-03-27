@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 27, 2020 alle 11:33
+-- Creato il: Mar 27, 2020 alle 18:49
 -- Versione del server: 10.4.10-MariaDB
 -- Versione PHP: 7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `photo`
 --
+CREATE DATABASE IF NOT EXISTS `photo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `photo`;
 
 -- --------------------------------------------------------
 
@@ -29,9 +31,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `carrello` (
-  `Id` int(11) NOT NULL,
-  `cliente` varchar(255) NOT NULL,
-  `foto` int(11) NOT NULL
+  `utente` varchar(255) NOT NULL,
+  `foto` int(11) NOT NULL,
+  `prezzo` double NOT NULL,
+  `data` date NOT NULL,
+  `stato` enum('in corso','concluso','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -107,7 +111,8 @@ CREATE TABLE `messaggi` (
 INSERT INTO `messaggi` (`id`, `email`, `data`, `oggetto`, `testo`, `nome`, `cognome`) VALUES
 (1, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
 (2, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
-(3, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user');
+(3, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
+(9, 'user@photostock.com', '0000-00-00', 'problemi con un acquisto', 'hahahaha', 'user', 'user');
 
 -- --------------------------------------------------------
 
@@ -174,8 +179,8 @@ INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `passw
 -- Indici per le tabelle `carrello`
 --
 ALTER TABLE `carrello`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `cliente` (`cliente`),
+  ADD PRIMARY KEY (`utente`,`foto`),
+  ADD KEY `cliente` (`utente`),
   ADD KEY `foto` (`foto`);
 
 --
@@ -225,12 +230,6 @@ ALTER TABLE `utenti`
 --
 
 --
--- AUTO_INCREMENT per la tabella `carrello`
---
-ALTER TABLE `carrello`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT per la tabella `categorie`
 --
 ALTER TABLE `categorie`
@@ -246,7 +245,7 @@ ALTER TABLE `foto`
 -- AUTO_INCREMENT per la tabella `messaggi`
 --
 ALTER TABLE `messaggi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Limiti per le tabelle scaricate
@@ -256,7 +255,7 @@ ALTER TABLE `messaggi`
 -- Limiti per la tabella `carrello`
 --
 ALTER TABLE `carrello`
-  ADD CONSTRAINT `carrello_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `utenti` (`username`),
+  ADD CONSTRAINT `carrello_ibfk_1` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `carrello_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`);
 
 --
