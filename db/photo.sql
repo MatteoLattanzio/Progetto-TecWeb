@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 16, 2020 alle 11:39
--- Versione del server: 10.4.11-MariaDB
--- Versione PHP: 7.4.1
+-- Creato il: Mar 27, 2020 alle 11:33
+-- Versione del server: 10.4.10-MariaDB
+-- Versione PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `photo`
 --
-CREATE DATABASE IF NOT EXISTS `photo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `photo`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,6 @@ USE `photo`;
 -- Struttura della tabella `carrello`
 --
 
-DROP TABLE IF EXISTS `carrello`;
 CREATE TABLE `carrello` (
   `Id` int(11) NOT NULL,
   `cliente` varchar(255) NOT NULL,
@@ -43,7 +40,6 @@ CREATE TABLE `carrello` (
 -- Struttura della tabella `categorie`
 --
 
-DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL
@@ -65,7 +61,6 @@ INSERT INTO `categorie` (`id`, `nome`) VALUES
 -- Struttura della tabella `foto`
 --
 
-DROP TABLE IF EXISTS `foto`;
 CREATE TABLE `foto` (
   `id` int(11) NOT NULL,
   `titolo` varchar(255) NOT NULL,
@@ -95,15 +90,24 @@ INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`,
 -- Struttura della tabella `messaggi`
 --
 
-DROP TABLE IF EXISTS `messaggi`;
 CREATE TABLE `messaggi` (
   `id` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `data` date NOT NULL,
   `oggetto` text NOT NULL,
-  `testo` text NOT NULL
+  `testo` text NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `cognome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `messaggi`
+--
+
+INSERT INTO `messaggi` (`id`, `email`, `data`, `oggetto`, `testo`, `nome`, `cognome`) VALUES
+(1, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
+(2, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
+(3, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user');
 
 -- --------------------------------------------------------
 
@@ -111,11 +115,19 @@ CREATE TABLE `messaggi` (
 -- Struttura della tabella `piaciuti`
 --
 
-DROP TABLE IF EXISTS `piaciuti`;
 CREATE TABLE `piaciuti` (
   `foto` int(11) NOT NULL,
   `utente` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `piaciuti`
+--
+
+INSERT INTO `piaciuti` (`foto`, `utente`) VALUES
+(2, 'user'),
+(4, 'user'),
+(4, 'userBuy');
 
 -- --------------------------------------------------------
 
@@ -123,11 +135,9 @@ CREATE TABLE `piaciuti` (
 -- Struttura della tabella `preferiti`
 --
 
-DROP TABLE IF EXISTS `preferiti`;
 CREATE TABLE `preferiti` (
-  `Id` int(11) NOT NULL,
-  `cliente` varchar(255) NOT NULL,
-  `foto` int(11) NOT NULL
+  `foto` int(11) NOT NULL,
+  `utente` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -136,7 +146,6 @@ CREATE TABLE `preferiti` (
 -- Struttura della tabella `utenti`
 --
 
-DROP TABLE IF EXISTS `utenti`;
 CREATE TABLE `utenti` (
   `nome` varchar(255) NOT NULL,
   `cognome` varchar(255) NOT NULL,
@@ -187,13 +196,13 @@ ALTER TABLE `foto`
 -- Indici per le tabelle `messaggi`
 --
 ALTER TABLE `messaggi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user` (`user`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `piaciuti`
 --
 ALTER TABLE `piaciuti`
+  ADD PRIMARY KEY (`foto`,`utente`),
   ADD KEY `foto` (`foto`),
   ADD KEY `utente` (`utente`);
 
@@ -201,8 +210,8 @@ ALTER TABLE `piaciuti`
 -- Indici per le tabelle `preferiti`
 --
 ALTER TABLE `preferiti`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `cliente` (`cliente`),
+  ADD PRIMARY KEY (`utente`,`foto`),
+  ADD KEY `cliente` (`utente`),
   ADD KEY `foto` (`foto`);
 
 --
@@ -231,19 +240,13 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT per la tabella `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT per la tabella `messaggi`
 --
 ALTER TABLE `messaggi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT per la tabella `preferiti`
---
-ALTER TABLE `preferiti`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Limiti per le tabelle scaricate
@@ -264,12 +267,6 @@ ALTER TABLE `foto`
   ADD CONSTRAINT `foto_ibfk_2` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`id`);
 
 --
--- Limiti per la tabella `messaggi`
---
-ALTER TABLE `messaggi`
-  ADD CONSTRAINT `messaggi_ibfk_1` FOREIGN KEY (`user`) REFERENCES `utenti` (`username`);
-
---
 -- Limiti per la tabella `piaciuti`
 --
 ALTER TABLE `piaciuti`
@@ -280,8 +277,8 @@ ALTER TABLE `piaciuti`
 -- Limiti per la tabella `preferiti`
 --
 ALTER TABLE `preferiti`
-  ADD CONSTRAINT `preferiti_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `utenti` (`username`),
-  ADD CONSTRAINT `preferiti_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`);
+  ADD CONSTRAINT `preferiti_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`),
+  ADD CONSTRAINT `preferiti_ibfk_3` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
