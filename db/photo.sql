@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 27, 2020 alle 18:49
+-- Creato il: Mar 28, 2020 alle 17:18
 -- Versione del server: 10.4.10-MariaDB
 -- Versione PHP: 7.3.12
 
@@ -33,10 +33,20 @@ USE `photo`;
 CREATE TABLE `carrello` (
   `utente` varchar(255) NOT NULL,
   `foto` int(11) NOT NULL,
+  `titolo` varchar(255) NOT NULL,
   `prezzo` double NOT NULL,
   `data` date NOT NULL,
   `stato` enum('in corso','concluso','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `carrello`
+--
+
+INSERT INTO `carrello` (`utente`, `foto`, `titolo`, `prezzo`, `data`, `stato`) VALUES
+('user', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
+('user', 3, 'Animali selvatici', 10, '2020-03-28', 'concluso'),
+('user', 4, 'Casa sul lago', 15, '2020-03-28', 'concluso');
 
 -- --------------------------------------------------------
 
@@ -57,7 +67,8 @@ INSERT INTO `categorie` (`id`, `nome`) VALUES
 (1, 'Ritratti'),
 (2, 'Paesaggi'),
 (3, 'Animali'),
-(4, 'Macro');
+(4, 'Macro'),
+(5, 'Piante');
 
 -- --------------------------------------------------------
 
@@ -233,7 +244,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT per la tabella `foto`
