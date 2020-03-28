@@ -19,7 +19,6 @@
 
 		$username=$_SESSION["username"];
 		$carrello=$connessione->query("SELECT * FROM carrello WHERE utente='$username' AND stato='in corso';");
-		global $imgUser;
 		$img="<div class=\"foto\"><ul>";
 		$tot=0;
 		$rows=mysqli_num_rows($carrello);
@@ -41,9 +40,7 @@
 				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
 					<div id=\"parag\">
 							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-							<!--form>
-								<button class=\"submitButton\" type=\"submit\" name=\"rimuovi-carrello\">Rimuovi</button>						
-							</form-->
+							
 					</div>
 					
 				</li>";
