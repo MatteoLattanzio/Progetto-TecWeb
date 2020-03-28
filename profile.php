@@ -26,6 +26,7 @@
 	$nome=$utente["nome"];
 	$cognome=$utente["cognome"];
 	$email=$utente["email"];
+
 	
 	function getImages(){
 		global $imgUser;
@@ -57,6 +58,39 @@
 		$img.="</ul></div>";
 		return $img;
 	}
+	function getWishList(){
+		$connessione=connessione();
+		$username=$_SESSION['username'];
+		$wishList=$connessione->query("SELECT * FROM preferiti WHERE utente='$username' ");
+		$img="<div class=\"foto\"><ul>";
+		while($row=$wishList->fetch_assoc()){
+			$idImg=$row["foto"];
+			if(file_exists("upload/".$idImg.'.png')){
+				$url="upload/".$idImg.'.png';
+			}else if(file_exists("upload/".$idImg.'.jpg')){
+					$url="upload/".$idImg.'.jpg';
+			}else if(file_exists("upload/".$idImg.'.jpeg')){
+					$url="upload/".$idImg.'.jpeg';
+			}
+			$result=$connessione->query("SELECT * FROM foto WHERE id='$idImg'");
+			$dettagli=$result->fetch_assoc();
+
+			$titoloImg=$dettagli["titolo"];
+			$prezzoImg=$dettagli["prezzo"];
+			$statoImg=$dettagli["stato"];
+			
+			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/></a>
+				<div id=\"parag\">
+						<p><strong>Titolo: </strong>".$titoloImg."</p>
+						<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+						<p>	<strong>Stato: </strong>".$statoImg."</p>
+				</div>
+				
+			</li>";
+		}
+		$img.="</ul></div>";
+		return $img;
+	}
 	
 	$output=file_get_contents("html/profile.html");
 	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
@@ -64,6 +98,8 @@
 	$output=str_replace("<div class=\"foto\"/>",getImages(),$output);
 	$output=str_replace("<meta/>",file_get_contents("html/meta.html"),$output);
 	$output=str_replace("<div class=\"foto\"/>",getImages(),$output);
+	$output=str_replace("<div class=\"foto carrello\"/>",getWishList(),$output);
+
 	$output=str_replace("%username%",$username,$output);
 	$output=str_replace("%nome%",$nome,$output);
 	$output=str_replace("%cognome%",$cognome,$output);
