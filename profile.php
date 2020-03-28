@@ -31,29 +31,34 @@
 	function getImages(){
 		global $imgUser;
 		$img="<div class=\"foto\"><ul>";
-		while($foto=$imgUser->fetch_assoc()){
-			$idImg=$foto["id"];
-			if(file_exists("upload/".$idImg.'.png')){
-				$url="upload/".$idImg.'.png';
-			}else if(file_exists("upload/".$idImg.'.jpg')){
-					$url="upload/".$idImg.'.jpg';
-			}else if(file_exists("upload/".$idImg.'.jpeg')){
-					$url="upload/".$idImg.'.jpeg';
+		$rows=mysqli_num_rows($imgUser);
+		if($rows==0){
+			$img.="<p>Non hai venduto alcuna foto. <a href=\"nuova_foto.php\">Vendi</a></p>";
+		}else{
+			while($foto=$imgUser->fetch_assoc()){
+				$idImg=$foto["id"];
+				if(file_exists("upload/".$idImg.'.png')){
+					$url="upload/".$idImg.'.png';
+				}else if(file_exists("upload/".$idImg.'.jpg')){
+						$url="upload/".$idImg.'.jpg';
+				}else if(file_exists("upload/".$idImg.'.jpeg')){
+						$url="upload/".$idImg.'.jpeg';
+				}
+				$titoloImg=$foto["titolo"];
+				$prezzoImg=$foto["prezzo"];
+				$statoImg=$foto["stato"];
+				//QUANTITA' VENDUTE
+				//MI PIACE RICEVUTI
+				//VOLTE IN CUI E' STATA MESSA TRA I PREFERITI
+				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a>
+					<div id=\"parag\">
+							<p><strong>Titolo: </strong>".$titoloImg."</p>
+							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+							<p>	<strong>Stato: </strong>".$statoImg."</p>
+					</div>
+					
+				</li>";
 			}
-			$titoloImg=$foto["titolo"];
-			$prezzoImg=$foto["prezzo"];
-			$statoImg=$foto["stato"];
-			//QUANTITA' VENDUTE
-			//MI PIACE RICEVUTI
-			//VOLTE IN CUI E' STATA MESSA TRA I PREFERITI
-			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a>
-				<div id=\"parag\">
-						<p><strong>Titolo: </strong>".$titoloImg."</p>
-						<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-						<p>	<strong>Stato: </strong>".$statoImg."</p>
-				</div>
-				
-			</li>";
 		}
 		$img.="</ul></div>";
 		return $img;
@@ -63,28 +68,33 @@
 		$username=$_SESSION['username'];
 		$wishList=$connessione->query("SELECT * FROM preferiti WHERE utente='$username' ");
 		$img="<div class=\"foto\"><ul>";
-		while($row=$wishList->fetch_assoc()){
-			$idImg=$row["foto"];
-			if(file_exists("upload/".$idImg.'.png')){
-				$url="upload/".$idImg.'.png';
-			}else if(file_exists("upload/".$idImg.'.jpg')){
-					$url="upload/".$idImg.'.jpg';
-			}else if(file_exists("upload/".$idImg.'.jpeg')){
-					$url="upload/".$idImg.'.jpeg';
-			}
-			$result=$connessione->query("SELECT * FROM foto WHERE id='$idImg'");
-			$dettagli=$result->fetch_assoc();
+		$rows=mysqli_num_rows($wishList);
+		if($rows==0){
+			$img.="<p>La tua lista desideri è vuota. Esplora la <a href=\"gallery.php\">galleria</a> per aggiungere foto ai preferiti</p>";
+		}else{
+			while($row=$wishList->fetch_assoc()){
+				$idImg=$row["foto"];
+				if(file_exists("upload/".$idImg.'.png')){
+					$url="upload/".$idImg.'.png';
+				}else if(file_exists("upload/".$idImg.'.jpg')){
+						$url="upload/".$idImg.'.jpg';
+				}else if(file_exists("upload/".$idImg.'.jpeg')){
+						$url="upload/".$idImg.'.jpeg';
+				}
+				$result=$connessione->query("SELECT * FROM foto WHERE id='$idImg'");
+				$dettagli=$result->fetch_assoc();
 
-			$titoloImg=$dettagli["titolo"];
-			$prezzoImg=$dettagli["prezzo"];
-			
-			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/></a>
-				<div id=\"parag\">
-						<p><strong>Titolo: </strong>".$titoloImg."</p>
-						<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-				</div>
+				$titoloImg=$dettagli["titolo"];
+				$prezzoImg=$dettagli["prezzo"];
 				
-			</li>";
+				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/></a>
+					<div id=\"parag\">
+							<p><strong>Titolo: </strong>".$titoloImg."</p>
+							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+					</div>
+					
+				</li>";
+			}
 		}
 		$img.="</ul></div>";
 		return $img;
