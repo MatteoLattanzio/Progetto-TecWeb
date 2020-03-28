@@ -77,13 +77,11 @@
 
 			$titoloImg=$dettagli["titolo"];
 			$prezzoImg=$dettagli["prezzo"];
-			$statoImg=$dettagli["stato"];
 			
 			$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/></a>
 				<div id=\"parag\">
 						<p><strong>Titolo: </strong>".$titoloImg."</p>
 						<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-						<p>	<strong>Stato: </strong>".$statoImg."</p>
 				</div>
 				
 			</li>";
