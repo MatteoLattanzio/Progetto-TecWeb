@@ -14,12 +14,12 @@ require_once "dbhandler.php";
 			$result=$connessione->query("SELECT * FROM piaciuti WHERE foto='$idImg' AND utente='$user' ;");
 			
 			if(mysqli_num_rows($result)==0){
-				$output=	"<form>
+				$output=	"<fform id=\"buttonsContainer\"orm>
 								<button id=\"like-button\" type=\"button\" value=\"aggiungi-like\" onclick=\"like('".$idImg."')\"><i class=\"fa fa-thumbs-o-up\"></i></button>
 							</form>";
 			}
 			else{
-				$output=	"<form>
+				$output=	"<form id=\"buttonsContainer\">
 								<button id=\"like-button\" type=\"button\" value=\"rimuovi-like\" onclick=\"like(".$idImg.")\"><i class=\"fa fa-thumbs-up\"></i></button>
 							</form>";
 			}
@@ -34,12 +34,12 @@ require_once "dbhandler.php";
 			$result=$connessione->query("SELECT * FROM preferiti WHERE foto='$idImg' AND utente='$user' ;");
 			
 			if(mysqli_num_rows($result)==0){
-				$output=	"<form>
+				$output=	"<form id=\"buttonsContainer\">
 								<button id=\"preferiti-button\" type=\"button\" value=\"aggiungi-preferiti\" onclick=\"preferiti('".$idImg."')\"><i class=\"fa fa-heart-o\"></i></button>
 							</form>";
 			}
 			else{
-				$output=	"<form>
+				$output=	"<form id=\"buttonsContainer\">
 								<button id=\"preferiti-button\" type=\"button\" value=\"rimuovi-preferiti\" onclick=\"preferiti(".$idImg.")\"><i class=\"fa fa-heart\"></i></button>
 							</form>";
 			}
@@ -56,16 +56,16 @@ require_once "dbhandler.php";
 			$stato= $cat['stato'];
 
 			if(mysqli_num_rows($result)==0){
-				$output=	"<form>
+				$output=	"<form id=\"buttonsContainer\">
 								<button id=\"acquisto-button\" type=\"button\" value=\"aggiungi-carrello\" onclick=\"acquista('".$idImg."')\">Acquista</button>
 							</form>";
 			}
 			elseif($stato=="in corso"){
-				$output=	"<form>
+				$output=	"<form id=\"buttonsContainer\">
 								<button id=\"acquisto-button\" type=\"button\" value=\"rimuovi-carrello\" onclick=\"acquista(".$idImg.")\">Rimuovi</button>
 							</form>";
 			}else
-				$output= "<form>
+				$output= "<form id=\"buttonsContainer\">
 								<button id=\"acquisto-button\" type=\"button\" disabled>Acquistato</button>
 						</form>";
 		}
