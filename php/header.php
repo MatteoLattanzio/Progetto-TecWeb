@@ -21,8 +21,13 @@ class Header{
 			$nav['Accedi']='login.php';
 		}
 		if(isset($_SESSION["username"])){
+			$nav['Carrello']='carrello.php';
+		}
+		if(isset($_SESSION["username"])){
 			$nav['Esci']='logout.php';
 		}
+		
+
 		$output="<div id=\"navbar\"><ul>";
 		foreach($nav as $element => $link){
 			$output.="<li><a ";
