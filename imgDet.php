@@ -50,10 +50,10 @@
 	require_once "php/checkButton.php";
 	require_once "php/countLike.php";
 
-	$like=setLikeButton($idImg);
+	$like=setLikeButton($idImg, $venditore);
 	$countLike=countLike($idImg);
-	$preferiti=setPreferitiButton($idImg);
-	$acquisto=setAcquistoButton($idImg);
+	$preferiti=setPreferitiButton($idImg,$venditore);
+	$acquisto=setAcquistoButton($idImg, $venditore);
 		
 
 
