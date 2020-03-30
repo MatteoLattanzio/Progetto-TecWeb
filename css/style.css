@@ -144,7 +144,7 @@ a:visited{
 #topUp{
 	outline: none;
 	z-index: 99;
-	/*display: none;        da inserire con l'inserimento dello script*/ 
+	/*display: none;*/
 	position: fixed;
 	font-size: 1.5em;
 	bottom:2em;
@@ -776,7 +776,7 @@ textarea{
 #boxProfile{
 	width:40em;
 	display: block;
-	margin:0 auto 5em auto;
+	margin:0 auto 7em auto;
 }
 
 .formStyle h2{
@@ -843,18 +843,21 @@ textarea{
 .foto ul{
 	display: flex;
 	flex-wrap: wrap;
-	margin:2em 0 10em 0;
+	margin:0 0 4em 0;
+	width: 100%;
 }
 
 .foto ul li{
 	box-sizing: border-box;
-	flex: 16.5%;
+	padding:2em;
+	flex: 25%;
 }
 
 .imgElement{
 	width: 15em;
 	height: 10em;
-	margin:0 1em 0 1em;
+	display:block;
+	margin: auto;
 }
 
 .imgElement a:hover{
@@ -1016,8 +1019,9 @@ textarea{
 	display:block;
 	margin: 0 auto 0 auto;
 	align-items: center;
-	/*box-shadow: 0 0 0.5em #777;*/
+	box-shadow: 0 0 0.5em #777;
 	padding:2em;
+	background-color: #f5f5f5;
 }
 
 .descriptionImage{
@@ -1082,4 +1086,10 @@ dd{ margin-left: 0em;}
 .error{
 	font-size:1.2em;
 	color:red;
+}
+
+/*---Carrello---*/
+
+#fotoContainer p{
+	text-align: center;
 }
