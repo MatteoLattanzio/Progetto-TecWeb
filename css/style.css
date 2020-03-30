@@ -1004,10 +1004,20 @@ textarea{
 	margin: 1em auto 5em auto;
 }
 
-.description{
+#descriptionContainer{
 	flex:50%;
 	display:block;
 	margin: 1em auto 5em auto;
+	padding:0em;
+}
+
+.description{
+	width:40em;
+	display:block;
+	margin: 0 auto 0 auto;
+	align-items: center;
+	/*box-shadow: 0 0 0.5em #777;*/
+	padding:2em;
 }
 
 .descriptionImage{
@@ -1033,6 +1043,7 @@ dd{ margin-left: 0em;}
 
 #buttonsContainer{
 	display: inline-block;
+	margin-top: 3.5em;
 }
 
 #buttonsContainer>button{
@@ -1048,7 +1059,8 @@ dd{ margin-left: 0em;}
 #buttonsContainer #acquisto-button{
 	font-size: 1.5em;
 	margin-left:15em;
-	width:6em;
+	width:6.5em;
+	height:2.5em;
 	color:white;
 	background-color: #ff9900;
 	-webkit-transition-duration: 0.2s;
@@ -1063,8 +1075,6 @@ dd{ margin-left: 0em;}
 .fa-thumbs-up{color:#4267B2}
 .fa-heart{color: red;}
 .fa-heart-o{color:red;}
-
-
 
 
 /*---Errori---*/
