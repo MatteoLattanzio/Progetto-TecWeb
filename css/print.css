@@ -1,0 +1,25 @@
+*{
+	color: black;
+	background:white;
+	box-shadow:none;
+	font-family: Arial;
+}
+
+html,
+body {
+	margin-top: 0px !important;
+	padding-top: 0px;
+	margin-bottom: 0em;
+	padding-bottom: 0em;
+	font-family: Arial;
+}
+
+h1,h2,h3{
+	color:black;
+	font-family: Georgia, "Times New Roman", Times, serif !important;
+	font-weight: bold;
+}
+
+a{
+	color:black;
+}
