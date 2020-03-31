@@ -11,7 +11,8 @@ require_once "dbhandler.php";
 		$output="";	
 		if(isset($_SESSION['username'])){
 			$user=$_SESSION['username'];
-			if($user!=$venditore){
+			$tipo=$_SESSION['type'];
+			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM piaciuti WHERE foto='$idImg' AND utente='$user' ;");
 				
 				if(mysqli_num_rows($result)==0){
@@ -33,7 +34,8 @@ require_once "dbhandler.php";
 		$output="";
 		if(isset($_SESSION['username'])){
 			$user=$_SESSION['username'];
-			if($user!=$venditore){
+			$tipo=$_SESSION['type'];
+			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM preferiti WHERE foto='$idImg' AND utente='$user' ;");
 				
 				if(mysqli_num_rows($result)==0){
@@ -55,7 +57,8 @@ require_once "dbhandler.php";
 		$output="";
 		if(isset($_SESSION['username'])){
 			$user=$_SESSION['username'];
-			if($user!=$venditore){
+			$tipo=$_SESSION['type'];
+			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM carrello WHERE foto='$idImg' AND utente='$user';");
 				$cat=$result->fetch_assoc();
 				$stato= $cat['stato'];
