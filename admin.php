@@ -45,9 +45,12 @@
 			}else if(file_exists("upload/".$idImg.'.jpeg')){
 					$url="upload/".$idImg.'.jpeg';
 			}
-			$list.="<form class=\"formInApp\" method=\"post\" action=\"admin.php\">
-						<div class=\"imgInApp\">
-							<img src=\"".$url."\" alt=\"immagine da approvare\"/>
+			$list.="<div id=\"boxFormApp\">
+					<div class=\"imgInApp\">
+						<img src=\"".$url."\" alt=\"immagine da approvare\"/>
+					</div>
+					<div id=\"formApp\">
+						<form class=\"formStyle\" method=\"post\" action=\"admin.php\">
 							<p class=\"modify\">
 								<input type=\"hidden\" value=\"".$img["id"]."\" name=\"id\"/>
 								<label for=\"titolo\">Titolo</label>
@@ -68,8 +71,9 @@
 								<button type=\"submit\" name=\"alter\" value=\"Modifica e approva\">Modifica e approva</button>
 								<button type=\"submit\" name=\"no\" id=\"del\">Elimina</button>
 							</p>
-						</div>
-					</form>";
+						</form>
+					</div>
+				</div>";
 		}
 		$list.="</div>";
 		return $list;
