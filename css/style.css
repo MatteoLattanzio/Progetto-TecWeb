@@ -103,6 +103,14 @@ a:visited{
 	 font-size: 0;
 }
 
+@media all and (max-width:768px){
+	#header h1:hover{
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
 
 /*---Footer---*/
 
@@ -153,8 +161,8 @@ a:visited{
 
 #topUp{
 	outline: none;
-	z-index: 99;
-	/*display: none;*/
+	z-index: 1;
+	display: none;
 	position: fixed;
 	font-size: 1.5em;
 	bottom:2em;
@@ -305,74 +313,77 @@ a:visited{
 	#homeText{
 		flex-wrap: wrap;
 		display: flex;
-	}
+}
 
-	.homeParagraph{
-		width: 100%;
-		margin-top:0;
-		margin-bottom: 0;
-	}
+.homeParagraph{
+	width: 100%;
+	margin-top:0;
+	margin-bottom: 0;
+}
 
-	 /*---menu Hamburger---*/
+/*---menu Hamburger---*/
 
-   #header{
-      display: inherit;
-    }
+#header{
+    display: inherit;
+}
 
-    #header h1{
-      float: none;
-    }         
+#header h1{
+    float: none;
+}         
 
-    #navbar ul{
-      display: inherit;
-      float:none;
-      margin-top: 2em;
-    }
+ #navbar ul{
+    display: inherit;
+    float:none;
+    margin-top: 2em;
+}
 
-    #navbar li a{
-      padding: 0.5em;
-      text-align: center;
-    }
-        
+#navbar li a{
+    padding: 0.5em;
+    text-align: center;
+}
+	
+.sx-logo{
+	
+}  
     
-    .topnav {
-       height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        background-color: #2e2c2c;
-        overflow-x: hidden;
-        transition: 0.5s;
-    }
+.topnav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background-color: #2e2c2c;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
 
-    .topnav li a {
-      display: block;
-    }
+.topnav li{
+	font-size: 1.1em;
+}
 
+.topnav li a {
+	display: block;
+	margin: 2em 0;
+}
 
-    #header .icon{
-      position: absolute;
-      color: white;
-      top: 0.8em;
-      right: 0.8em;
-      cursor:pointer;
-      font-size:2em;
-    }
+#header .icon{
+    position: absolute;
+    color: white;
+    top: 0.8em;
+    right: 0.8em;
+    cursor:pointer;
+    font-size:2em;
+}
 
-    .topnav .closebtn {
-      position: absolute;
-      top:  0.3em;
-      right:  0.5em;
-      font-size:3em;
-      color: white;
-      cursor:pointer;
-      text-decoration: none;
-    }
-
-
-
+.topnav .closebtn {
+    position: absolute;
+    top:  0.3em;
+    right:  0.5em;
+    font-size:3em;
+    color: white;
+    cursor:pointer;
+    text-decoration: none;
 }
 
 /*---Contatti---*/
