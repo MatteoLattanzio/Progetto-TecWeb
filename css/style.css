@@ -1093,3 +1093,67 @@ dd{ margin-left: 0em;}
 #fotoContainer p{
 	text-align: center;
 }
+
+/*---Admin---*/
+
+#adminCatBox{
+	width:45em;
+	display: block;
+	margin:2em auto 6em auto;
+}
+
+#adminCatBox .inputContactwide{width:45em;}
+#adminCatBox label{	width: 8em;}
+#adminCatBox .submitButton{margin-right:6em;}
+
+#boxFormApp{
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.imgInApp{
+	flex:50%;
+	display:block;
+	margin: 0 auto 2em auto;
+	height: 20em;
+}
+
+#formApp{
+	flex:50%;
+	display:block;
+	margin: 0 auto 2em auto;
+	height: 20em;
+}
+
+#formApp .formStyle{
+	width:30em;
+	margin:1em 5em 0 0;
+}
+
+.imgInApp img{
+	margin: 2em auto 3em;
+    display: block;
+	width:20em;
+	height: 13em;
+}
+
+.modify{
+	width:30em;
+	display:block;
+	margin: 0 auto 0 auto;
+}
+
+#formApp .inputContactwide{
+	margin-left: 0;
+	width:25em;
+}
+
+#formApp .inputContactwide input{padding:0.75em;}
+#formApp .inputContactwide label{font-size:0.75em;}
+
+.adminButtons{margin-left: 3em;}
+
+.adminButtons .submitButton{
+	float:none;
+	font-size:0.6em;
+}
