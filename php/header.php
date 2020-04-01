@@ -11,13 +11,8 @@ class Header{
 	}
 	
 	public static function navbar(){
-		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php');
-		if((isset($_SESSION["type"])&&($_SESSION["type"]=="user"))||(!isset($_SESSION["type"]))) {
-			$nav['Vendi']='nuova_foto.php';
-		}
-		if((isset($_SESSION["type"])&&($_SESSION["type"]=="user"))||(!isset($_SESSION["type"]))) {
-			$nav['Contatti']='contacts.php';
-		}
+		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php', 'Vendi' => 'nuova_foto.php','Contatti' => 'contacts.php');
+		
 		if(isset($_SESSION["username"]) && $_SESSION["type"]=="user") {
 			$nav['Profilo']='profile.php';
 		}else if(isset($_SESSION["username"]) && $_SESSION["type"] == "admin") {
@@ -25,7 +20,7 @@ class Header{
 		}else{
 			$nav['Accedi']='login.php';
 		}
-		if(isset($_SESSION["username"]) && $_SESSION["type"]== "user"){
+		if(isset($_SESSION["username"])){
 			$nav['Carrello']='carrello.php';
 		}
 		if(isset($_SESSION["username"])){

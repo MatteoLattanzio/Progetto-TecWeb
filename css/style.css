@@ -71,14 +71,16 @@ a:visited{
 	transform: scale(1.05);
 }
 
+
 #Pchar{color: #ff9900;}
 #Schar{color: #ff9900;}
 
 #navbar ul{
-	float:right;
+	float: right;
 	display: flex;
 	list-style-type: none;
 	font-family: 'Roboto';
+	right: 2%;
 }
 
 #navbar li a{
@@ -93,6 +95,14 @@ a:visited{
 #navbar li a:hover{
 	color: #ff9900;
 }
+
+#header .icon, .closebtn{
+	 position: fixed;
+	 right: 0;
+	 top: 0;
+	 font-size: 0;
+}
+
 
 /*---Footer---*/
 
@@ -163,129 +173,6 @@ a:visited{
 #topUp:hover{
 	background-color: #ffb340;
 }
-
-/*---menuHamburger---*/
-
-.sx-logo{
-	float:left;
-	width: 90%;
-  }
-  
-  .nav{
-	  width: 100%;
-	  float: left;
-	  background: #2e2c2c;
-  }
-  
-  .logo-pulsante{
-	  font-size: 2em;
-	  color:white;
-	  background: #2e2c2c;
-	  border: #2e2c2c;
-	  margin-left: 3%;
-   }
-  
-  ul {
-	  list-style-type: none;
-  }
-  
-  /*---questo va messo dentro a un media---*/
-  
-  
-  .icon-menu{
-	  background:white;
-	  height: 0.2em;
-	  width: 1.5em;
-	  border-radius: 0.5em;
-  }
-  
-  .pos1-icon{
-	  margin-left:14%;
-	  margin-top:12%;
-  }
-  .pos2-icon{
-	  margin-left:14%;
-	  margin-top:18%;
-  }
-  .pos3-icon{
-	  margin-left:14%;
-	  margin-top:23%;
-  }
-  
-  
-  .topnav a{
-	  display: none;
-	  margin-left: 2%;
-	  color:white;
-	  
-  
-  }
-  
-  #nav-link a{
-	  padding: 0.8em;
-	  text-align: center;
-	  margin-right: 2%;
-  
-  }
-  
-  .topnav a.icon {
-	  float: right;
-	  display: block;
-	  position: absolute;
-	  background: #2e2c2c;
-	  height: 2em;
-	  width: 2em;
-	  right: 2%;
-	  top: 1%;
-  }
-  
-  .topnav a.link:hover{
-	  background-color: #ff9900;
-	  color: white;
-  }
-  
-  
-  .topnav a.link:focus{
-	  background-color: #ff9900;
-	  color: white;
-	  
-  }
-  
-  .topnav a.menu:hover{
-	  background-color: #2e2c2c;
-	  color: white;
-  }
-  
-  
-  .topnav a.menu:focus{
-	  background-color: #2e2c2c;
-	  color: white;
-  }
-  
-  .topnav a.active{
-	  background-color: #ff9900;
-	  color: white;
-  }
-  
-  .topnav.responsive a.icon{
-	  position: absolute;
-	  height: 2em;
-	  width: 2em;
-	  top: 1%;
-  }
-  
-  .topnav.responsive a{
-	  float: none;
-	  display: block;
-  }
-  
-  div.end {
-	  clear:both;
-  }
-  
-  li{
-	  float:none;
-  }
 
 
 /*---Breadcrumb---*/
@@ -425,6 +312,67 @@ a:visited{
 		margin-top:0;
 		margin-bottom: 0;
 	}
+
+	 /*---menu Hamburger---*/
+
+   #header{
+      display: inherit;
+    }
+
+    #header h1{
+      float: none;
+    }         
+
+    #navbar ul{
+      display: inherit;
+      float:none;
+      margin-top: 2em;
+    }
+
+    #navbar li a{
+      padding: 0.5em;
+      text-align: center;
+    }
+        
+    
+    .topnav {
+       height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #2e2c2c;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .topnav li a {
+      display: block;
+    }
+
+
+    #header .icon{
+      position: absolute;
+      color: white;
+      top: 0.8em;
+      right: 0.8em;
+      cursor:pointer;
+      font-size:2em;
+    }
+
+    .topnav .closebtn {
+      position: absolute;
+      top:  0.3em;
+      right:  0.5em;
+      font-size:3em;
+      color: white;
+      cursor:pointer;
+      text-decoration: none;
+    }
+
+
+
 }
 
 /*---Contatti---*/
