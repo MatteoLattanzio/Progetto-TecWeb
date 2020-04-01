@@ -1,3 +1,4 @@
+
 <?php
 	require_once "php/header.php";
 	require_once "php/footer.php";
@@ -51,26 +52,38 @@
 					</div>
 					<div id=\"formApp\">
 						<form class=\"formStyle\" method=\"post\" action=\"admin.php\">
-							<p class=\"modify\">
+                            <div class=\"modify\">
 								<input type=\"hidden\" value=\"".$img["id"]."\" name=\"id\"/>
-								<label for=\"titolo\">Titolo</label>
-								<input type=\"text\" name=\"titolo\" value=\"".$img["titolo"]."\" readonly=\"readonly\"/>
-								<label for=\"autore\">Autore</label>
-								<input type=\"text\" name=\"autore\" value=\"".$img["venditore"]."\" readonly=\"readonly\"/>
-								<label for=\"categoria\">Categoria</label>
-								<input type=\"text\" name=\"categoria\" value=\"".$idC."\" readonly=\"readonly\"/>
-								<label for=\"tag1\">Tag1</label>
-								<input type=\"text\" name=\"tag1\" value=\"".$img["tag1"]."\"/>
-								<label for=\"tag2\">Tag2</label>
-								<input type=\"text\" name=\"tag2\" value=\"".$img["tag2"]."\"/>
-								<label for=\"tag3\">Tag3</label>
-								<input type=\"text\" name=\"tag3\" value=\"".$img["tag3"]."\"/>
-							</p>
-							<p class=\"buttons\">
-								<button type=\"submit\" name=\"ok\">Approva</button>
-								<button type=\"submit\" name=\"alter\" value=\"Modifica e approva\">Modifica e approva</button>
-								<button type=\"submit\" name=\"no\" id=\"del\">Elimina</button>
-							</p>
+								<div class=\"inputContactwide\">
+									<label for=\"titolo\">Titolo</label>
+									<input type=\"text\" name=\"titolo\" value=\"".$img["titolo"]."\" readonly=\"readonly\"/>
+								</div>
+								<div class=\"inputContactwide\">
+									<label for=\"autore\">Autore</label>
+									<input type=\"text\" name=\"autore\" value=\"".$img["venditore"]."\" readonly=\"readonly\"/>
+								</div>
+								<div class=\"inputContactwide\">
+									<label for=\"categoria\">Categoria</label>
+									<input type=\"text\" name=\"categoria\" value=\"".$idC."\" readonly=\"readonly\"/>
+								</div>
+								<div class=\"inputContactwide\">
+									<label for=\"tag1\">Tag1</label>
+									<input type=\"text\" name=\"tag1\" value=\"".$img["tag1"]."\"/>
+								</div>
+								<div class=\"inputContactwide\">
+									<label for=\"tag2\">Tag2</label>
+									<input type=\"text\" name=\"tag2\" value=\"".$img["tag2"]."\"/>
+								</div>
+								<div class=\"inputContactwide\">
+									<label for=\"tag3\">Tag3</label>
+									<input type=\"text\" name=\"tag3\" value=\"".$img["tag3"]."\"/>
+								</div>
+							</div>
+							<div class=\"adminButtons\">
+								<button class=\"submitButton\" type=\"submit\" name=\"ok\">Approva</button>
+								<button class=\"submitButton\" type=\"submit\" name=\"alter\" value=\"Modifica e approva\">Modifica e approva</button>
+								<button class=\"submitButton\" type=\"submit\" name=\"no\" id=\"del\">Elimina</button>
+							</div>
 						</form>
 					</div>
 				</div>";
