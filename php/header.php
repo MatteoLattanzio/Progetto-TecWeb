@@ -12,10 +12,10 @@ class Header{
 	
 	public static function navbar(){
 		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php');
-		if($_SESSION["type"]=="user") {
+		if((isset($_SESSION["type"])&&($_SESSION["type"]=="user"))||(!isset($_SESSION["type"]))) {
 			$nav['Vendi']='nuova_foto.php';
 		}
-		if($_SESSION["type"]=="user") {
+		if((isset($_SESSION["type"])&&($_SESSION["type"]=="user"))||(!isset($_SESSION["type"]))) {
 			$nav['Contatti']='contacts.php';
 		}
 		if(isset($_SESSION["username"]) && $_SESSION["type"]=="user") {
