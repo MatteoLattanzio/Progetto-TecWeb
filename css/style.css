@@ -322,6 +322,13 @@ a:visited{
 		z-index:5;
 	}
 
+	#header h1:hover{
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+
 	#content{margin-top: 5em;}
 
     #navbar ul{
@@ -663,62 +670,6 @@ textarea{
 	}
 }
 
-/*---Vendi---*/
-
-#vendiForm{
-	width: 50%;
-	margin: 0 auto;
-}
-
-#vendiForm>div{
-	width: 100%;
-	margin: 1em 0 1em 0;
-}
-
-#vendiForm>div label{
-	width: 5em;
-	display: inline-block;
-}
-
-#vendiForm input{
-	width: 75%;
-	margin: 0.75em auto 0.75em auto;
-	padding: 0.75em;
-	text-align: center;
-	display: inline-block;
-	border-radius: 0.25em;
-	outline:none;
-	border:1px solid black;
-	font-size: 0.8em;
-}
-
-#vendiForm button{
-	padding:0.5em;
-	background: #ff9900;
-	width:5em;
-	font-size: 1.1em;
-	cursor: pointer;
-	border-radius: 0.15em;
-	border:none;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-	display: block;
-	margin: 3em auto 8em auto;
-}
-
-#vendiForm button:hover{
-	background-color: #ffb340;
-}
-
-#vendiForm select{
-	width: 50%;
-	padding: 0.75em;
-	text-align: center;
-	display: inline-block;
-	border-radius: 0.25em;
-	outline:none;
-}
-
 /*---Profilo---*/
 
 #boxProfile{
@@ -921,6 +872,12 @@ textarea{
 	margin:2em auto 9em auto;
 }
 
+@media all and (max-width:768px){
+	#boxNuovaFoto input{width: 27.5em;}
+	#boxNuovaFoto select{width:27.5em;}
+	#boxNuovaFoto .submitButton{margin-right:7em;}
+}
+
 /*---CatGallery---*/
 
 .listImg {
@@ -1028,6 +985,17 @@ dd{ margin-left: 0em;}
 .fa-thumbs-up{color:#4267B2}
 .fa-heart{color: red;}
 .fa-heart-o{color:red;}
+
+@media all and (max-width:768px){
+	.descriptionImage{
+		width:30em;
+		height: 20em;
+	}
+	.description{
+		width:27.5em;
+		height: 20em;
+	}
+}
 
 
 /*---Errori---*/
