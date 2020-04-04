@@ -391,9 +391,10 @@ a:visited{
 }
 
 #contactForm{
-	width:100%;
-	display:block;
-	margin: 3em auto 10em auto;
+	margin: 3em auto;
+	position: relative;
+	overflow: hidden;
+	padding: 1em;
 }
 
 #contactForm h1{
@@ -401,22 +402,20 @@ a:visited{
 }
 
 #contact-container {
-    width: 41em;
-    max-width: 41em;
-	margin: 1.5em auto 2em auto;
+	max-width: 50em;
+	margin: 2em auto;
 }
 
 .styled-input {
-    float: left;
-    width: 20em;
+	width: 49%;
+	float:left;
     margin: 1rem 0;
 	position: relative;
 	border-radius: 0.25em;
 }
 
 .inputContactwide { 
-    width: 41em;
-    max-width: 100%;
+	width: 100%;
 }
 
 .styled-input input{
@@ -427,16 +426,6 @@ a:visited{
     background-color: #2c2c2c;
 	color: white;
 	border-radius: 0.25em;
-}
-
-.inputContact input{
-	display: block;
-	padding: 1.5em;
-    border: 0;
-    width: 100%;
-    font-size: 1rem;
-    background-color: #2c2c2c;
-	color: white;
 }
 
 .inputContactwide input{
@@ -494,17 +483,6 @@ textarea{
 
 .submitButton:hover{
 	background-color: #ffb340;
-}
-
-@media all and (max-width:768px){
-	#contact-container {
-		width: 30em;
-		max-width: 30em;
-		margin: 1.5em auto 2em auto;
-	}
-	.styled-input{
-		width: 14.5em;
-	}
 }
 
 /*---FAQ---*/
