@@ -301,7 +301,10 @@ a:visited{
 	text-align: center;
 }
 
-@media all and (max-width:768px){
+@media screen and (max-width:768px){
+	#backgroundContent{
+		height:30em;
+	}
 	#homeText{
 		flex-wrap: wrap;
 		display: flex;
@@ -390,32 +393,45 @@ a:visited{
 	font-size: 1.1em;
 }
 
-#contactForm{
+/*---Form---*/
+
+#Form{
 	margin: 3em auto;
 	position: relative;
 	overflow: hidden;
 	padding: 1em;
+	background-color: #e4405f;
 }
 
-#contactForm h1{
+#Form h1{
 	font-size: 1.75em;
 }
 
-#contact-container {
-	max-width: 50em;
+#container {
+	max-width: 45em;
 	margin: 2em auto;
+	background-color: blueviolet;
 }
 
 .styled-input {
 	width: 49%;
 	float:left;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
 	position: relative;
 	border-radius: 0.25em;
 }
 
 .inputContactwide { 
 	width: 100%;
+	margin-bottom: 1em;
+	display:flex; 
+	flex-direction: row; 
+	justify-content: center; 
+	align-items: center
+}
+.inputContactwide label{
+	width:7em;
+	text-align: center;
 }
 
 .styled-input input{
@@ -460,7 +476,6 @@ a:visited{
 	min-height: 15em;
 	resize: none;
 	border-radius: 0.25em;
-	margin: 1rem 0;
 }
 
 textarea{
@@ -607,22 +622,11 @@ textarea{
   text-align: center;
 }
 
-@media all and (max-width:768px){
-	#backgroundVendi-sample{
-		height: 30em;
-	}
-
-	#vendiSample{
-		margin-top:5em;
-	}
-
-	#vendiSample h1{
-		font-size: 2.3em;
-	}
-
-	#vendiSample p{
-		font-size: 1.5em;
-	}
+@media screen and (max-width:768px){
+	#backgroundVendi-sample{height: 30em;}
+	#vendiSample{margin-top:5em;}
+	#vendiSample h1{font-size: 2.3em;}
+	#vendiSample p{font-size: 1.5em;}
 
 	#vendiSampleText p{
 		margin: 1em;
@@ -649,63 +653,6 @@ textarea{
 }
 
 /*---Profilo---*/
-
-#boxProfile{
-	width:40em;
-	display: block;
-	margin:0 auto 7em auto;
-}
-
-.formStyle h2{
-	text-align: center;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-.formStyle{
-	width: 100%;
-}
-
-.formStyle .inputContactwide{
-	display: block;
-	margin:1em auto 1em auto;
-}
-
-.formStyle .inputContactwide input{
-	border-radius: 0.2em;
-	padding: 1.5em;
-	box-sizing: border-box;
-	width: 32em;
-	display:inline-block;
-}
-
-.formStyle .inputContactwide label{
-	width: 6em;
-	margin-left: 1em;
-	display: inline-block;
-	text-align: center;
-}
-
-.formStyle .submitButton{
-	padding:0.6em;
-	margin-right: 3.3em;
-}
-
-.formStyle select{
-	border-radius: 0.2em;
-	padding: 1.5em;
-	box-sizing: border-box;
-	width: 32em;
-	display:inline-block;
-}
-
-.formStyle input[type=file]{
-	border-radius: 0.2em;
-	padding: 1.5em;
-	box-sizing: border-box;
-	width: 32em;
-	display:inline-block;
-}
 
 #pro{
 	text-align: center;
@@ -832,7 +779,7 @@ textarea{
 	margin-top: 1em;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
 	#login{
 		width: 100%;
 	}
@@ -840,20 +787,6 @@ textarea{
 	#register{
 		width: 100%;
 	}
-}
-
-/*---Nuova foto---*/
-
-#boxNuovaFoto{
-	width:40em;
-	display: block;
-	margin:2em auto 9em auto;
-}
-
-@media all and (max-width:768px){
-	#boxNuovaFoto input{width: 27.5em;}
-	#boxNuovaFoto select{width:27.5em;}
-	#boxNuovaFoto .submitButton{margin-right:7em;}
 }
 
 /*---CatGallery---*/
@@ -964,7 +897,7 @@ dd{ margin-left: 0em;}
 .fa-heart{color: red;}
 .fa-heart-o{color:red;}
 
-@media all and (max-width:768px){
+@media screen and (max-width:768px){
 	.descriptionImage{
 		width:30em;
 		height: 20em;
