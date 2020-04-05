@@ -1,54 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html>
 	<head>
-		<title>Carica Foto - PhotoStock</title>
-		<meta name="title" content="Carica Foto - PhotoStock" />
-		<meta name="description" content="Pagina dedicata al caricamento di una nuova foto sul sito"/>
+		<title>Contatti - PhotoStock</title>
+		<meta name="title" content="Galleria - PhotoStock" />
+		<meta name="description" content="Galleria immagini di PhotoStock"/>
 		<meta/>
 	</head>
 	<body>
 		<div id="header"></div>
 		<div id="breadcrumb">
-			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; Carica foto</p>
+			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; Contatti </p>
 		</div>
-		<div id="content">
-		<div id="boxNuovaFoto">
-		<form class="formStyle" method="post" action="nuova_foto.php" enctype="multipart/form-data" name="carica_img">
-			<h2>Carica la tua nuova immagine! </h2>	
-			<h2 error/>
-			<div class="inputContactwide">
-				<label for="titolo">Titolo</label>
-				<input type="text" name="titolo" placeholder="Inserire titolo">
-			</div>
-			<div class="inputContactwide">
-				<label for="prezzo">Prezzo</label>
-				<input type="text" name="prezzo" placeholder="Inserire prezzo">
-			</div>
-			<div class="inputContactwide">
-				<label for="tag1">Tag 1</label>
-				<input type="text" name="tag1" placeholder="Inserire primo tag">
-			</div>
-			<div class="inputContactwide">
-				<label for="tag2">Tag 2</label>
-				<input type="text" name="tag2" placeholder="Inserire secondo tag">
-			</div>
-			<div class="inputContactwide">
-				<label for="tag3">Tag 3</label>
-				<input type="text" name="tag3" placeholder="Inserire terzo tag">
-			</div>
-			<div class="inputContactwide">
-				<label for="Categoria">Categoria</label>
-				<select  categorie/>
-			</div>
-			<div class="inputContactwide">
-				<label for="File">File</label>
-				<input type="file" name="file" id="file"></input>
-			</div>
-			<button class="submitButton" type="submit" name="carica_img">Invia</button>
-		</form>
-		</div>
-		<p id="faqContacts">Per qualsiasi informazione relativa le clausole di vendita o ai contenuti pubblicabili sul sito, vi invitiamo a visitare la pagina relative le <a href="faq.php">FAQ</a>.</p>
-		</div>
+			<div id="content">
+				<div id="Form">
+					<h1>Carica la tua nuova immagine! </h1>
+					<form method="post" action="nuova_foto.php" name="carica_img">
+						<div id="container">	
+							<h2 error/>
+							<div class="inputContactwide">
+								<label for="titolo">Titolo</label>
+								<input type="text" name="titolo" placeholder="Inserire titolo">
+							</div>
+							<div class="inputContactwide">
+								<label for="prezzo">Prezzo</label>
+								<input type="text" name="prezzo" placeholder="Inserire prezzo">
+							</div>
+							<div class="inputContactwide">
+								<label for="tag1">Tag 1</label>
+								<input type="text" name="tag1" placeholder="Inserire primo tag">
+							</div>
+							<div class="inputContactwide">
+								<label for="tag2">Tag 2</label>
+								<input type="text" name="tag2" placeholder="Inserire secondo tag">
+							</div>
+							<div class="inputContactwide">
+								<label for="tag3">Tag 3</label>
+								<input type="text" name="tag3" placeholder="Inserire terzo tag">
+							</div>
+							<div class="inputContactwide">
+								<label for="Categoria">Categoria</label>
+								<select  categorie/>
+							</div>
+							<div class="inputContactwide">
+								<label for="File">File</label>
+								<input type="file" name="file" id="file"></input>
+							</div>
+							<button class="submitButton" type="submit" name="carica_img">Invia</button>
+						</div>
+					</form>
+				</div>
 		<div id="footer"></div>
 	</body>
 </html>
