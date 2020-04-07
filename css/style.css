@@ -92,6 +92,10 @@ a:visited{
 	transition-duration: 0.2s;
 }
 
+#navbar #current{
+	color: #ff9900;
+}
+
 #navbar li a:hover{
 	color: #ff9900;
 }
