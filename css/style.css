@@ -797,13 +797,11 @@ textarea{
 }
 
 @media screen and (max-width: 768px){
-	#login{
-		width: 100%;
-	}
-	
-	#register{
-		width: 100%;
-	}
+	#login{width: 100%;}
+	#register{width: 100%;}
+	.formLogin{width:20em;}
+	.formLogin .inputContactwide{width:20em;}
+	.formLogin .styled-input{width: 9.5em;}
 }
 
 /*---CatGallery---*/
