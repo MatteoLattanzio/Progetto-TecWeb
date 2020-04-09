@@ -360,6 +360,7 @@ a:visited{
     #navbar li a{
       	padding: 0.5em;
       	text-align: center;
+	font-size: 1.3em;
     }
     
     .topnav {
