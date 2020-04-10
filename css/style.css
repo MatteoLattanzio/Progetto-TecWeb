@@ -834,17 +834,15 @@ textarea{
 #detailsImageContainer{
 	max-width:35em;
 	display:block;
-	margin: 0 auto 2em auto;
+	margin: 0 auto;
 	padding:1em;
-	background-color: darkred;
 }
 
 #descriptionContainer{
 	width:35em;
 	display:block;
-	margin: 0 auto 2em auto;
+	margin: 0 auto;
 	padding:1em;
-	background-color: darkolivegreen;
 }
 
 .description{
@@ -875,7 +873,7 @@ dt{
 	font-weight: bold;
 }
   
-dd{ margin-left: 0em;}
+dd{ margin-left: 0;}
 
 #buttonsContainer{
 	display: inline-block;
@@ -914,6 +912,7 @@ dd{ margin-left: 0em;}
 
 @media screen and (max-width:768px){
 	.descriptionParagraph{font-size: 1em;}
+	#descriptionContainer{margin:1em 0;}
 }
 
 
