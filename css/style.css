@@ -359,8 +359,8 @@ a:visited{
 
     #navbar li a{
       	padding: 0.5em;
-      	text-align: center;
-	font-size: 1.3em;
+		  text-align: center;
+		  font-size: 1.3em;
     }
     
     .topnav {
@@ -835,22 +835,23 @@ textarea{
 }
 
 #detailsImageContainer{
-	flex:50%;
+	max-width:35em;
 	display:block;
-	margin: 1em auto 5em auto;
+	margin: 0 auto 2em auto;
+	padding:1em;
 }
 
 #descriptionContainer{
-	flex:50%;
+	width:35em;
 	display:block;
-	margin: 1em auto 5em auto;
-	padding:0em;
+	margin: 0 auto 2em auto;
+	padding:1em;
 }
 
 .description{
-	width:40em;
+	max-width:100%;
 	display:block;
-	margin: 0 auto 0 auto;
+	margin: 0 auto;
 	align-items: center;
 	box-shadow: 0 0 0.5em #777;
 	padding:2em;
@@ -858,10 +859,9 @@ textarea{
 }
 
 .descriptionImage{
+	width: 100%;
 	display: block;
 	margin: 0 auto;
-	width:40em;
-	height: 30em;
 }
 
 .descriptionParagraph{ 
@@ -914,14 +914,7 @@ dd{ margin-left: 0em;}
 .fa-heart-o{color:red;}
 
 @media screen and (max-width:768px){
-	.descriptionImage{
-		width:30em;
-		height: 20em;
-	}
-	.description{
-		width:27.5em;
-		height: 20em;
-	}
+	.descriptionParagraph{font-size: 1em;}
 }
 
 
