@@ -740,17 +740,15 @@ textarea{
 /*---Login---*/
 
 #login{
-	flex: 50%;
-	width: 25em;
+	width:30em;
 	display:block;
-	margin: 1em auto 5em auto;
+	margin: 1em auto 2em auto;
 }
 
 #register{
-	flex: 50%;
-	width: 25em;
+	max-width:30em;
 	display:block;
-	margin: 1em auto 5em auto;
+	margin: 1em auto 2em auto;
 }
 
 #gridLogin{
@@ -759,12 +757,13 @@ textarea{
 }
 
 .formLogin{
-	width: 25em;
-	margin: 2em auto 2em auto;
+	padding:1em;
+	max-width: 30em;
+	margin: -1em auto;
 }
 
 .formLogin .inputContactwide{
-	width: 25em;
+	max-width: 30em;
 	margin: 1rem 0 0 0;
 }
 
@@ -775,7 +774,7 @@ textarea{
 }
 
 .formLogin .styled-input{
-	width:12em;
+	max-width:14.5em;
 	float:left;
 	margin-top: 1em;
 }
@@ -798,11 +797,9 @@ textarea{
 }
 
 @media screen and (max-width: 768px){
-	#login{width: 100%;}
-	#register{width: 100%;}
-	.formLogin{width:20em;}
-	.formLogin .inputContactwide{width:20em;}
-	.formLogin .styled-input{width: 9.5em;}
+	#login{margin:0;}
+	#register{margin:1em 0;}
+
 }
 
 /*---CatGallery---*/
@@ -829,7 +826,7 @@ textarea{
 /*---imgDet---*/
 
 #detailsContainer{
-	margin-top:3em;
+	margin-top:1em;
 	flex-wrap: wrap;
 	display: flex;
 }
@@ -839,6 +836,7 @@ textarea{
 	display:block;
 	margin: 0 auto 2em auto;
 	padding:1em;
+	background-color: darkred;
 }
 
 #descriptionContainer{
@@ -846,6 +844,7 @@ textarea{
 	display:block;
 	margin: 0 auto 2em auto;
 	padding:1em;
+	background-color: darkolivegreen;
 }
 
 .description{
