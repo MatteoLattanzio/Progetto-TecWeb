@@ -797,8 +797,8 @@ textarea{
 }
 
 @media screen and (max-width: 768px){
-	#login{margin:0;}
-	#register{margin:1em 0;}
+	#login{margin:0 auto;}
+	#register{margin:1em auto 0 auto;}
 
 }
 
@@ -912,7 +912,7 @@ dd{ margin-left: 0;}
 
 @media screen and (max-width:768px){
 	.descriptionParagraph{font-size: 1em;}
-	#descriptionContainer{margin:1em 0;}
+	#descriptionContainer{margin:1em auto 0 auto;}
 }
 
 
