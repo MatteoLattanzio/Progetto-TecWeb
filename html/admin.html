@@ -14,12 +14,12 @@
 		<div id="content">
 			<h1>Pagina di amministrazione</h1>
 			<h2>Totale incassi dalle vendite: %tot%&euro;</h2>
-			<form class="addCatForm" method="post" action="admin.php">
-				<div id="addCat">
-					<h3>Aggiunta categorie</h3>
-					<label for="newCat">Aggiungi una nuova categoria:</label>
+			<form id="addCat" method="post" action="admin.php">
+				<h2>Aggiunta categorie</h2>
+				<div class="inputContactwide">
+					<label for="newCat">Nuova categoria</label>
 					<input type="text" name="newCat"/>
-					<button class="newC" type="submit" name="add">Aggiungi categoria</button> 
+					<button class="submitButton" type="submit" name="add">Aggiungi categoria</button> 
 				</div>
 				<div catList/>
 			</form>
