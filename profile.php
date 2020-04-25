@@ -68,7 +68,9 @@
 		$username=$_SESSION['username'];
 		$wishList=$connessione->query("SELECT * FROM preferiti WHERE utente='$username' ");
 		$img="<div class=\"foto\"><ul>";
-		$rows=mysqli_num_rows($wishList);
+		$rows=0;
+		if($wishList)
+			$rows=mysqli_num_rows($wishList);
 		if($rows==0){
 			$img.="<p>La tua lista desideri è vuota. Esplora la <a href=\"gallery.php\">galleria</a> per aggiungere foto ai preferiti</p>";
 		}else{
