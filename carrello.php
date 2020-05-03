@@ -27,6 +27,8 @@
 		}else{
 			while($foto=$carrello->fetch_assoc()){
 				$idImg=$foto["foto"];
+				$immagine=$connessione->query("SELECT * FROM foto WHERE id='$idImg';");
+				$getImg=$immagine->fetch_assoc();
 				if(file_exists("upload/".$idImg.'.png')){
 					$url="upload/".$idImg.'.png';
 				}else if(file_exists("upload/".$idImg.'.jpg')){
@@ -34,12 +36,15 @@
 				}else if(file_exists("upload/".$idImg.'.jpeg')){
 						$url="upload/".$idImg.'.jpeg';
 				}
-				$prezzoImg=$foto["prezzo"];
-				$titolo=$foto["titolo"];
+				$prezzoImg=$getImg["prezzo"];
+				$titolo=$getImg["titolo"];
+				$venditore=$getImg["venditore"];
 
 				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
 					<div id=\"parag\">
 							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+							<p> <strong>Titolo: </strong>".$titolo."</p>
+							<p> <strong>Venditore: </strong>".$venditore."</p>
 							
 					</div>
 					
