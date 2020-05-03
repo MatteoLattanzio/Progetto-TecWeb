@@ -16,7 +16,7 @@
 		while($categoria=$categorie->fetch_assoc()){
 			$idCat=$categoria["catId"];
 			$nomeCat=$categoria["nome"];
-			$trovate=$connessione->query("SELECT * FROM foto WHERE categoria='$idCat' ORDER BY data DESC LIMIT 1;");
+			$trovate=$connessione->query("SELECT * FROM foto WHERE categoria='$idCat' AND stato='approvata' ORDER BY data DESC LIMIT 1;");
 			$trovate=$trovate->fetch_assoc();
 			$idImg=$trovate["id"];
 			if(file_exists("upload/".$idImg.'.png')){
