@@ -51,7 +51,7 @@
 				</li>";
 				$tot=$tot+$prezzoImg;
 			}
-		$img.="</ul></div><p>Totale=".$tot."€</p><form method=\"post\" ><button type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form>";
+		$img.="</ul></div><div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form></div>";
 		}
 		
 		return $img;
