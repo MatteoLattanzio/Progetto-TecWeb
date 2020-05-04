@@ -169,7 +169,6 @@ a:visited{
 #topUp{
 	outline: none;
 	z-index: 2;
-	/*display: none;*/
 	position: fixed;
 	font-size: 1.5em;
 	bottom:2em;
@@ -188,7 +187,6 @@ a:visited{
 #topUp:hover{
 	background-color: #ffb340;
 }
-
 
 /*---Breadcrumb---*/
 
@@ -505,7 +503,7 @@ textarea{
 	padding: 0.5em 1em;
     display: inline-block;
     background-color: #ff9900;
-    color: white;
+    color: black;
     font-size: 1.1em;
 	cursor: pointer;
 	border-radius: 0.25em;
@@ -579,29 +577,18 @@ textarea{
 	margin-bottom: 1em;
 }
 
-#vendiSample button{
-	background: #ff9900;
+#vendiSample .submitButton{
+	float:none;
 	width:5em;
 	height: 2.5em;
 	font-size: 1.7em;
-	position: relative;
-	cursor: pointer;
-	border-radius: 0.2em;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	border:none;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-	color:white;
 }
 
 #vendiSample a{
 	text-decoration: none;
-}
-
-#vendiSample button:hover{
-	background-color: #ffb340;
 }
 
 #vendiSampleText{
@@ -881,7 +868,8 @@ dd{ margin-left: 0;}
 
 #buttonsContainer{
 	display: inline-block;
-	margin-top: 3.5em;
+	margin-top: 2em;
+	background-color: blue;
 }
 
 #buttonsContainer>button{
@@ -890,13 +878,11 @@ dd{ margin-left: 0;}
 	font-size: 1.75em;
 	border: none;
 	background: none;
-	outline: none;
 	margin:0;
 }
 
-#buttonsContainer #acquisto-button{
+#buttonsContainer>#acquisto-button{
 	font-size: 1.5em;
-	margin-left:15em;
 	width:6.5em;
 	height:2.5em;
 	color:white;
@@ -917,6 +903,10 @@ dd{ margin-left: 0;}
 @media screen and (max-width:768px){
 	.descriptionParagraph{font-size: 1em;}
 	#descriptionContainer{margin:1em auto 0 auto;}
+	#buttonsContainer>#acquisto-button{
+		width:5em;
+		height: 2em;
+	}
 }
 
 
