@@ -10,34 +10,34 @@
 		$password=mysqli_real_escape_string($connessione,sanitizeString($_POST['password']));
 		$password_2=mysqli_real_escape_string($connessione,sanitizeString($_POST['passwordR']));
 		if(empty($nome)){
-			$errors['nome']="Nome richiesto";
+			$errors['nome']="Inserisci il tuo nome";
 		}
 		if(empty($cognome)){
-			$errors['cognome']="Cognome richiesto";
+			$errors['cognome']="Inserisci il tuo cognome";
 		}
 		if(empty($data)){
-			$errors['data']="Data di nascita richiesta";
+			$errors['data']="Inserisci la tua data di nascita";
 		}
 		if(empty($indirizzo)){
-			$errors['indirizzo']="Indirizzo richiesto";
+			$errors['indirizzo']="Inserisci il tuo indirizzo";
 		}
 		if(empty($password)){
-			$errors['password']="Password richiesta";
+			$errors['password']="Scegli una password";
 		}
 		if(empty($password_2)){
-			$errors['password2']="Conferma password";
+			$errors['password2']="Conferma la password";
 		}
 		if($password != $password_2){
 			$errors['password']="Le password non corrispondono";
 		}
 		if(strpos($email,'@') == false){
-			$errors['email']="Fornire una mail valida";
+			$errors['email']="Fornisci una mail valida";
 		}
 		if(strlen($password)<4){
 			$errors['password']="La password deve contenere almeno 4 caratteri";
 		}
 		if(empty($username)){
-			$errors['username']="Username richiesto";
+			$errors['username']="Scegli uno username";
 		}
 		if(count($errors)==0){
 			$result=$connessione->query("SELECT * FROM `utenti` WHERE Username='$username';");

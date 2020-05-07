@@ -2,7 +2,7 @@
 
 //LOGIN
 	if(isset($_POST['Login'])){
-		$username=mysqli_real_escape_string($connessione,sanitizeString($_POST['username']));
+		$username=mysqli_real_escape_string($connessione,sanitizeString($_POST['usernameLog']));
 		$password=mysqli_real_escape_string($connessione,sanitizeString($_POST['password']));
 		if(empty($username)){
 			$errors['usernameL']="Username richiesto";
