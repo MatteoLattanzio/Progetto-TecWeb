@@ -92,11 +92,21 @@
 		$list.="</div>";
 		return $list;
 	}
+
+	function money(){
+		global $connessione;
+		$result=$connessione->query("SELECT SUM(prezzo) AS money FROM carrello WHERE stato='concluso';");
+		if($result){
+			$tot=$result->fetch_assoc();
+			return 5*$tot['money']/100;
+		}
+	}
 	
 	$output=file_get_contents("html/admin.html");
 	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
 	$output=str_replace("<div id=\"footer\"></div>", Footer::build(), $output);
 	$output=str_replace("<meta/>",file_get_contents("html/meta.html"),$output);
+	$output=str_replace("%tot%",money(),$output);
 	$output=str_replace("<div catList/>",listaCategorie(),$output);
 	$output=str_replace("<div listImgApp/>",immaginiApprovazione(),$output);
 	

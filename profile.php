@@ -50,8 +50,14 @@
 				//QUANTITA' VENDUTE
 				//MI PIACE RICEVUTI
 				//VOLTE IN CUI E' STATA MESSA TRA I PREFERITI
-				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a>
-					<div id=\"parag\">
+				$img.="<li>";
+				if($foto['stato']=='approvata')
+					$img.="<a href=\"imgDet.php?img=".urlencode($idImg)."\">";
+
+				$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/>";
+				if($foto['stato']=='approvata')
+					$img.="</a>";
+				$img.="<div id=\"parag\">
 							<p><strong>Titolo: </strong>".$titoloImg."</p>
 							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
 							<p>	<strong>Stato: </strong>".$statoImg."</p>
@@ -89,13 +95,14 @@
 				$titoloImg=$dettagli["titolo"];
 				$prezzoImg=$dettagli["prezzo"];
 				
-				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/></a>
-					<div id=\"parag\">
-							<p><strong>Titolo: </strong>".$titoloImg."</p>
-							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-					</div>
-					
-				</li>";
+				$img.="<li><a href=\"imgDet.php?img=".urlencode($idImg)."\">
+								<img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/>
+							</a>
+							<div id=\"parag\">
+									<p><strong>Titolo: </strong>".$titoloImg."</p>
+									<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+							</div>
+						</li>";
 			}
 		}
 		$img.="</ul></div>";

@@ -44,9 +44,9 @@ CREATE TABLE `carrello` (
 --
 
 INSERT INTO `carrello` (`utente`, `foto`, `titolo`, `prezzo`, `data`, `stato`) VALUES
-('user', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
-('user', 3, 'Animali selvatici', 10, '2020-03-28', 'concluso'),
-('user', 4, 'Casa sul lago', 15, '2020-03-28', 'concluso');
+('userBuy', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
+('userBuy', 3, 'Animali selvatici', 10, '2020-03-28', 'in corso'),
+('userBuy', 4, 'Casa sul lago', 15, '2020-03-28', 'acquistato');
 
 -- --------------------------------------------------------
 

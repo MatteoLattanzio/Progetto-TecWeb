@@ -41,7 +41,17 @@
 			}else if(file_exists("upload/".$idImg.'.jpeg')){
 					$url="upload/".$idImg.'.jpeg';
 			}
-			$img.="<li><a href=\"imgDet.php?img=".urlencode($idImg)."\"><img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/></a></li>";
+			$titleImg=$foto['titolo'];
+			$priceImg=$foto['prezzo'];
+			$img.="<li>
+						<a href=\"imgDet.php?img=".urlencode($idImg)."\">
+							<img class=\"imgElement\" src=\"".$url."\" alt=\"".$titleImg."\"/>
+						</a>
+						<div id=\"parag\">
+							<p> <strong>Titolo: </strong>".$titleImg."</p>	
+							<p>	<strong>Prezzo: </strong>".$priceImg." &euro;</p>						
+						</div>
+					</li>";
 		}
 		$img.="</ul></div>";
 		return $img;

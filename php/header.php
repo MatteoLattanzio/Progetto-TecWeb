@@ -11,8 +11,12 @@ class Header{
 	}
 	
 	public static function navbar(){
-		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php', 'Vendi' => 'nuova_foto.php','Contatti' => 'contacts.php');
+		$nav=array('Home' => 'home.php','Galleria' => 'gallery.php');
 		
+		if(!isset($_SESSION['username']) || ($_SESSION["type"] != "admin")){
+			$nav['Vendi']='nuova_foto.php';
+			$nav['Contatti'] = 'contacts.php';
+		}
 		if(isset($_SESSION["username"]) && $_SESSION["type"]=="user") {
 			$nav['Profilo']='profile.php';
 		}else if(isset($_SESSION["username"]) && $_SESSION["type"] == "admin") {
@@ -20,13 +24,12 @@ class Header{
 		}else{
 			$nav['Accedi']='login.php';
 		}
-		if(isset($_SESSION["username"])){
+		if(isset($_SESSION["username"]) && $_SESSION['type']!='admin'){
 			$nav['Carrello']='carrello.php';
 		}
 		if(isset($_SESSION["username"])){
 			$nav['Esci']='logout.php';
 		}
-		
 
 		$output="<div id=\"navbar\"><ul>";
 		foreach($nav as $element => $link){
