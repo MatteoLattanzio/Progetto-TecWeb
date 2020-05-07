@@ -24,12 +24,14 @@
 			$tag3='';
 		}
 		if(empty($titolo)){
-			$errors['titolo']="Titolo richiesto";
+			$errors['titolo']="Inserisci un titolo";
 		}else if(empty($prezzo)){
-			$errors['prezzo']="Prezzo richiesto";
+			$errors['prezzo']="Inserisci il prezzo";
 		}else if($categoria=='Seleziona'){
-			$errors['categoria']="Categoria richiesta";
-		}else{
+			$errors['categoria']="Seleziona una categoria";
+		}else if(!file_exists($temp_name))
+				$errors['file']="Carica un file";
+			else{
 			$idcategoria=$_POST['selectCategoria'];
 			$user=$_SESSION['username'];
 			$connessione->query("INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
