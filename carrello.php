@@ -21,7 +21,7 @@
 		$carrello=$connessione->query("SELECT * FROM carrello WHERE utente='$username' AND stato='in corso';");
 		$img="<div class=\"foto\"><ul>";
 		$tot=0;
-		if(!$carrello){
+		if(!$carrello || mysqli_num_rows($carrello)==0){
 			$img.="<p>Carrello vuoto</p>";
 		}else{
 			while($foto=$carrello->fetch_assoc()){

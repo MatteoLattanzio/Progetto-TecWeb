@@ -6,7 +6,6 @@ require_once "dbhandler.php";
 
 
 	function setLikeButton($idImg,$venditore){
-		
 		$connessione=connessione();
 		$output="";	
 		if(isset($_SESSION['username'])){
@@ -15,7 +14,7 @@ require_once "dbhandler.php";
 			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM piaciuti WHERE foto='$idImg' AND utente='$user' ;");
 				
-				if(mysqli_num_rows($result)==0){
+				if(!$result || mysqli_num_rows($result)==0){
 					$output=	"<form id=\"buttonsContainer\">
 									<button id=\"like-button\" type=\"button\" value=\"aggiungi-like\" onclick=\"like('".$idImg."')\"><i class=\"fa fa-thumbs-o-up\"></i></button>
 								</form>";
@@ -29,6 +28,7 @@ require_once "dbhandler.php";
 		}
 		return $output;	
 	}
+
 	function setPreferitiButton($idImg,$venditore){
 		$connessione=connessione();
 		$output="";
@@ -38,7 +38,7 @@ require_once "dbhandler.php";
 			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM preferiti WHERE foto='$idImg' AND utente='$user' ;");
 				
-				if(mysqli_num_rows($result)==0){
+				if(!$result || mysqli_num_rows($result)==0){
 					$output=	"<form id=\"buttonsContainer\">
 									<button id=\"preferiti-button\" type=\"button\" value=\"aggiungi-preferiti\" onclick=\"preferiti('".$idImg."')\"><i class=\"fa fa-heart-o\"></i></button>
 								</form>";
@@ -52,6 +52,7 @@ require_once "dbhandler.php";
 		}
 		return $output;
 	}
+
 	function setAcquistoButton($idImg,$venditore){
 		$connessione=connessione();
 		$output="";
@@ -60,15 +61,14 @@ require_once "dbhandler.php";
 			$tipo=$_SESSION['type'];
 			if(($user!=$venditore)&&($tipo=="user")){
 				$result=$connessione->query("SELECT * FROM carrello WHERE foto='$idImg' AND utente='$user';");
-				$cat=$result->fetch_assoc();
-				$stato= $cat['stato'];
-
-				if(mysqli_num_rows($result)==0){
+				if(!$result || mysqli_num_rows($result)==0){
 					$output=	"<form id=\"buttonsContainer\">
 									<button id=\"acquisto-button\" type=\"button\" value=\"aggiungi-carrello\" onclick=\"acquista('".$idImg."')\">Acquista</button>
 								</form>";
-				}
-				elseif($stato=="in corso"){
+				}else{
+				$cat=$result->fetch_assoc();
+				$stato=$cat['stato'];
+				if($stato=="in corso"){
 					$output=	"<form id=\"buttonsContainer\">
 									<button id=\"acquisto-button\" type=\"button\" value=\"rimuovi-carrello\" onclick=\"acquista(".$idImg.")\">Rimuovi</button>
 								</form>";
@@ -76,6 +76,7 @@ require_once "dbhandler.php";
 					$output= "<form id=\"buttonsContainer\">
 									<button id=\"acquisto-button\" type=\"button\" disabled>Acquistato</button>
 							</form>";
+				}
 			}
 		}
 		return $output;
