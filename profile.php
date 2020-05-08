@@ -54,7 +54,7 @@
 				if($foto['stato']=='approvata')
 					$img.="<a href=\"imgDet.php?img=".urlencode($idImg)."\">";
 
-				$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"".$foto["titolo"]."\"/>";
+				$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$foto["titolo"]."\"/>";
 				if($foto['stato']=='approvata')
 					$img.="</a>";
 				$img.="<div id=\"parag\">
@@ -96,7 +96,7 @@
 				$prezzoImg=$dettagli["prezzo"];
 				
 				$img.="<li><a href=\"imgDet.php?img=".urlencode($idImg)."\">
-								<img class=\"imgElement\" src=\"".$url."\" alt=\"".$titoloImg."\"/>
+								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
 							</a>
 							<div id=\"parag\">
 									<p><strong>Titolo: </strong>".$titoloImg."</p>

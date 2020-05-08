@@ -28,7 +28,7 @@
 			}
 			$output.="<div class=\"catImg\"><p>".$nomeCat."</p>
 				<a href=\"catGallery.php?photo=".urlencode($idCat)."\">
-					<img class=\"transiction\" src=\"".$url."\" alt=\"".$nomeCat."\"/>
+					<img class=\"transiction\" src=\"".$url."\" alt=\"link per vedere immagini relative a".$nomeCat." \"/>
 				</a></div>";
 		}
 		return $output;
