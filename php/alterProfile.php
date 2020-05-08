@@ -15,7 +15,7 @@
 	$cognome=$user["cognome"];
 	if(isset($_POST["modifica"])){
 		$newN=$nome;
-		$newC=$cognome;
+		$newS=$cognome;
 		$newP=$psw;
 		if(isset($_POST["name"]) && $_POST["name"]!='')
 			$newN=$_POST["name"];
@@ -23,12 +23,12 @@
 			$newS=$_POST["surname"];
 		if(isset($_POST["password"]) && $_POST["password"]!='')
 			$newP=$_POST["password"];
-		$result=$connessione->query("UPDATE utenti SET nome='$newN',cognome='$newC',password='$newP' WHERE username='$username';");
+		$result=$connessione->query("UPDATE utenti SET nome='$newN',cognome='$newS',password='$newP' WHERE username='$username';");
 		if($result){
-			header("Location: ../profile.php?correct=true");
+			header("Location: profile.php?correct=true");
 			exit();
 		}else{
-			header("Location: ../profile.php?error=".urlencode($connessione->error));
+			header("Location: profile.php?error=".urlencode($connessione->error));
 			exit();
 		}
 	}

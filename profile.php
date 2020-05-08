@@ -2,6 +2,7 @@
 	require_once "php/header.php";
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
+	require_once "php/alterProfile.php";
 	
 	if (!isset($_SESSION)) {
 		session_start();
