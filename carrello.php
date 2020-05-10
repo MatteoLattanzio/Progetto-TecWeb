@@ -24,6 +24,7 @@
 		if(!$carrello || mysqli_num_rows($carrello)==0){
 			$img.="<p>Carrello vuoto</p>";
 		}else{
+			$prices=array();
 			while($foto=$carrello->fetch_assoc()){
 				$idImg=$foto["foto"];
 				$immagine=$connessione->query("SELECT * FROM foto WHERE id='$idImg';");
@@ -35,22 +36,24 @@
 				}else if(file_exists("upload/".$idImg.'.jpeg')){
 						$url="upload/".$idImg.'.jpeg';
 				}
-				$prezzoImg=$getImg["prezzo"];
+				$prezzo=$getImg["prezzo"];
 				$titolo=$getImg["titolo"];
 				$venditore=$getImg["venditore"];
-
 				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
 					<div id=\"parag\">
-							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
 							<p> <strong>Titolo: </strong>".$titolo."</p>
 							<p> <strong>Venditore: </strong>".$venditore."</p>
 							
-					</div>
-					
+					</div>	
 				</li>";
-				$tot=$tot+$prezzoImg;
+				$prices[$titolo]=$prezzo;
+				$tot=$tot+$prezzo;
 			}
-		$img.="</ul></div><div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form></div>";
+			$img.="</ul></div><div class=\"prezzi\">";
+			foreach($prices as $title => $price)
+				$img.="<p><strong>".$title."</strong>..........".$price."&euro;</p>";
+			$img.="<div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form></div>";
+		
 		}
 		
 		return $img;
