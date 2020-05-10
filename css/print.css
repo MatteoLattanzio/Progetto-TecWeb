@@ -94,8 +94,6 @@ a:visited{
 #backgroundVendi-sample p{color:black;}
 #vendiSample{margin:0;}
 
-/*--Contatti--*/
-
 /*--Profilo--*/
 
 #Form form{
@@ -108,10 +106,7 @@ a:visited{
 #addCat .inputContactwide{display:none;}
 #boxFormApp{flex-wrap: nowrap;}
 #imgInApp{width:15em;}
-#formApp{width:15em;}
-
-
-/*--Carrello--*/
+#formApp{width:15em; margin:0;}
 
 /*--FAQ--*/
 
@@ -132,9 +127,13 @@ a:visited{
 	border: 1px solid black;
 }
 
+#buttonsContainer{display:none; margin:0;}
+
 /*--Input--*/
 #login{margin:0 auto; }
 #register{margin:1em auto;}
 .submitButton{display:none;}
-.inputContactwide{border: 1px solid black; padding:0;}
-.styled-input{border: 1px solid black; padding:0;}
+.inputContactwide{border: 1px solid black;}
+.styled-input{border: 1px solid black;}
+.inputContactwide input{background-color: white; color:black;}
+.styled-input input{background-color: white; color:black;}
