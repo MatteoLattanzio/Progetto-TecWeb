@@ -7,7 +7,7 @@
 
 html,
 body {
-	margin-top: 0px !important;
+	margin-top: 0px;
 	padding-top: 0px;
 	margin-bottom: 0em;
 	padding-bottom: 0em;
@@ -23,3 +23,118 @@ h1,h2,h3{
 a{
 	color:black;
 }
+
+#header{
+	display: none;
+}
+
+a:visited{
+	color:black;
+	text-decoration: none;
+	font-family: Arial;
+}
+
+#footer{
+	display: none;
+}
+
+#title h1{
+	color:black;
+}
+
+#breadcrumb{
+	background:white;
+	box-shadow: none;
+	margin: 0;
+}
+
+#content{
+	padding:0;
+	background:white;
+	margin:0;
+	box-shadow: none;
+	float: none;
+	font-size:1em;
+}
+
+/*---Home---*/
+
+#backgroundContent{
+	background-color: white;
+	margin:0;	
+	height: 6em;
+}
+
+#backgroundContent h1{color:black; font-size: 2em;}
+#homeContent{margin:0;}
+
+#backgroundContent #homeContent form{
+	display:none;
+	margin:0;
+}
+
+/*---Galleria---*/
+
+.catImg img {
+	width: 15em;
+	height: 10em;
+}
+
+/*--Vendi--*/
+
+#backgroundVendi-sample{
+	background-color: white;
+	margin:0;	
+	height: 10em;
+}
+#backgroundVendi-sample h1{
+	color:black; 
+	font-size: 2em;
+}
+#backgroundVendi-sample p{color:black;}
+#vendiSample{margin:0;}
+
+/*--Contatti--*/
+
+/*--Profilo--*/
+
+#Form form{
+	display: none;
+	margin:0;
+}
+
+/*--Gestione--*/
+
+#addCat .inputContactwide{display:none;}
+#boxFormApp{flex-wrap: nowrap;}
+#imgInApp{width:15em;}
+#formApp{width:15em;}
+
+
+/*--Carrello--*/
+
+/*--FAQ--*/
+
+#faqList{
+	margin:0;
+	font-size:1em;
+}
+
+/*--Dettagli immagini--*/
+
+.descriptionImage{width:25em;}
+#descriptionContainer{width:25em;}
+.description{
+	display: block;
+	margin:0 auto;
+	box-shadow:none;
+	background-color:white;
+	border: 1px solid black;
+}
+
+/*--Input--*/
+#login{margin:0 auto; }
+#register{margin:1em auto;}
+.submitButton{display:none;}
+.inputContactwide{border: 1px solid black; padding:0;}
+.styled-input{border: 1px solid black; padding:0;}
