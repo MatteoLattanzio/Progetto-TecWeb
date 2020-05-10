@@ -70,6 +70,7 @@
 		$img.="</ul></div>";
 		return $img;
 	}
+
 	function getWishList(){
 		$connessione=connessione();
 		$username=$_SESSION['username'];
@@ -109,6 +110,47 @@
 		$img.="</ul></div>";
 		return $img;
 	}
+
+	function getBuyed(){
+		$connessione=connessione();
+		$username=$_SESSION['username'];
+		$buyed=$connessione->query("SELECT * FROM carrello JOIN foto ON carrello.foto=foto.id WHERE utente='$username' AND carrello.stato='concluso';");
+		$img="<div class=\"foto acquistate\"><ul>";
+		$rows=0;
+		if($buyed)
+			$rows=mysqli_num_rows($buyed);
+		if($rows==0){
+			$img.="<p>Da qui potrai accedere ai tuoi acquisti completati. Esplora la <a href=\"gallery.php\">galleria</a> per acquistare.</p>";
+		}else{
+			while($row=$buyed->fetch_assoc()){
+				$idImg=$row["foto"];
+				if(file_exists("upload/".$idImg.'.png')){
+					$url="upload/".$idImg.'.png';
+					$urlFull="upload/".$idImg.'_original.png';
+				}else if(file_exists("upload/".$idImg.'.jpg')){
+						$url="upload/".$idImg.'.jpg';
+						$urlFull="upload/".$idImg.'_original.jpg';
+				}else if(file_exists("upload/".$idImg.'.jpeg')){
+						$url="upload/".$idImg.'.jpeg';
+						$urlFull="upload/".$idImg.'_original.jpeg';
+				}
+				$result=$connessione->query("SELECT * FROM foto WHERE id='$idImg'");
+				$dettagli=$result->fetch_assoc();
+				$titoloImg=$dettagli["titolo"];
+				$prezzoImg=$dettagli["prezzo"];
+				$img.="<li><a href=\"".$urlFull."\" target=\"_blank\">
+								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
+							</a>
+							<div id=\"parag\">
+									<p><strong>Titolo: </strong>".$titoloImg."</p>
+									<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+							</div>
+						</li>";
+			}
+		}
+		$img.="</ul></div>";
+		return $img;
+	}
 	
 	$output=file_get_contents("html/profile.html");
 	$output=str_replace("<div id=\"header\"></div>", Header::build(), $output);
@@ -116,7 +158,8 @@
 	$output=str_replace("<div class=\"foto\"/>",getImages(),$output);
 	$output=str_replace("<meta/>",file_get_contents("html/meta.html"),$output);
 	$output=str_replace("<div class=\"foto\"/>",getImages(),$output);
-	$output=str_replace("<div class=\"foto carrello\"/>",getWishList(),$output);
+	$output=str_replace("<div class=\"foto acquistate\"/>",getBuyed(),$output);
+	$output=str_replace("<div class=\"foto preferiti\"/>",getWishList(),$output);
 
 	$output=str_replace("%username%",$username,$output);
 	$output=str_replace("%nome%",$nome,$output);

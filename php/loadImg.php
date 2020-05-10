@@ -36,20 +36,33 @@
 			$user=$_SESSION['username'];
 			$connessione->query("INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 
 				  VALUES('$titolo', '$user', '$prezzo', 'in attesa', '$idcategoria', '$data', '$tag1', '$tag2', '$tag3');");
-			
 			$result=$connessione->query("SELECT id FROM foto WHERE venditore='$user' ORDER BY id DESC LIMIT 1;");
 			$ris=mysqli_fetch_assoc($result);
-			$name=$ris['id'].'.'.pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
+			$name=$ris['id']."_original.".pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
 			if(isset($name)){
 				if(!empty($name)){      
 					$location='upload/';      
 					if(!move_uploaded_file($temp_name, $location.$name)){
 						$idfoto=$ris['id'];
 						$connessione->query("DELETE FROM foto WHERE id='$idfoto';");
+					}else{
+						compressImage($location.$name,$location.$ris['id'].".".pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION),25);
 					}
 				}       
 			}
-			//header("Location: fotoOk.php");
+			header("Location: fotoOk.php");
 		}
 	}
+
+	function compressImage($source, $destination, $quality) {
+	  $info = getimagesize($source);
+	  if ($info['mime'] == 'image/jpeg' || $info['mime'] == 'image/jpg'){
+		$image = imagecreatefromjpeg($source);
+		imagejpeg($image, $destination, $quality);
+	  }elseif ($info['mime'] == 'image/png'){
+		$image = imagecreatefrompng($source);
+		imagepng($image,$destination,$quality);
+	  }
+	}
+
 ?>
