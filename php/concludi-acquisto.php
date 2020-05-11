@@ -10,7 +10,6 @@
 			$id=$foto["foto"];
 			$result=$connessione->query("UPDATE `carrello` SET stato='concluso', data='$data' WHERE foto='$id' AND utente='$username'; ");
 		}
+		header("Location: buyed.php");
 	}
-		
-
 ?>
