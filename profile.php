@@ -138,12 +138,14 @@
 				$dettagli=$result->fetch_assoc();
 				$titoloImg=$dettagli["titolo"];
 				$prezzoImg=$dettagli["prezzo"];
+				$dataAcquisto=$row["data"];
 				$img.="<li><a href=\"".$urlFull."\" target=\"_blank\" download>
 								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
 							</a>
 							<div id=\"parag\">
 									<p><strong>Titolo: </strong>".$titoloImg."</p>
 									<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+									<p> <strong>Data acquisto: </strong>".$dataAcquisto."</p>
 							</div>
 						</li>";
 			}
