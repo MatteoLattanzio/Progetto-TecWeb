@@ -95,7 +95,7 @@
 
 	function money(){
 		global $connessione;
-		$result=$connessione->query("SELECT SUM(prezzo) AS money FROM carrello WHERE stato='concluso';");
+		$result=$connessione->query("SELECT SUM(prezzo) AS money FROM carrello INNER JOIN Foto ON carrello.foto=foto.id WHERE carrello.stato='concluso';");
 		if($result){
 			$tot=$result->fetch_assoc();
 			return 5*$tot['money']/100;
