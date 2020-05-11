@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2020 at 10:09 AM
+-- Generation Time: May 11, 2020 at 10:56 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -32,8 +32,6 @@ USE `photo`;
 CREATE TABLE `carrello` (
   `utente` varchar(255) NOT NULL,
   `foto` int(11) NOT NULL,
-  `titolo` varchar(255) NOT NULL,
-  `prezzo` double NOT NULL,
   `data` date NOT NULL,
   `stato` enum('in corso','concluso','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,12 +40,9 @@ CREATE TABLE `carrello` (
 -- Dumping data for table `carrello`
 --
 
-INSERT INTO `carrello` (`utente`, `foto`, `titolo`, `prezzo`, `data`, `stato`) VALUES
-('user', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
-('user', 3, 'Animali selvatici', 10, '2020-03-28', 'concluso'),
-('user', 4, 'Casa sul lago', 15, '2020-03-28', 'concluso'),
-('userBuy', 1, '', 0, '2020-05-11', 'in corso'),
-('userBuy', 3, 'Animali selvatici', 10, '2020-05-01', 'in corso');
+INSERT INTO `carrello` (`utente`, `foto`, `data`, `stato`) VALUES
+('userBuy', 3, '2020-05-11', 'in corso'),
+('userBuy', 1, '2020-05-11', 'in corso');
 
 -- --------------------------------------------------------
 
@@ -203,8 +198,7 @@ INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `passw
 -- Indexes for table `carrello`
 --
 ALTER TABLE `carrello`
-  ADD PRIMARY KEY (`utente`,`foto`),
-  ADD KEY `cliente` (`utente`),
+  ADD KEY `utente` (`utente`),
   ADD KEY `foto` (`foto`);
 
 --

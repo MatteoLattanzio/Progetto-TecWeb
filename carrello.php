@@ -11,6 +11,7 @@
 		exit();
 	}
 	require_once "php/concludi-acquisto.php";
+	require_once "php/rimuovi_carrello.php";
 	
 	
 	
@@ -48,11 +49,14 @@
 				</li>";
 				$prices[$titolo]=$prezzo;
 				$tot=$tot+$prezzo;
+				$_SESSION['img']=$idImg;
+				$img.="<form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"rimuovi-immagine\"><i class=\"fa fa-times\"></i></button></form>";
 			}
 			$img.="</ul></div><div class=\"prezzi\">";
 			foreach($prices as $title => $price)
 				$img.="<p><strong>".$title."</strong>..........".$price."&euro;</p>";
-			$img.="<div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form></div>";
+			$img.="<div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button><button class=\"submitButton\" type=\"submit\" name=\"svuota-carrello\">Svuota carrello</button></form></div>
+				";
 		
 		}
 		
