@@ -31,10 +31,18 @@
 	
 	function getImages(){
 		global $imgUser;
-		$img="<div class=\"foto\"><ul>";
+		global $connessione;
+		$result=$connessione->query("SELECT SUM(foto.prezzo) as tot FROM foto JOIN carrello on foto.id=carrello.foto WHERE foto.venditore='".$_SESSION['username']."' AND carrello.stato='concluso'");
+		$selled=$result->fetch_assoc();
+		if($selled['tot']!=NULL){
+			
+			$img="<p>Grazie al nostro sito hai fin'ora guadagnato <strong>".($selled['tot'] - 5*$selled['tot']/100)."&euro;</strong></p>";
+		}else
+			$img="<p>Spiacente, non hai ancora venduto alcuna foto sul nostro sito.</p>";
+		$img.="<div class=\"foto\"><ul>";
 		$rows=mysqli_num_rows($imgUser);
 		if($rows==0){
-			$img.="<p>Non hai venduto alcuna foto. <a href=\"nuova_foto.php\">Vendi</a></p>";
+			$img.="<p>Non hai caricato alcuna foto. <a href=\"nuova_foto.php\">Vendi</a></p>";
 		}else{
 			while($foto=$imgUser->fetch_assoc()){
 				$idImg=$foto["id"];
@@ -48,9 +56,6 @@
 				$titoloImg=$foto["titolo"];
 				$prezzoImg=$foto["prezzo"];
 				$statoImg=$foto["stato"];
-				//QUANTITA' VENDUTE
-				//MI PIACE RICEVUTI
-				//VOLTE IN CUI E' STATA MESSA TRA I PREFERITI
 				$img.="<li>";
 				if($foto['stato']=='approvata')
 					$img.="<a href=\"imgDet.php?img=".urlencode($idImg)."\">";
