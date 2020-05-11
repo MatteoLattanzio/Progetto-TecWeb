@@ -46,4 +46,18 @@
 		if(isset($errors['file']))
 			return $temp.=$errors['file']."</h2>";
 	}
+
+	function getErrorMessage($errors){
+		$temp="<h2 class=\"error\">";
+		if(isset($errors['email']))
+			return $temp.=$errors['email']."</h2>";
+		if(isset($errors['nome']))
+			return $temp.=$errors['nome']."</h2>";
+		if(isset($errors['cognome']))
+			return $temp.=$errors['cognome']."</h2>";
+		if(isset($errors['oggetto']))
+			return $temp.=$errors['oggetto']."</h2>";
+		if(isset($errors['mess']))
+			return $temp.=$errors['mess']."</h2>";
+	}
 ?>

@@ -45,7 +45,6 @@
 					<div id=\"parag\">
 							<p> <strong>Titolo: </strong>".$titolo."</p>
 							<p> <strong>Venditore: </strong>".$venditore."</p>
-							
 					</div>	
 				</li>";
 				$prices[$titolo]=$prezzo;
@@ -56,9 +55,7 @@
 			foreach($prices as $title => $price)
 				$img.="<p><strong>".$title."</strong>&nbsp;".$price."&euro;</p>";
 			$img.="<div id=\"carrelloFinale\"> <p><strong>Totale</strong>:".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button><button class=\"submitButton\" type=\"submit\" name=\"svuota-carrello\">Svuota carrello</button></form></div></div></div></div>";
-		
 		}
-		
 		return $img;
 	}
 
