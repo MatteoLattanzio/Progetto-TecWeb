@@ -1057,23 +1057,22 @@ dd{ margin-left: 0;}
 
 .fotoCarrello{
 	width:100%;
-	max-width: 20em;
+	max-width: 30em;
 	padding:1em 3em;
 	margin:0 auto 3em;
 }
-
+.fotoCarrello p{text-align: center;}
 .fotoCarrello ul{list-style-type: none;}
-.fotoCarrello .imgElement{margin-bottom:1em;}
 
 #prezziContainer{
-	width:25em;
+	width:35em;
 	display:block;
 	margin: 0 auto;
 	padding:1em;
 }
 
 .prezzi{
-	max-width: 35em;
+	max-width:35em;
 	display:block;
 	margin: 0 auto;
 	box-shadow: 0 0 0.5em #777;
@@ -1100,13 +1099,15 @@ dd{ margin-left: 0;}
 	text-align: center;
 }
 
-@media screen and (max-width:768px){
-	.fotoCarrello{margin:0 auto;}
-	.prezziContainer{margin:2em auto;}
-}
-
 .removeButton{
 	border:0;
 	font-size: 1.2em;
 	background: none;
+	margin-left: 20%;
+}
+
+@media screen and (max-width:768px){
+	.fotoCarrello{margin:0 auto;}
+	.prezziContainer{margin:2em auto;}
+	.removeButton{margin-left: 10%;}
 }
