@@ -1111,3 +1111,26 @@ dd{ margin-left: 0;}
 	.prezziContainer{margin:2em auto;}
 	.removeButton{margin-left: 10%;}
 }
+
+/*---FotoOk---*/
+
+#centerText{
+    position: absolute;
+    top: 0;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+	max-width:35em;
+	padding:2em;
+    height: 30%;
+	margin: auto;
+	text-align: center;
+}
+
+#centerText ul{list-style-position: inside;}
+
+#centerText a{
+	display: block;
+	text-align: center;
+	margin-top: 1em;
+}
