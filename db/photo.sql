@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 28, 2020 alle 17:18
--- Versione del server: 10.4.10-MariaDB
--- Versione PHP: 7.3.12
+-- Generation Time: May 11, 2020 at 10:09 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -27,7 +26,7 @@ USE `photo`;
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `carrello`
+-- Table structure for table `carrello`
 --
 
 CREATE TABLE `carrello` (
@@ -40,18 +39,20 @@ CREATE TABLE `carrello` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `carrello`
+-- Dumping data for table `carrello`
 --
 
 INSERT INTO `carrello` (`utente`, `foto`, `titolo`, `prezzo`, `data`, `stato`) VALUES
-('userBuy', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
-('userBuy', 3, 'Animali selvatici', 10, '2020-03-28', 'in corso'),
-('userBuy', 4, 'Casa sul lago', 15, '2020-03-28', 'acquistato');
+('user', 1, 'Venezia di notte', 20, '2020-03-28', 'concluso'),
+('user', 3, 'Animali selvatici', 10, '2020-03-28', 'concluso'),
+('user', 4, 'Casa sul lago', 15, '2020-03-28', 'concluso'),
+('userBuy', 1, '', 0, '2020-05-11', 'in corso'),
+('userBuy', 3, 'Animali selvatici', 10, '2020-05-01', 'in corso');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `categorie`
+-- Table structure for table `categorie`
 --
 
 CREATE TABLE `categorie` (
@@ -60,7 +61,7 @@ CREATE TABLE `categorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `categorie`
+-- Dumping data for table `categorie`
 --
 
 INSERT INTO `categorie` (`id`, `nome`) VALUES
@@ -73,7 +74,7 @@ INSERT INTO `categorie` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `foto`
+-- Table structure for table `foto`
 --
 
 CREATE TABLE `foto` (
@@ -90,19 +91,23 @@ CREATE TABLE `foto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `foto`
+-- Dumping data for table `foto`
 --
 
 INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`, `data`, `tag1`, `tag2`, `tag3`) VALUES
 (1, 'Venezia di notte', 'user', 20, 'approvata', 2, '2020-03-02', '', '', ''),
 (2, 'Compleanno', 'user', 10, 'in attesa', 1, '2020-01-12', 'bambini', '', ''),
 (3, 'Animali selvatici', 'user', 10, 'approvata', 3, '2018-02-04', 'fenicottero', 'zoo', ''),
-(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno');
+(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno'),
+(46, 'eqewqw', 'user', 2121, 'in attesa', 1, '2020-04-25', '', '', ''),
+(47, 'swqwqw', 'user', 2121, 'in attesa', 1, '2020-05-01', '', '', ''),
+(48, 'swqwqw', 'user', 2121, 'in attesa', 1, '2020-05-01', '', '', ''),
+(49, 'dsds', 'user', 332, 'in attesa', 1, '2020-05-01', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `messaggi`
+-- Table structure for table `messaggi`
 --
 
 CREATE TABLE `messaggi` (
@@ -116,7 +121,7 @@ CREATE TABLE `messaggi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `messaggi`
+-- Dumping data for table `messaggi`
 --
 
 INSERT INTO `messaggi` (`id`, `email`, `data`, `oggetto`, `testo`, `nome`, `cognome`) VALUES
@@ -128,7 +133,7 @@ INSERT INTO `messaggi` (`id`, `email`, `data`, `oggetto`, `testo`, `nome`, `cogn
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `piaciuti`
+-- Table structure for table `piaciuti`
 --
 
 CREATE TABLE `piaciuti` (
@@ -137,18 +142,19 @@ CREATE TABLE `piaciuti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `piaciuti`
+-- Dumping data for table `piaciuti`
 --
 
 INSERT INTO `piaciuti` (`foto`, `utente`) VALUES
 (2, 'user'),
+(3, 'userBuy'),
 (4, 'user'),
 (4, 'userBuy');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `preferiti`
+-- Table structure for table `preferiti`
 --
 
 CREATE TABLE `preferiti` (
@@ -156,10 +162,17 @@ CREATE TABLE `preferiti` (
   `utente` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `preferiti`
+--
+
+INSERT INTO `preferiti` (`foto`, `utente`) VALUES
+(3, 'userBuy');
+
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `utenti`
+-- Table structure for table `utenti`
 --
 
 CREATE TABLE `utenti` (
@@ -174,7 +187,7 @@ CREATE TABLE `utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `utenti`
+-- Dumping data for table `utenti`
 --
 
 INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `password`, `email`, `tipo`) VALUES
@@ -183,11 +196,11 @@ INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `passw
 ('userBuy', 'userBuy', '1987-12-18', 'via acquisti', 'userBuy', 'buy', 'userBuy@photostock.com', 'user');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `carrello`
+-- Indexes for table `carrello`
 --
 ALTER TABLE `carrello`
   ADD PRIMARY KEY (`utente`,`foto`),
@@ -195,13 +208,13 @@ ALTER TABLE `carrello`
   ADD KEY `foto` (`foto`);
 
 --
--- Indici per le tabelle `categorie`
+-- Indexes for table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `foto`
+-- Indexes for table `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`id`),
@@ -209,13 +222,13 @@ ALTER TABLE `foto`
   ADD KEY `categoria` (`categoria`);
 
 --
--- Indici per le tabelle `messaggi`
+-- Indexes for table `messaggi`
 --
 ALTER TABLE `messaggi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `piaciuti`
+-- Indexes for table `piaciuti`
 --
 ALTER TABLE `piaciuti`
   ADD PRIMARY KEY (`foto`,`utente`),
@@ -223,7 +236,7 @@ ALTER TABLE `piaciuti`
   ADD KEY `utente` (`utente`);
 
 --
--- Indici per le tabelle `preferiti`
+-- Indexes for table `preferiti`
 --
 ALTER TABLE `preferiti`
   ADD PRIMARY KEY (`utente`,`foto`),
@@ -231,60 +244,60 @@ ALTER TABLE `preferiti`
   ADD KEY `foto` (`foto`);
 
 --
--- Indici per le tabelle `utenti`
+-- Indexes for table `utenti`
 --
 ALTER TABLE `utenti`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `categorie`
+-- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT per la tabella `foto`
+-- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT per la tabella `messaggi`
+-- AUTO_INCREMENT for table `messaggi`
 --
 ALTER TABLE `messaggi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `carrello`
+-- Constraints for table `carrello`
 --
 ALTER TABLE `carrello`
   ADD CONSTRAINT `carrello_ibfk_1` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `carrello_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`);
 
 --
--- Limiti per la tabella `foto`
+-- Constraints for table `foto`
 --
 ALTER TABLE `foto`
   ADD CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`venditore`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `foto_ibfk_2` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`id`);
 
 --
--- Limiti per la tabella `piaciuti`
+-- Constraints for table `piaciuti`
 --
 ALTER TABLE `piaciuti`
   ADD CONSTRAINT `piaciuti_ibfk_1` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`),
   ADD CONSTRAINT `piaciuti_ibfk_2` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`);
 
 --
--- Limiti per la tabella `preferiti`
+-- Constraints for table `preferiti`
 --
 ALTER TABLE `preferiti`
   ADD CONSTRAINT `preferiti_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`),
