@@ -7,7 +7,7 @@
 		$idImg=$_SESSION['img'];
 		$user=$_SESSION['username'];
 		$result=$connessione->query("DELETE FROM `carrello` WHERE foto='$idImg' AND utente='$user' ");
-
+		$idImg="";
 	}
 	if(isset($_POST['svuota-carrello'])){
 		$user=$_SESSION['username'];
