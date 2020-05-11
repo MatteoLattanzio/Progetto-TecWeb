@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2020 at 10:56 AM
+-- Generation Time: May 11, 2020 at 12:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -41,8 +41,7 @@ CREATE TABLE `carrello` (
 --
 
 INSERT INTO `carrello` (`utente`, `foto`, `data`, `stato`) VALUES
-('userBuy', 3, '2020-05-11', 'in corso'),
-('userBuy', 1, '2020-05-11', 'in corso');
+('userBuy', 1, '2020-05-11', 'concluso');
 
 -- --------------------------------------------------------
 
@@ -93,11 +92,7 @@ INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`,
 (1, 'Venezia di notte', 'user', 20, 'approvata', 2, '2020-03-02', '', '', ''),
 (2, 'Compleanno', 'user', 10, 'in attesa', 1, '2020-01-12', 'bambini', '', ''),
 (3, 'Animali selvatici', 'user', 10, 'approvata', 3, '2018-02-04', 'fenicottero', 'zoo', ''),
-(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno'),
-(46, 'eqewqw', 'user', 2121, 'in attesa', 1, '2020-04-25', '', '', ''),
-(47, 'swqwqw', 'user', 2121, 'in attesa', 1, '2020-05-01', '', '', ''),
-(48, 'swqwqw', 'user', 2121, 'in attesa', 1, '2020-05-01', '', '', ''),
-(49, 'dsds', 'user', 332, 'in attesa', 1, '2020-05-01', '', '', '');
+(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno');
 
 -- --------------------------------------------------------
 
@@ -257,7 +252,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `messaggi`
