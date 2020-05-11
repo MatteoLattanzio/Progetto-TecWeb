@@ -11,6 +11,7 @@
 		exit();
 	}
 	require_once "php/concludi-acquisto.php";
+	require_once "php/rimuovi_carrello.php";
 	
 	
 	
@@ -39,6 +40,7 @@
 				$prezzo=$getImg["prezzo"];
 				$titolo=$getImg["titolo"];
 				$venditore=$getImg["venditore"];
+				$img.="<form method=\"post\" ><button class=\"removeButton\" type=\"submit\" name=\"rimuovi-immagine\"><i class=\"fa fa-times\"></i></button></form>";
 				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
 					<div id=\"parag\">
 							<p> <strong>Titolo: </strong>".$titolo."</p>
@@ -48,11 +50,12 @@
 				</li>";
 				$prices[$titolo]=$prezzo;
 				$tot=$tot+$prezzo;
+				$_SESSION['img']=$idImg;
 			}
-			$img.="</ul></div><div class=\"prezziContainer\"><div class=\"prezzi\">";
+			$img.="</ul></div><div id=\"prezziContainer\"><div class=\"prezzi\">";
 			foreach($prices as $title => $price)
-				$img.="<p>".$title.": ".$price."&euro;</p>";
-				$img.="<div id=\"carrelloFinale\"> <p><strong>Totale</strong>: ".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button></form></div></div></div>";
+				$img.="<p><strong>".$title."</strong>&nbsp;".$price."&euro;</p>";
+			$img.="<div id=\"carrelloFinale\"> <p><strong>Totale</strong>:".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button><button class=\"submitButton\" type=\"submit\" name=\"svuota-carrello\">Svuota carrello</button></form></div></div>";
 		
 		}
 		
