@@ -138,7 +138,7 @@
 				$dettagli=$result->fetch_assoc();
 				$titoloImg=$dettagli["titolo"];
 				$prezzoImg=$dettagli["prezzo"];
-				$img.="<li><a href=\"".$urlFull."\" target=\"_blank\">
+				$img.="<li><a href=\"".$urlFull."\" target=\"_blank\" download>
 								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
 							</a>
 							<div id=\"parag\">
