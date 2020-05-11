@@ -1014,7 +1014,6 @@ dd{ margin-left: 0;}
 #boxFormApp{
 	flex-wrap: wrap;
 	display: flex;
-	background-color: violet;
 }
 
 #imgInApp{
@@ -1058,7 +1057,7 @@ dd{ margin-left: 0;}
 
 .fotoCarrello{
 	width:100%;
-	max-width: 15em;
+	max-width: 20em;
 	padding:1em 3em;
 	margin:0 auto 3em;
 }
@@ -1066,7 +1065,7 @@ dd{ margin-left: 0;}
 .fotoCarrello ul{list-style-type: none;}
 .fotoCarrello .imgElement{margin-bottom:1em;}
 
-.prezziContainer{
+#prezziContainer{
 	width:25em;
 	display:block;
 	margin: 0 auto;
@@ -1085,15 +1084,18 @@ dd{ margin-left: 0;}
 .prezzi p{
 	text-align: center;
 	line-height: 2em;
+	font-size: 1.1em;
 }
 
 #carrelloFinale .submitButton{
 	float:none;
 	display: block;
 	margin:1em auto 2em;
+	font-size:1em;
 }
 
 #carrelloFinale p{
+	font-size:1.3em;
 	margin-top: 2em;
 	text-align: center;
 }
@@ -1101,4 +1103,10 @@ dd{ margin-left: 0;}
 @media screen and (max-width:768px){
 	.fotoCarrello{margin:0 auto;}
 	.prezziContainer{margin:2em auto;}
+}
+
+.removeButton{
+	border:0;
+	font-size: 1.2em;
+	background: none;
 }
