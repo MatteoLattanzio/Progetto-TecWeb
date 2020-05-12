@@ -12,7 +12,7 @@
 	
 	function getCategory(){
 		global $connessione;
-		$list="<select name=\"selectCategoria\">";
+		$list="<select name=\"selectCategoria\" id=\"Categoria\">";
 		$result=$connessione->query("SELECT * FROM categorie;");
 		while($cat=$result->fetch_assoc()){
 			$list.="<option name=\"".$cat["nome"]."\" value=\"".$cat["id"]."\">".$cat["nome"]."</option>";

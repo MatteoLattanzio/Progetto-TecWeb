@@ -22,12 +22,12 @@
 						<form class="formLogin" action="login.php" method="post" name="login">
 							<fieldset>
 							<div class="inputContactwide">
-								<label for="Username">Username</label>
-								<input type="text" name="usernameLog" placeholder="Username" value="%userLogVal%"> 
+								<label for="Username" xml:lang="en">Username</label>
+								<input type="text" name="usernameLog" id="Username" placeholder="Username" value="%userLogVal%"> 
 							</div>
 							<div class="inputContactwide">
-								<label for="Password">Password</label>
-								<input type="password" name="password" placeholder="Password">
+								<label for="Password"> Password </label>
+								<input type="password" name="password" id="Password" placeholder="Password">
 							</div>
 							<button class="submitButton" type="submit" name="Login">Login</button>
 						</fieldset>
@@ -39,35 +39,35 @@
 						<form class="formLogin" method="post" onSubmit="return validaRegistrazione()">
 							<fieldset>						
 							<div class="inputContactwide">
-								<label for="Nome">Nome</label>
-								<input id="nome" type="text" name="nome" placeholder="Nome" value="%nameVal%"/>
+								<label for="nome">Nome</label>
+								<input id="nome" type="text" name="nome"  placeholder="Nome" value="%nameVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<label for="Cognome">Cognome</label>
+								<label for="cognome">Cognome</label>
 								<input id="cognome" type="text" name="cognome" placeholder="Cognome" value="%surnameVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<label for="Data di nascita">Data di nascita</label>
-								<input id="data" type="date" name="data" max="2003-01-01"  min="1920-01-01" placeholder="Data di nascita"/>
+								<label for="data">Data di nascita</label>
+								<input id="data" type="date" name="data" max="2003-01-01" min="1920-01-01" placeholder="Data di nascita"/>
 							</div>
 							<div class="inputContactwide">
-								<label for="Indirizzo">Indirizzo</label>
+								<label for="indirizzo">Indirizzo</label>
 								<input id="indirizzo" type="text" name="indirizzo" placeholder="Indirizzo" value="%addVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<label for="E-mail">E-mail</label>
+								<label for="email" xml:lang="en">E-mail</label>
 								<input id="email" type="email" name="email" placeholder="E-mail" value="%mailVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<label for="Username">Username</label>
+								<label for="usernameR" xml:lang="en">Username</label>
 								<input id="usernameR" type="text" name="username" placeholder="Username" value="%userVal%"/>			
 							</div>
 							<div class="styled-input">
-								<label for="Password">Password</label>
-								<input id="passwordR" type="password" name="password" placeholder="Password"/>
+								<label for="passwordR" xml:lang="en">Password</label>
+								<input id="passwordR" type="password" name="password"  placeholder="Password"/>
 							</div>
 							<div class="styled-input" style="float:right;">
-								<label for="Ripeti password">Ripeti password</label>
+								<label for="passwordR2" >Ripeti <span xml:lang="en">password</span></label>
 								<input id="passwordR2" type="password" name="passwordR" placeholder="Ripeti password"/>
 							</div>
 							<button class="submitButton" type="submit" name="registrazione">Registrati</button>
