@@ -36,39 +36,39 @@
 					<div id="register">
 						<h1 id="title-color">Registrati</h1>
 						%err2%
-						<form class="formLogin" method="post" action="login.php">
+						<form class="formLogin" method="post" onSubmit="return validaRegistrazione()">
 							<fieldset>						
 							<div class="inputContactwide">
 								<label for="Nome">Nome</label>
-								<input type="text" name="nome" placeholder="Nome" value="%nameVal%"/>
+								<input id="nome" type="text" name="nome" placeholder="Nome" value="%nameVal%"/>
 							</div>
 							<div class="inputContactwide">
 								<label for="Cognome">Cognome</label>
-								<input type="text" name="cognome" placeholder="Cognome" value="%surnameVal%"/>
+								<input id="cognome" type="text" name="cognome" placeholder="Cognome" value="%surnameVal%"/>
 							</div>
 							<div class="inputContactwide">
 								<label for="Data di nascita">Data di nascita</label>
-								<input type="date" name="data" max="2003-01-01"  min="1920-01-01" placeholder="Data di nascita"/>
+								<input id="data" type="date" name="data" max="2003-01-01"  min="1920-01-01" placeholder="Data di nascita"/>
 							</div>
 							<div class="inputContactwide">
 								<label for="Indirizzo">Indirizzo</label>
-								<input type="text" name="indirizzo" placeholder="Indirizzo" value="%addVal%"/>
+								<input id="indirizzo" type="text" name="indirizzo" placeholder="Indirizzo" value="%addVal%"/>
 							</div>
 							<div class="inputContactwide">
 								<label for="E-mail">E-mail</label>
-								<input type="email" name="email" placeholder="E-mail" value="%mailVal%"/>
+								<input id="email" type="email" name="email" placeholder="E-mail" value="%mailVal%"/>
 							</div>
 							<div class="inputContactwide">
 								<label for="Username">Username</label>
-								<input type="text" name="username" placeholder="Username" value="%userVal%"/>			
+								<input id="usernameR" type="text" name="username" placeholder="Username" value="%userVal%"/>			
 							</div>
 							<div class="styled-input">
 								<label for="Password">Password</label>
-								<input type="password" name="password" placeholder="Password"/>
+								<input id="passwordR" type="password" name="password" placeholder="Password"/>
 							</div>
 							<div class="styled-input" style="float:right;">
 								<label for="Ripeti password">Ripeti password</label>
-								<input type="password" name="passwordR" placeholder="Ripeti password"/>
+								<input id="passwordR2" type="password" name="passwordR" placeholder="Ripeti password"/>
 							</div>
 							<button class="submitButton" type="submit" name="registrazione">Registrati</button>
 						</fieldset>
