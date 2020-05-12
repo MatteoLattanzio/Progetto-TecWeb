@@ -944,6 +944,7 @@ dd{ margin-left: 0;}
 	background: none;
 	outline: none;
 	margin:0;
+	cursor: pointer;
 }
 
 #buttonsContainer>#acquisto-button{
@@ -1104,6 +1105,7 @@ dd{ margin-left: 0;}
 	font-size: 1.2em;
 	background: none;
 	margin-left: 20%;
+	cursor: pointer;
 }
 
 @media screen and (max-width:768px){
