@@ -20,10 +20,10 @@
 
 		$username=$_SESSION["username"];
 		$carrello=$connessione->query("SELECT * FROM carrello WHERE utente='$username' AND stato='in corso';");
-		$img="<div class=\"foto\"><ul>";
+		$img="<div id=\"gridContainer\"><div class=\"fotoCarrello\"><ul>";
 		$tot=0;
 		if(!$carrello || mysqli_num_rows($carrello)==0){
-			$img.="<p>Carrello vuoto</p>";
+			$img.="<p>Carrello vuoto</p></div></div>";
 		}else{
 			$prices=array();
 			while($foto=$carrello->fetch_assoc()){
@@ -40,26 +40,22 @@
 				$prezzo=$getImg["prezzo"];
 				$titolo=$getImg["titolo"];
 				$venditore=$getImg["venditore"];
+				$img.="<form method=\"post\" ><button class=\"removeButton\" type=\"submit\" name=\"rimuovi-immagine\"><i class=\"fa fa-times\"></i></button></form>";
 				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
 					<div id=\"parag\">
 							<p> <strong>Titolo: </strong>".$titolo."</p>
 							<p> <strong>Venditore: </strong>".$venditore."</p>
-							
 					</div>	
 				</li>";
 				$prices[$titolo]=$prezzo;
 				$tot=$tot+$prezzo;
 				$_SESSION['img']=$idImg;
-				$img.="<form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"rimuovi-immagine\"><i class=\"fa fa-times\"></i></button></form>";
 			}
-			$img.="</ul></div><div class=\"prezzi\">";
+			$img.="</ul></div><div id=\"prezziContainer\"><div class=\"prezzi\">";
 			foreach($prices as $title => $price)
-				$img.="<p><strong>".$title."</strong>..........".$price."&euro;</p>";
-			$img.="<div id=\"carrelloFinale\" <p>Totale=".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button><button class=\"submitButton\" type=\"submit\" name=\"svuota-carrello\">Svuota carrello</button></form></div>
-				";
-		
+				$img.="<p><strong>".$title."</strong>&nbsp;".$price."&euro;</p>";
+			$img.="<div id=\"carrelloFinale\"> <p><strong>Totale</strong>:".$tot."€</p><form method=\"post\" ><button class=\"submitButton\" type=\"submit\" name=\"concludi-acquisto\">Concludi acquisto</button><button class=\"submitButton\" type=\"submit\" name=\"svuota-carrello\">Svuota carrello</button></form></div></div></div></div>";
 		}
-		
 		return $img;
 	}
 
