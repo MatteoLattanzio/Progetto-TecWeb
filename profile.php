@@ -36,9 +36,9 @@
 		$selled=$result->fetch_assoc();
 		if($selled['tot']!=NULL){
 			
-			$img="<p>Grazie al nostro sito hai fin'ora guadagnato <strong>".($selled['tot'] - 5*$selled['tot']/100)."&euro;</strong></p>";
+			$img="<p id=\"center\">Grazie al nostro sito hai fin'ora guadagnato <strong>".($selled['tot'] - 5*$selled['tot']/100)."&euro;</strong></p>";
 		}else
-			$img="<p>Spiacente, non hai ancora venduto alcuna foto sul nostro sito.</p>";
+			$img="<p id=\"center\">Spiacente, non hai ancora venduto alcuna foto sul nostro sito.</p>";
 		$img.="<div class=\"foto\"><ul>";
 		$rows=mysqli_num_rows($imgUser);
 		if($rows==0){

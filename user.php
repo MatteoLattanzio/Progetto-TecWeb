@@ -31,7 +31,7 @@
 	
 	function getImages(){
 		global $imgUser;
-		$img="<div class=\"userImg\"><ul>";
+		$img="<div class=\"foto\"><ul>";
 		while($foto=$imgUser->fetch_assoc()){
 			$idImg=$foto["id"];
 			if(file_exists("upload/".$idImg.'.png')){
