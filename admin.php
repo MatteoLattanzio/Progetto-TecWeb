@@ -55,7 +55,7 @@
 							</div>
 							<div id=\"formApp\">
 								<form method=\"post\" action=\"admin.php\">
-									<div id=\"modify\">
+									<fieldset>
 										<input type=\"hidden\" value=\"".$img["id"]."\" name=\"id\"/>
 										<div class=\"inputContactwide\">
 											<label for=\"titolo\">Titolo</label>
@@ -81,12 +81,12 @@
 											<label for=\"tag3\">Tag3</label>
 											<input type=\"text\" name=\"tag3\" value=\"".$img["tag3"]."\"/>
 										</div>
-									</div>
 									<div class=\"adminButtons\">
 										<button class=\"submitButton\" type=\"submit\" name=\"ok\">Approva</button>
 										<button class=\"submitButton\" type=\"submit\" name=\"alter\" value=\"Modifica e approva\">Modifica e approva</button>
 										<button class=\"submitButton\" type=\"submit\" name=\"no\" id=\"del\">Elimina</button>
 									</div>
+									</fieldset>
 								</form>
 							</div>
 						</div>";
