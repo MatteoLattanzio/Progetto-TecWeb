@@ -481,6 +481,7 @@ a:visited{
 
 /*---Form---*/
 fieldset{border: none;}
+::-webkit-datetime-edit { padding: 0.4em; }
 
 label{
 	display:block;
@@ -497,6 +498,7 @@ label{
 
 #Form h1{
 	font-size: 1.75em;
+	margin-bottom:1em;
 }
 
 #container {
@@ -581,9 +583,6 @@ textarea{
 }
 
 .submitButton:hover{
-	background-color: #ffb340;
-}
-.submitButton:focus{
 	background-color: #ffb340;
 }
 
@@ -831,7 +830,7 @@ textarea{
 
 .formLogin .inputContactwide{
 	max-width: 30em;
-	margin: 0.5rem 0 0 0;
+	margin-top: 0.25em;
 }
 
 .formLogin .inputContactwide input{
@@ -1133,4 +1132,26 @@ dd{ margin-left: 0;}
 	display: block;
 	text-align: center;
 	margin-top: 1em;
+}
+
+/*---Inbox---*/
+
+.messaggi{
+	margin: 1em auto;
+	text-align: center;
+}
+
+.messaggi form .removeButton{
+	display: block;
+	margin:0 auto;
+}
+
+.messaggio{
+	margin: 1em auto;
+	text-align: center;
+}
+
+.messaggio form .removeButton{
+	display: block;
+	margin:0 auto;
 }
