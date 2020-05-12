@@ -498,10 +498,11 @@ label{
 
 #Form h1{
 	font-size: 1.75em;
-	margin-bottom:1em;
+	margin-bottom:0.5em;
 }
 
-#container {
+fieldset{
+	border:none;
 	max-width: 35em;
 	margin: 0 auto 2em auto;
 }
@@ -1136,16 +1137,6 @@ dd{ margin-left: 0;}
 
 /*---Inbox---*/
 
-.messaggi{
-	margin: 1em auto;
-	text-align: center;
-}
-
-.messaggi form .removeButton{
-	display: block;
-	margin:0 auto;
-}
-
 .messaggio{
 	margin: 1em auto;
 	text-align: center;
@@ -1154,4 +1145,20 @@ dd{ margin-left: 0;}
 .messaggio form .removeButton{
 	display: block;
 	margin:0 auto;
+}
+
+/*---Pagina venditore---*/
+
+.info{
+	width:17em;
+	margin-left:auto;
+	margin-right: auto;
+	font-size:1.1em;
+}
+
+/*---Paragrafi centrati---*/
+
+#center{
+	text-align: center;
+	font-size: 1.2em;
 }
