@@ -6,6 +6,8 @@
 		<meta name="description" content="Pagina di login e registrazione di PhotoStock" />
 		<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/> 
 		<meta/>
+		<script src="./js/checkForm.js"></script>	
+
     </head>
 	<body>
 		<div id="header"></div>
@@ -17,7 +19,7 @@
 					<div id="login">
 						<h1 id="title-color" xml:lang="en">Login</h1>
 						%err%
-						<form class="formLogin" action="login.php" method="post" name="login">
+						<form class="formLogin"  method="post" name="login">
 							<div class="inputContactwide">
 								<input type="text" name="usernameLog" placeholder="Inserisci username" value="%userLogVal%"> 
 							</div>
@@ -30,33 +32,39 @@
 					<div id="register">
 						<h1 id="title-color">Registrati</h1>
 						%err2%
-						<form class="formLogin" method="post" action="login.php">						
+						<form class="formLogin" method="post"  onSubmit="return validaRegistrazione()">						
 							<div class="inputContactwide">
-								<input type="text" name="nome" placeholder="Inserisci nome" value="%nameVal%"/>
+								<input id="nome" type="text" name="nome" placeholder="Inserisci nome" value="%nameVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<input type="text" name="cognome" placeholder="Inserisci cognome" value="%surnameVal%"/>
+								<input id="cognome" type="text" name="cognome" placeholder="Inserisci cognome" value="%surnameVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<input type="date" name="data" max="2003-01-01"  min="1920-01-01" placeholder="Inserisci data di nascita"/>
+								<input id="data" type="date" name="data" max="2003-01-01"  min="1920-01-01" placeholder="Inserisci data di nascita"/>
 							</div>
 							<div class="inputContactwide">
-								<input type="text" name="indirizzo" placeholder="Inserisci indirizzo" value="%addVal%"/>
+								<input id="indirizzo" type="text" name="indirizzo" placeholder="Inserisci indirizzo" value="%addVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<input type="email" name="email" placeholder="Inserisci e-mail" value="%mailVal%"/>
+								<input id="email" type="email" name="email" placeholder="Inserisci e-mail" value="%mailVal%"/>
 							</div>
 							<div class="inputContactwide">
-								<input type="text" name="username" placeholder="Inserisci username" value="%userVal%"/>			
+								<input id="usernameR" type="text" name="username" placeholder="Inserisci username" value="%userVal%"/>			
 							</div>
 							<div class="styled-input">
-								<input type="password" name="password" placeholder="Inserisci password"/>
+								<input id="passwordR" type="password" name="password" placeholder="Inserisci password"/>
 							</div>
 							<div class="styled-input" style="float:right;">
-								<input type="password" name="passwordR" placeholder="Ripeti password"/>
+								<input id="passwordR2" type="password" name="passwordR" placeholder="Ripeti password"/>
 							</div>
 							<button class="submitButton" type="submit" name="registrazione">Registrati</button>
 						</form>
+						 	<div id="errore"></div>
+							
+						
+
+							
+
 					</div>
 				</div>
 			</div>
