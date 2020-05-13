@@ -19,7 +19,7 @@
 	function messageList(){
 		global $connessione;
 		$messaggi = $connessione->query("SELECT * FROM messaggi ORDER BY data DESC");
-		$output = "<h1>Messaggi ricevuti</h1><div class=\"messaggi\"";
+		$output = "<h1>Messaggi ricevuti</h1><div class=\"messaggi\">";
 		if(mysqli_num_rows($messaggi)>0){
 			while($messaggio = $messaggi->fetch_assoc()) {
 				$output .= "<div class=\"messaggio\">

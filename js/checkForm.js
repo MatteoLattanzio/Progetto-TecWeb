@@ -36,7 +36,7 @@ function validaRegistrazione() {
   		text = text + "<p> Inserire username</p>";
   		x=false;
   	}
-  	if ((passwordR.length<6) || (password == "")) {
+  	if ((passwordR.length<6) || (passwordR == "")) {
   		text = text + "<p> Inserire una password di almeno 6 caratteri</p>";
   		x=false;
   	}

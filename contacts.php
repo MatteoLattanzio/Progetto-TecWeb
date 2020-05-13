@@ -31,7 +31,7 @@
 			$output=str_replace("%cognome%",$_POST['cognome'],$output);
 		if(isset($_POST['email']))
 			$output=str_replace("%email%",$_POST['email'],$output);
-		if(strlen($_POST['mess'])>0)
+		if(isset($_POST['mess']) && strlen($_POST['mess'])>0)
 			$output=str_replace("%mess%",$_POST['mess'],$output);
 		else
 			$output=str_replace("%mess%","",$output);
