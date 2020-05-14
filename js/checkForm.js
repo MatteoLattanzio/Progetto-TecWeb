@@ -13,41 +13,40 @@ function validaRegistrazione() {
   passwordR = document.getElementById("passwordR").value;
   passwordR2 = document.getElementById("passwordR2").value;
   	if (nome=="") {
-    	text = text + "<p>Inserire nome</p>";
+    document.getElementById("errore-nome").innerHTML ="<p>Inserire nome</p>";
     	x=false;    	
   	}
   	if (cognome==""){
-  		text = text + "<p>Inserire cognome</p>";
+    document.getElementById("errore-cognome").innerHTML ="<p>Inserire cognome</p>";
   		x=false;
   	}
   	if (data==""){
-  		text = text + "<p>Inserire data di nascita</p>";
+    document.getElementById("errore-data").innerHTML ="<p>Inserire data</p>";
   		x=false;
   	}
   	if (indirizzo==""){
-  		text = text + "<p>Inserire indirizzo</p>";
+    document.getElementById("errore-indirizzo").innerHTML ="<p>Inserire indirizzo</p>";
   		x=false;  	
   	}
   	if (!email_valid.test(email) || email == ""){
-  		text = text + "<p> Inserire un indirizzo email valido</p>";
+    document.getElementById("errore-email").innerHTML ="<p>Inserire email valida</p>";
   		x=false;
   	}
   	if (usernameR==""){
-  		text = text + "<p> Inserire username</p>";
+    document.getElementById("errore-usernameR").innerHTML ="<p>Inserire username</p>";
   		x=false;
   	}
   	if ((passwordR.length<6) || (passwordR == "")) {
-  		text = text + "<p> Inserire una password di almeno 6 caratteri</p>";
+    document.getElementById("errore-passwordR").innerHTML ="<p>Inserire una password di almeno 6 caratteri</p>";
   		x=false;
   	}
   	if (passwordR2==""){
-  		text = text + "<p>Confermare la password</p>";
+    document.getElementById("errore-password2R").innerHTML ="<p>Confermare password</p>";
   		x=false;
   	}
-  	if (passwordR2!=passwordR){
-  		text = text + "<p>Le password non coincidono</p>";
+  	else if (passwordR2!=passwordR){
+    document.getElementById("errore-password2R").innerHTML ="<p>Le password non coincidono</p>";
   		x=false;
   	}
-    document.getElementById("errore").innerHTML = text;
     return x;
  }
