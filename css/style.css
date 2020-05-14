@@ -1164,3 +1164,7 @@ dd{ margin-left: 0;}
 	text-align: center;
 	font-size: 1.2em;
 }
+
+/*---Controlli input---*/
+
+.erroreInput{color: red; font-weight: 600; font-size: 1.1em;}
