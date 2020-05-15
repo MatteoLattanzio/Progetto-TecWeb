@@ -804,6 +804,13 @@ textarea{
 	text-align: center;
 }
 
+@media all and (max-width:786px){
+	.catImg img {
+		width: 17em;
+		height: 12em;
+	}
+}
+
 /*---Login---*/
 
 #login{
@@ -869,7 +876,7 @@ textarea{
 .listImg img {
 	display:block;
 	margin: auto;
-	width: 18em;
+	width: 17em;
 	height: 12em;
 }
 
@@ -1018,7 +1025,7 @@ dd{ margin-left: 0;}
 }
 
 #imgInApp{
-	max-width:15em;
+	max-width:20em;
 	display: block;
 	margin: 1em auto;
 }
@@ -1052,6 +1059,9 @@ dd{ margin-left: 0;}
 
 @media screen and (max-width:768px){
 	#formApp{margin:-1.5em 0;}
+	#imgInApp img{
+		width:85%;
+	}
 }
 
 /*--Carrello--*/
