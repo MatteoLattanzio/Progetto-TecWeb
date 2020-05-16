@@ -788,6 +788,9 @@ textarea{
 	display: flex;
 	flex-wrap: wrap;
 }
+#categoryContainer h2 {
+	text-align: center;
+}
 
 .catImg {
 	box-sizing: border-box;
@@ -1182,3 +1185,10 @@ dd{ margin-left: 0;}
 /*---Controlli input---*/
 
 .erroreInput{color: red; font-weight: 600; font-size: 1.1em;}
+
+
+/*---Bad Search---*/
+
+#badSearch{text-align: center;}
+#badSearch h2{margin-top: 3em; font-size:1.5em;}
+#badSearch p{margin-top: 3em;}
