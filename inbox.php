@@ -30,7 +30,7 @@
 						<strong>Messaggio: </strong>".$messaggio["testo"]."<br/><br/>
 						<form method=\"post\">
 							<input type=\"hidden\" value=\"".$messaggio["id"]."\" name=\"id\"/>
-							<button class=\"removeButton\" type=\"submit\" name=\"rimuovi-messaggio\"><i class=\"fa fa-times\"></i>
+							<button class=\"removeButton\" type=\"submit\" name=\"rimuovi-messaggio\" aria-label=\"Rimuovi oggetto dal carrello\"><i class=\"fa fa-times\"></i>
 							</button>
 						</form>
 					</div>";
