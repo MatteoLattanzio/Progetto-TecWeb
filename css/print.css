@@ -130,10 +130,43 @@ a:visited{
 #buttonsContainer{display:none; margin:0;}
 
 /*--Input--*/
+label{display:none;}
 #login{margin:0 auto; }
 #register{margin:1em auto;}
 .submitButton{display:none;}
-.inputContactwide{border: 1px solid black;}
-.styled-input{border: 1px solid black;}
-.inputContactwide input{background-color: white; color:black;}
-.styled-input input{background-color: white; color:black;}
+.removeButton{display: none;}
+.inputContactwide{ margin:0;}
+.styled-input{margin:0;}
+.inputContactwide input{border:1px solid black;background-color: white; color:black; margin:0; border-radius: 0;}
+.styled-input input{border:1px solid black;background-color: white; color:black; margin:0;border-radius: 0;}
+
+/*--Carrello--*/
+
+#prezziContainer{
+	padding:0;
+	width: 25em;
+}
+
+.prezzi{
+	background-color: white;
+	box-shadow:none;
+	border: 1px solid black;
+}
+
+#carrelloFinale .submitButton{display: none;}
+
+/*--Admin--*/
+
+#formApp{
+	width:20em;
+	margin:0;
+}
+
+#imgInApp{margin:0;}
+#boxFormApp{margin:0;}
+
+/*--Login--*/
+
+#login{display: none;}
+#register{display: none;}
+.formLogin{display: none;margin:0;}
