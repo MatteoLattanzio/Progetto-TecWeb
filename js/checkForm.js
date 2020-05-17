@@ -67,10 +67,12 @@ function validaLogin(){
     document.getElementById("errore-usernameL").innerHTML = "<p>Inserire username</p>";
     x=false;
   }
+  else document.getElementById("errore-usernameL").innerHTML ="";
   if(passwordL==""){
     document.getElementById("errore-passwordL").innerHTML = "<p>Inserire password</p>";
     x=false;
   }
+  else document.getElementById("errore-passwordL").innerHTML ="";
   return x;
 
 }
@@ -86,21 +88,25 @@ function validaUpload(){
         opt = sel.options[i];
         if ( opt.selected === true && opt.disabled === true) {
             document.getElementById("errore-categoria").innerHTML = "<p>Scegli una categoria per la tua foto</p>";
+        
     x=false;
-        }
+        }else document.getElementById("errore-categoria").innerHTML ="";
     }
   if(titolo== "" ){
     document.getElementById("errore-titolo").innerHTML = "<p>Inserisci un titolo</p>";
     x=false;
   }
+  else document.getElementById("errore-titolo").innerHTML ="";
   if(prezzo == "" ){
     document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci il prezzo</p>";
     x=false;
   }
+  else document.getElementById("errore-prezzo").innerHTML ="";
   if( file== 0 ){
     document.getElementById("errore-file").innerHTML = "<p>Scegli una foto da caricare</p>";
     x=false;
   }
+  else document.getElementById("errore-file").innerHTML ="";
   return x;
 }
 
@@ -112,5 +118,6 @@ function validaModifica(){
     document.getElementById("errore-password").innerHTML = "<p>Inserire una password di almeno 6 caratteri</p>";
     x=false;
   }
+  else document.getElementById("errore-password").innerHTML ="";
   return x;
 }
