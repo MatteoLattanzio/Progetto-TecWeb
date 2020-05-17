@@ -14,13 +14,13 @@
 				<h1>PhotoStock, il portale della creatività</h1>
 				<form action="search.php" method="post">
 					<div id="searchForm"> 
-						<input type="text" id="inputSearch" placeholder="Che cosa stai cercando?" name="search">
-						<select name="searchType" >
+						<input type="text" id="inputSearch" placeholder="Che cosa stai cercando?" name="search" aria-label="Inserire parola chiave per la ricerca">
+						<select name="searchType" aria-label="Selezione della categoria">
 							<option name="immagini" value="imm">Immagini</option>
 							<option name="utenti" value="user">Utenti</option>
 							<option name="categorie" value="cat">Categorie e Tag</option>
 						</select>
-						<button type="submit" name="submit" title="Pulsante di ricerca"><i class="fa fa-search"></i></button>
+						<button type="submit" name="submit" title="Pulsante di ricerca" aria-label="Pulsante di ricerca"><i class="fa fa-search"></i></button>
 					</div>
 				</form>
 			</div>
