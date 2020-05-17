@@ -34,9 +34,8 @@
 		global $connessione;
 		$result=$connessione->query("SELECT SUM(foto.prezzo) as tot FROM foto JOIN carrello on foto.id=carrello.foto WHERE foto.venditore='".$_SESSION['username']."' AND carrello.stato='concluso'");
 		$selled=$result->fetch_assoc();
-		if($selled['tot']!=NULL){
-			
-			$img="<p id=\"center\">Grazie al nostro sito hai fin'ora guadagnato <strong>".($selled['tot'] - 5*$selled['tot']/100)."&euro;</strong></p>";
+		if($selled['tot']!=NULL){		
+			$img="<p id=\"center\">Grazie al nostro sito hai finora guadagnato <strong>".($selled['tot'] - 5*$selled['tot']/100)."&euro;</strong></p>";
 		}else
 			$img="<p id=\"center\">Spiacente, non hai ancora venduto alcuna foto sul nostro sito.</p>";
 		$img.="<div class=\"foto\"><ul>";
