@@ -4,6 +4,7 @@
 		<meta name="title" content="Aggiungi foto - PhotoStock" />
 		<meta name="description" content="Pagina dedicata al caricamento di una nuova foto sul sito"/>
 		<meta/>
+		<script src="./js/checkForm.js"></script>
 	</head>
 	<body>
 		<div id="header"></div>
@@ -13,16 +14,18 @@
 			<div id="content">
 				<div id="Form">
 					<h1>Carica la tua nuova immagine! </h1>
-					<form method="post" action="nuova_foto.php" name="carica_img" enctype="multipart/form-data">
+					<form method="post" name="carica_img" enctype="multipart/form-data"  onSubmit="return validaUpload()">
 						<fieldset>	
 							<h2 error/>
 							<div class="inputContactwide">
 								<label for="titolo">Titolo</label>
 								<input type="text" name="titolo" id="titolo" placeholder="Inserire titolo" value="%titleVal%">
+								<div id="errore-titolo" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
 								<label for="prezzo">Prezzo</label>
 								<input type="text" name="prezzo" id="prezzo" placeholder="Inserire prezzo" value="%priceVal%">
+								<div id="errore-prezzo" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
 								<label for="tag1">Tag 1</label>
@@ -43,6 +46,7 @@
 							<div class="inputContactwide">
 								<label for="File">File</label>
 								<input type="file" name="file" id="File"></input>
+								<div id="errore-file" class="erroreInput"></div>
 							</div>
 							<button class="submitButton" type="submit" name="carica_img">Invia</button>
 						</fieldset>

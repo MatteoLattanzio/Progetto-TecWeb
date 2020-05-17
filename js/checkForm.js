@@ -66,3 +66,24 @@ function validaLogin(){
   return x;
 
 }
+
+function validaUpload(){
+  var x;
+  x=true;
+  titolo = document.getElementById("titolo").value;
+  prezzo = document.getElementById("prezzo").value;
+  file = document.getElementById("File").files.length;
+  if(titolo== "" ){
+    document.getElementById("errore-titolo").innerHTML = "<p>Inserisci titolo</p>";
+    x=false;
+  }
+  if(prezzo == "" ){
+    document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci prezzo</p>";
+    x=false;
+  }
+  if( file== 0 ){
+    document.getElementById("errore-file").innerHTML = "<p>Scegli un'immagine</p>";
+    x=false;
+  }
+  return x;
+}
