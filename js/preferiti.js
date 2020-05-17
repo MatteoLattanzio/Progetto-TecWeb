@@ -5,7 +5,7 @@ function preferiti(str)
     xmlHttp=GetXmlHttpObjectPreferiti();
     if (xmlHttp==null)
     {
-        alert ("Browser does not support HTTP Request");
+        alert ("Il browser non supporta la richiesta");
         return;
     }
     var url="php/preferiti.php";

@@ -5,7 +5,7 @@ function like(str)
     xmlHttp=GetXmlHttpObjectLike();
     if (xmlHttp==null)
     {
-        alert ("Browser does not support HTTP Request");
+        alert ("Il browser non supporta la richiesta");
         return;
     }
     var url="php/like.php";
