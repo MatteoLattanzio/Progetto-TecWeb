@@ -33,8 +33,8 @@
 		if(strpos($email,'@') == false){
 			$errors['email']="Fornisci una mail valida";
 		}
-		if(strlen($password)<4){
-			$errors['password']="La password deve contenere almeno 4 caratteri";
+		if(strlen($password)<6){
+			$errors['password']="La password deve contenere almeno 6 caratteri";
 		}
 		if(empty($username)){
 			$errors['username']="Scegli uno username";

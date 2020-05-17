@@ -21,15 +21,19 @@
 			$newN=$_POST["name"];
 		if(isset($_POST["surname"]) && $_POST["surname"]!='')
 			$newS=$_POST["surname"];
-		if(isset($_POST["password"]) && $_POST["password"]!='')
-			$newP=$_POST["password"];
-		$result=$connessione->query("UPDATE utenti SET nome='$newN',cognome='$newS',password='$newP' WHERE username='$username';");
-		if($result){
-			header("Location: profile.php?correct=true");
-			exit();
+		if(isset($_POST['password']) && $_POST["password"]!='' && strlen($_POST['password'])<6){
+			$errors['password']="La password deve contenere almeno 6 caratteri";
 		}else{
-			header("Location: profile.php?error=".urlencode($connessione->error));
-			exit();
+			if(isset($_POST["password"]) && $_POST["password"]!='')
+				$newP=$_POST["password"];
+			$result=$connessione->query("UPDATE utenti SET nome='$newN',cognome='$newS',password='$newP' WHERE username='$username';");
+			if($result){
+				header("Location: profile.php?correct=true");
+				exit();
+			}else{
+				header("Location: profile.php?error=".urlencode($connessione->error));
+				exit();
+			}
 		}
 	}
 ?>
