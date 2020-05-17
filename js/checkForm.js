@@ -122,3 +122,42 @@ function validaModifica(){
   else document.getElementById("errore-password").innerHTML ="";
   return x;
 }
+
+function validaMessaggio(){
+  var x;
+  x=true;
+  email = document.getElementById("Email").value;
+  nome = document.getElementById("Nome").value;
+  cognome = document.getElementById("Cognome").value;
+  sel = document.getElementById("oggettoMessaggio");
+  messaggio = document.getElementById("Messaggio").value;
+  if(email==""){
+    document.getElementById("errore-email").innerHTML = "<p>Inserire email</p>";
+    x=false;
+  }
+  else document.getElementById("errore-email").innerHTML ="";
+  if(nome==""){
+    document.getElementById("errore-nome").innerHTML = "<p>Inserire nome</p>";
+    x=false;
+  }
+  else document.getElementById("errore-nome").innerHTML ="";
+  if(cognome==""){
+    document.getElementById("errore-cognome").innerHTML = "<p>Inserire cognome</p>";
+    x=false;
+  }
+  else document.getElementById("errore-cognome").innerHTML ="";
+  for(var i = 0,len = sel.options.length;i<len;i++) {
+        opt = sel.options[i];
+        if ( opt.selected === true && opt.disabled === true) {
+            document.getElementById("errore-oggetto").innerHTML = "<p>Scegli un oggetto per il tuo messaggio</p>";   
+      x=false;
+        }else if(opt.selected === true) document.getElementById("errore-oggetto").innerHTML ="";
+      x=false;
+  }
+  if(messaggio==""){
+    document.getElementById("errore-messaggio").innerHTML = "<p>Inserire messaggio</p>";
+    x=false;
+  }
+  else document.getElementById("errore-messaggio").innerHTML ="";
+  return x;
+}

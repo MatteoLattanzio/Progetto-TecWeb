@@ -4,6 +4,8 @@
 		<meta name="title" content="Contatti - PhotoStock" />
 		<meta name="description" content="Pagina per contattare PhotoStock"/>
 		<meta/>
+		<script src="./js/checkForm.js"></script>
+
 	</head>
 	<body>
 		<div id="header"></div>
@@ -19,19 +21,22 @@
 				<div id="Form">
 					<h1>Contattaci!</h1>
 					<h2 error/>
-					<form method="post" action="contacts.php">						
+					<form method="post"  onSubmit="return validaMessaggio()">						
 						<fieldset>
 								<div class="inputContactwide">
 									<label for="Email">E-mail</label>
 									<input type="text" name="email" id="Email" value="%email%" placeholder="E-mail" />
+									<div id="errore-email" class="erroreInput"></div>
 								</div>
 								<div class="styled-input">
 									<label for="Nome">Nome</label>
 									<input type="text" name="nome" id="Nome" value="%nome%" placeholder="Nome" />
+									<div id="errore-nome" class="erroreInput"></div>
 								</div>
 								<div class="styled-input" style="float:right;">
 									<label for="Cognome">Cognome</label>
 									<input type="text" name="cognome" id="Cognome" value="%cognome%" placeholder="Cognome" />
+									<div id="errore-cognome" class="erroreInput"></div>
 								</div>
 								<div class="inputContactwide">
 									<label for="oggettoMessaggio">Oggetto messaggio</label>
@@ -43,10 +48,12 @@
 										<option value="segnalazione utenti" name="segnalazione">Segnalazione utenti</option>
 										<option value="altro" name="altro">Altro</option>
 									</select>
+									<div id="errore-oggetto" class="erroreInput"></div>
 								</div>
 								<div class="inputContactwide">
 									<label for="Messaggio">Messaggio</label>
 									<textarea name="mess" id="Messaggio" placeholder="Scrivi qui il tuo messaggio!">%mess%</textarea>
+									<div id="errore-messaggio" class="erroreInput"></div>
 								</div>
 								<button class="submitButton" type="submit" name="invia">Invia</button>
 						</fieldset>
