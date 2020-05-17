@@ -15,30 +15,37 @@ function validaRegistrazione() {
     document.getElementById("errore-nome").innerHTML ="<p>Inserire nome</p>";
     	x=false;    	
   	}
+    else document.getElementById("errore-nome").innerHTML ="";
   	if (cognome==""){
     document.getElementById("errore-cognome").innerHTML ="<p>Inserire cognome</p>";
   		x=false;
   	}
+    else document.getElementById("errore-cognome").innerHTML ="";
   	if (data==""){
     document.getElementById("errore-data").innerHTML ="<p>Inserire data</p>";
   		x=false;
   	}
+    else document.getElementById("errore-data").innerHTML ="";
   	if (indirizzo==""){
     document.getElementById("errore-indirizzo").innerHTML ="<p>Inserire indirizzo</p>";
   		x=false;  	
   	}
+    else document.getElementById("errore-indirizzo").innerHTML ="";
   	if (!email_valid.test(email) || email == ""){
     document.getElementById("errore-email").innerHTML ="<p>Inserire email valida</p>";
   		x=false;
   	}
+    else document.getElementById("errore-email").innerHTML ="";
   	if (usernameR==""){
     document.getElementById("errore-usernameR").innerHTML ="<p>Inserire username</p>";
   		x=false;
   	}
+    else document.getElementById("errore-usernameR").innerHTML ="";
   	if ((passwordR.length<6) || (passwordR == "")) {
     document.getElementById("errore-passwordR").innerHTML ="<p>Inserire una password di almeno 6 caratteri</p>";
   		x=false;
   	}
+    else document.getElementById("errore-passwordR").innerHTML ="";
   	if (passwordR2==""){
     document.getElementById("errore-password2R").innerHTML ="<p>Confermare password</p>";
   		x=false;
@@ -47,6 +54,7 @@ function validaRegistrazione() {
     document.getElementById("errore-password2R").innerHTML ="<p>Le password non coincidono</p>";
   		x=false;
   	}
+    else document.getElementById("errore-password2R").innerHTML ="";
     return x;
  }
 
