@@ -7,7 +7,6 @@
 //CARICAMENTO IMMAGINE
 	if(isset($_POST['carica_img'])){
 		$titolo=mysqli_real_escape_string($connessione,sanitizeString($_POST['titolo'])); 
-		$categoria=mysqli_real_escape_string($connessione,sanitizeString($_POST['selectCategoria']));
 		$prezzo=mysqli_real_escape_string($connessione,sanitizeString($_POST['prezzo']));
 		$tag1=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag1']));
 		$tag2=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag2']));
@@ -24,14 +23,15 @@
 			$tag3='';
 		}
 		if(empty($titolo)){
-			$errors['titolo']="Inserisci un titolo";
+			$errors['titolo']="Inserisci un titolo per la tua foto";
 		}else if(empty($prezzo)){
-			$errors['prezzo']="Inserisci il prezzo";
-		}else if($categoria=='Seleziona'){
-			$errors['categoria']="Seleziona una categoria";
+			$errors['prezzo']="Inserisci un prezzo per la tua foto";
 		}else if(!file_exists($temp_name))
-				$errors['file']="Carica un file";
-			else{
+				$errors['file']="Scegli una foto da caricare";
+		else if(!isset($_POST['selectCategoria']) || $_POST['selectCategoria']==""){
+			$errors['categoria']="Seleziona una categoria per la tua foto";
+		}else{
+			$categoria=mysqli_real_escape_string($connessione,sanitizeString($_POST['selectCategoria']));
 			$idcategoria=$_POST['selectCategoria'];
 			$user=$_SESSION['username'];
 			$connessione->query("INSERT INTO foto (titolo, venditore, prezzo, stato, categoria, data, tag1, tag2, tag3) 

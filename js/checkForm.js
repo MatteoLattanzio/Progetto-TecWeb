@@ -73,16 +73,24 @@ function validaUpload(){
   titolo = document.getElementById("titolo").value;
   prezzo = document.getElementById("prezzo").value;
   file = document.getElementById("File").files.length;
+  sel = document.getElementById("Categoria");
+  for(var i = 0,len = sel.options.length;i<len;i++) {
+        opt = sel.options[i];
+        if ( opt.selected === true && opt.disabled === true) {
+            document.getElementById("errore-categoria").innerHTML = "<p>Scegli una categoria per la tua foto</p>";
+    x=false;
+        }
+    }
   if(titolo== "" ){
-    document.getElementById("errore-titolo").innerHTML = "<p>Inserisci titolo</p>";
+    document.getElementById("errore-titolo").innerHTML = "<p>Inserisci un titolo</p>";
     x=false;
   }
   if(prezzo == "" ){
-    document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci prezzo</p>";
+    document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci il prezzo</p>";
     x=false;
   }
   if( file== 0 ){
-    document.getElementById("errore-file").innerHTML = "<p>Scegli un'immagine</p>";
+    document.getElementById("errore-file").innerHTML = "<p>Scegli una foto da caricare</p>";
     x=false;
   }
   return x;
