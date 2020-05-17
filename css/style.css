@@ -735,11 +735,6 @@ textarea{
 
 /*---Profilo---*/
 
-#pro{
-	text-align: center;
-	margin: 6em 0 2em 0;
-}
-
 .foto{
 	display: flex;
 	flex-wrap: wrap;
@@ -752,7 +747,7 @@ textarea{
 .foto ul{
 	display: flex;
 	flex-wrap: wrap;
-	margin:0 0 2em 0;
+	margin:0 0 1em 0;
 	width: 100%;
 }
 
@@ -770,17 +765,7 @@ textarea{
 	margin: auto;
 }
 
-.imgElement a:hover{
-	opacity: 0.9;
-}
-.imgElement a:focus{
-	opacity: 0.9;
-}
-
-#parag{
-	text-align: center;
-}
-
+#parag{	text-align: center;}
 
 /*---Acquista---*/
 
