@@ -3,6 +3,7 @@
 	require_once "php/footer.php";
 	require_once "php/dbhandler.php";
 	require_once "php/alterProfile.php";
+	require_once "php/server.php";
 	
 	if (!isset($_SESSION)) {
 		session_start();
@@ -166,13 +167,13 @@
 	$output=str_replace("<div class=\"foto\"/>",getImages(),$output);
 	$output=str_replace("<div class=\"foto acquistate\"/>",getBuyed(),$output);
 	$output=str_replace("<div class=\"foto preferiti\"/>",getWishList(),$output);
-
+	$output=str_replace("<h3 error/>",getErrorAlter($errors),$output);
 	$output=str_replace("%username%",$username,$output);
 	$output=str_replace("%nome%",$nome,$output);
 	$output=str_replace("%cognome%",$cognome,$output);
 	$output=str_replace("%email%",$email,$output);
 	if(isset($_GET["correct"]))
-		$output=str_replace("<h3 done/>","Modifiche effettuate correttamente",$output);
+		$output=str_replace("<h3 done/>","<h3 id=\"done\">Modifiche effettuate correttamente</h3>",$output);
 	else
 		$output=str_replace("<h3 done/>",'',$output);
 	

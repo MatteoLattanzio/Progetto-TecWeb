@@ -60,4 +60,11 @@
 		if(isset($errors['mess']))
 			return $temp.=$errors['mess']."</h2>";
 	}
+
+	function getErrorAlter($errors){
+		if(isset($errors['password']))
+			return "<h2 class=\"error\">".$errors['password']."</h2>";
+		else
+			return "";
+	}
 ?>
