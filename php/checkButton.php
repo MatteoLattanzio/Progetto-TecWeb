@@ -19,7 +19,7 @@ require_once "dbhandler.php";
 								</form>";
 				}else{
 					$output=	"<form id=\"buttonsContainer\">
-									<button id=\"like-button\" type=\"button\" value=\"rimuovi-like\" onclick=\"like(".$idImg.")\"><i class=\"fa fa-thumbs-up\" aria-label=\"Rimuovi Mi Piace\"></i></button>
+									<button id=\"like-button\" type=\"button\" value=\"rimuovi-like\" onclick=\"like(".$idImg.")\" aria-label=\"Rimuovi Mi Piace\"><i class=\"fa fa-thumbs-up\"></i></button>
 								</form>";
 				}
 			}
