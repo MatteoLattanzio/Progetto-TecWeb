@@ -87,18 +87,19 @@ function validaUpload(){
   for(var i = 0,len = sel.options.length;i<len;i++) {
         opt = sel.options[i];
         if ( opt.selected === true && opt.disabled === true) {
-            document.getElementById("errore-categoria").innerHTML = "<p>Scegli una categoria per la tua foto</p>";
-        
-    x=false;
-        }else document.getElementById("errore-categoria").innerHTML ="";
-    }
+            document.getElementById("errore-categoria").innerHTML = "<p>Scegli una categoria per la tua foto</p>";   
+			x=false;
+        }else if(opt.selected === true) document.getElementById("errore-categoria").innerHTML ="";
+			x=false;
+  }
+
   if(titolo== "" ){
     document.getElementById("errore-titolo").innerHTML = "<p>Inserisci un titolo</p>";
     x=false;
   }
   else document.getElementById("errore-titolo").innerHTML ="";
-  if(prezzo == "" ){
-    document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci il prezzo</p>";
+  if(prezzo == "" || isNaN(prezzo) ){
+    document.getElementById("errore-prezzo").innerHTML = "<p>Inserisci un prezzo valido</p>";
     x=false;
   }
   else document.getElementById("errore-prezzo").innerHTML ="";
