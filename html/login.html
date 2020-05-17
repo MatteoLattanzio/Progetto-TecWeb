@@ -19,15 +19,17 @@
 					<div id="login">
 						<h1 id="title-color" xml:lang="en">Login</h1>
 						%err%
-						<form class="formLogin" action="login.php" method="post" name="login">
+						<form class="formLogin" method="post" name="login" onSubmit="return validaLogin()">
 							<fieldset>
 							<div class="inputContactwide">
 								<label for="Username" xml:lang="en">Username</label>
-								<input type="text" name="usernameLog" id="Username" placeholder="Username" value="%userLogVal%"> 
+								<input type="text" name="usernameLog" id="Username" placeholder="Username" value="%userLogVal%">
+								<div id="errore-usernameL" class="erroreInput"></div> 
 							</div>
 							<div class="inputContactwide">
 								<label for="Password"> Password </label>
 								<input type="password" name="password" id="Password" placeholder="Password">
+								<div id="errore-passwordL" class="erroreInput"></div>
 							</div>
 							<button class="submitButton" type="submit" name="Login">Login</button>
 						</fieldset>

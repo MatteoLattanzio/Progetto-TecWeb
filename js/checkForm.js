@@ -1,8 +1,7 @@
 
 function validaRegistrazione() {
-  var x, text, email_valid;
+  var x, email_valid;
   x=true;
-  text=" ";
   email_valid = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
   nome = document.getElementById("nome").value;
   cognome = document.getElementById("cognome").value;
@@ -50,3 +49,20 @@ function validaRegistrazione() {
   	}
     return x;
  }
+
+function validaLogin(){
+  var x;
+  x=true;
+  usernameL = document.getElementById("Username").value;
+  passwordL = document.getElementById("Password").value;
+  if(usernameL==""){
+    document.getElementById("errore-usernameL").innerHTML = "<p>Inserire username</p>";
+    x=false;
+  }
+  if(passwordL==""){
+    document.getElementById("errore-passwordL").innerHTML = "<p>Inserire password</p>";
+    x=false;
+  }
+  return x;
+
+}
