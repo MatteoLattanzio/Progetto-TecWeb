@@ -87,3 +87,14 @@ function validaUpload(){
   }
   return x;
 }
+
+function validaModifica(){
+  var x;
+  x=true;
+  password = document.getElementById("password").value;
+  if((password!="")&&(password.length<6)){
+    document.getElementById("errore-password").innerHTML = "<p>Inserire una password di almeno 6 caratteri</p>";
+    x=false;
+  }
+  return x;
+}

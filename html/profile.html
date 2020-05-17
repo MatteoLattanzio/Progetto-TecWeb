@@ -4,6 +4,7 @@
 		<meta name="title" content="Profilo - PhotoStock" />
 		<meta name="keywords" content="Pagina personale di PhotoStock"/>		
 		<meta/>
+		<script src="./js/checkForm.js"></script>
 	</head>
 	<body>
 		<div id="header"></div>
@@ -14,7 +15,7 @@
 			<h2 error/>
 			<h1>I tuoi dati</h1>
 			<div id="Form">
-				<form method="post" action="profile.php">
+				<form method="post"  onSubmit="return validaModifica()">
 					<fieldset>
 						<h2>Benvenuto, %username%</h2>
 						<h3 done/>
@@ -25,6 +26,7 @@
 						<div class="inputContactwide">
 							<label for="password"><span xml:lang="en">Password</span></label>
 							<input type="password" id="password" name="password"/>
+							<div id="errore-password" class="erroreInput"></div>
 						</div>
 						<div class="inputContactwide">
 							<label for="nome">Nome</label>
