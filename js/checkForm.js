@@ -89,8 +89,9 @@ function validaUpload(){
         if ( opt.selected === true && opt.disabled === true) {
             document.getElementById("errore-categoria").innerHTML = "<p>Scegli una categoria per la tua foto</p>";   
 			x=false;
-        }else if(opt.selected === true) document.getElementById("errore-categoria").innerHTML ="";
-			x=false;
+        }else if(opt.selected === true){
+			document.getElementById("errore-categoria").innerHTML ="";
+		}
   }
 
   if(titolo== "" ){
@@ -150,9 +151,10 @@ function validaMessaggio(){
         opt = sel.options[i];
         if ( opt.selected === true && opt.disabled === true) {
             document.getElementById("errore-oggetto").innerHTML = "<p>Scegli un oggetto per il tuo messaggio</p>";   
-      x=false;
-        }else if(opt.selected === true) document.getElementById("errore-oggetto").innerHTML ="";
-      x=false;
+			x=false;
+        }else if(opt.selected === true){
+			document.getElementById("errore-oggetto").innerHTML ="";
+		}
   }
   if(messaggio==""){
     document.getElementById("errore-messaggio").innerHTML = "<p>Inserire messaggio</p>";
