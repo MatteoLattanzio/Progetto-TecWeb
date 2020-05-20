@@ -201,7 +201,7 @@ a:visited{
 .fa-pinterest:hover{ color: #CB2027; }
 
 .fa-facebook:focus{ color: #3B5998; }
-.fa-twitter:focus	{ color: #55ACEE; }
+.fa-twitter:focus{ color: #55ACEE; }
 .fa-linkedin:focus{ color: #007BB5; }
 .fa-instagram:focus{ color: #e4405f; }
 .fa-pinterest:focus{ color: #CB2027; }
@@ -602,11 +602,11 @@ textarea{
 	color:red;
 }
 
-#faqList{
+.faqList{
 	margin-bottom: 3em;
 }
 
-#faqList li{
+.faqList li{
 	margin: 1em 1em 1em 1em;
 	text-align: left;
 	list-style-type: square;
@@ -1162,7 +1162,7 @@ dd{ margin-left: 0;}
 
 /*---Paragrafi centrati---*/
 
-#center{
+.center{
 	text-align: center;
 	font-size: 1.1em;
 	margin-top: 0.5em;
