@@ -78,11 +78,13 @@ function validaLogin(){
 }
 
 function validaUpload(){
-  var x;
+  var x, extensions;
   x=true;
   titolo = document.getElementById("titolo").value;
   prezzo = document.getElementById("prezzo").value;
-  file = document.getElementById("File").files.length;
+  fileLength = document.getElementById("File").files.length;
+  filePath = document.getElementById("File").value;
+  extensions = /(\.jpg|\.png)$/i;
   sel = document.getElementById("Categoria");
   for(var i = 0,len = sel.options.length;i<len;i++) {
         opt = sel.options[i];
@@ -104,11 +106,16 @@ function validaUpload(){
     x=false;
   }
   else document.getElementById("errore-prezzo").innerHTML ="";
-  if( file== 0 ){
+  if( fileLength== 0 ){
     document.getElementById("errore-file").innerHTML = "<p>Scegli una foto da caricare</p>";
     x=false;
   }
+  else if (!extensions.exec(filePath)) {
+    document.getElementById("errore-file").innerHTML = "<p>Sono ammessi solo file .jpg e .png</p>"
+  }
   else document.getElementById("errore-file").innerHTML ="";
+
+
   return x;
 }
 
