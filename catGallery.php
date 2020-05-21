@@ -35,7 +35,7 @@
 			}
 			$titolo=$immagine["titolo"];
 			$autore=$immagine["venditore"];
-			$img.="<div class=\"listImg\"><p><span name=\"titolo\">".$titolo."</span> di <span name=\"autore\">".$autore."</span></p>
+			$img.="<div class=\"listImg\"><p><span title=\"titolo\">".$titolo."</span> di <span title=\"autore\">".$autore."</span></p>
 				<a href=\"imgDet.php?img=".urlencode($idImg)."\">
 					<img class=\"transiction\" src=\"".$url."\" alt=\"link per visualizzare informazioni dell'immagine ".$titolo."\"/>
 				</a></div>";

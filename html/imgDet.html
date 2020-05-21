@@ -5,9 +5,9 @@
 		<meta name="title" content="%titolo%"/>
 		<meta name="description" content="Immagine %titolo% nella categoria %cat%"/>
 		<meta/>
-		<script src="js/like.js"></script>
-		<script src="js/preferiti.js"></script>
-		<script src="js/acquista.js"></script>	
+		<script type="text/javascript" src="js/like.js"></script>
+		<script type="text/javascript" src="js/preferiti.js"></script>
+		<script type="text/javascript" src="js/acquista.js"></script>	
 	</head>
 	<body>
 		
@@ -21,15 +21,16 @@
 					<div id="detailsImageContainer">
 						<img class="descriptionImage" src="%url%" alt="%titolo%"/>
 					</div>
-					<div id="descriptionContainer">
+					<div id="descriptionContainer" >
 						<dl class="description">
-							<div class="descriptionParagraph"><dt>Titolo: </dt><dd>%titolo%</dd></div>
-							<div class="descriptionParagraph"><dt>Autore: </dt><dd><a href="user.php?user=%vend%">%vend%</a></dd></div>
-							<div class="descriptionParagraph"><dt>Prezzo di vendita: </dt><dd>%prezzo%&euro;</dd></div>
-							<div class="descriptionParagraph"><dt>Data di inserimento: </dt><dd>%data%</dd></div>
-							<div class="descriptionParagraph"><dt>Categoria: </dt><dd>%cat%</dd></div>
-							<div class="descriptionParagraph"><dt>Tag inseriti dall'autore: </dt><dd>%tag%</dd></div>
-							<div class="descriptionParagraph"><dt>Persone a cui piace: </dt><dd id="count-like">%count-like%</dd></div> 
+							<dt class=" descriptionParagraph">Titolo: </dt><dd class=" descriptionParagraph">%titolo%</dd>
+							<dt class=" descriptionParagraph">Autore: </dt><dd class=" descriptionParagraph"><a href="user.php?user=%vend%">%vend%</a></dd>
+
+							<dt class=" descriptionParagraph">Prezzo di vendita: </dt><dd class=" descriptionParagraph">%prezzo%&euro;</dd>
+							<dt class=" descriptionParagraph">Data di inserimento: </dt><dd class=" descriptionParagraph">%data%</dd>
+							<dt class=" descriptionParagraph">Categoria: </dt><dd class=" descriptionParagraph">%cat%</dd>
+							<dt class=" descriptionParagraph">Tag inseriti dall'autore: </dt><dd class=" descriptionParagraph">%tag%</dd>
+							<dt class=" descriptionParagraph">Persone a cui piace: </dt><dd id="count-like" class=" descriptionParagraph">%count-like%</dd>
 						%like%	
 						%preferiti%
 						%acquisto%
