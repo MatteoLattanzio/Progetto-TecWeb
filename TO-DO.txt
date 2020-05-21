@@ -1,4 +1,3 @@
 Fare controllo sulla data (registrazione utente)
-controllo estensioni e dimensioni immagini
+dimensioni immagini
 aggiungere immagine profilo per utenti
-errori nuova foto + controllo formato

@@ -12,6 +12,8 @@
 		$tag2=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag2']));
 		$tag3=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag3']));
 		$temp_name=$_FILES["file"]["tmp_name"];
+		$ext = pathinfo($temp_name, PATHINFO_EXTENSION);
+
 		$data=date('Y-m-d');
 		if(empty($tag1)){
 			$tag1='';
@@ -30,7 +32,10 @@
 				$errors['file']="Scegli una foto da caricare";
 		else if(!isset($_POST['selectCategoria']) || $_POST['selectCategoria']==""){
 			$errors['categoria']="Seleziona una categoria per la tua foto";
-		}else{
+		}else if ($ext !== 'png' || $ext !== 'jpg') {
+    			$errors['file']="Sono ammessi solo file .jpg e .png";		
+		}			
+		else{
 			$categoria=mysqli_real_escape_string($connessione,sanitizeString($_POST['selectCategoria']));
 			$idcategoria=$_POST['selectCategoria'];
 			$user=$_SESSION['username'];
