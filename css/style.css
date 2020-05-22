@@ -251,7 +251,6 @@ a:visited{
 #breadcrumb p{
 	margin-left: 0.5em;
 	font-size: 1.1em;
-	color: 
 }
 
 /*---Home---*/
@@ -932,11 +931,11 @@ dt{
   
 dd{ margin-left: 0;}
 
-#buttonsContainer{
+.buttonsContainer{
 	display: inline-block;
 }
 
-#buttonsContainer>button {
+.buttonsContainer>button {
 	width:2em;
 	height: 2em;
 	font-size: 1.75em;
@@ -947,7 +946,7 @@ dd{ margin-left: 0;}
 	cursor: pointer;
 }
 
-#buttonsContainer>#acquisto-button{
+.buttonsContainer>#acquisto-button{
 	font-size: 1.4em;
 	width:6em;
 	height:2.3em;
@@ -958,11 +957,11 @@ dd{ margin-left: 0;}
 	margin-left:20%;
 }
 
-#buttonsContainer #acquisto-button:hover{
+.buttonsContainer #acquisto-button:hover{
 	background-color: #ffb340;
 }
 
-#buttonsContainer #acquisto-button:focus{
+.buttonsContainer #acquisto-button:focus{
 	background-color: #ffb340;
 }
 
@@ -974,7 +973,7 @@ dd{ margin-left: 0;}
 @media screen and (max-width:768px){
 	.descriptionParagraph{font-size: 1em;}
 	#descriptionContainer{margin:1em auto 0 auto;}
-	#buttonsContainer>#acquisto-button{
+	.buttonsContainer>#acquisto-button{
 		width:5em;
 		height: 2em;
 		margin-left: 35%;
@@ -1165,7 +1164,7 @@ dd{ margin-left: 0;}
 
 .center{
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 1em;
 	margin-top: 0.5em;
 }
 
