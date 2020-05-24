@@ -7,7 +7,7 @@
 	line-height: 1.25em;
 }
 
-html{
+html, body{
 	background-image: url(../images/photography.png);
 }
 
@@ -528,7 +528,8 @@ fieldset{
     padding: 1.3em;
     border: 0;
     width: 100%;
-    font-size: 1rem;
+	font-size: 1rem;
+	box-sizing: border-box;
     background-color: #262626;
 	color: white;
 	border-radius: 0.25em;
@@ -539,7 +540,8 @@ fieldset{
 	padding: 1.3em;
     border: 0;
     width: 100%;
-    font-size: 1rem;
+	font-size: 1rem;
+	box-sizing: border-box;
     background-color: #262626;
 	color: white;
 	border-radius: 0.25em;
@@ -566,6 +568,7 @@ fieldset{
 	min-height: 15em;
 	resize: none;
 	border-radius: 0.25em;
+	box-sizing: border-box;
 }
 
 textarea{
@@ -838,14 +841,12 @@ textarea{
 	box-sizing: border-box;
 }
 
-.formLogin .styled-input{margin-top: 0.25em;}
-
 .formLogin .styled-input input{
 	width:100%;
 	box-sizing: border-box;
 }
 
-#title-color{
+.title-color{
 	margin-bottom: 0.25em;
 	text-align: center;
 	font-size: 1.5em;
