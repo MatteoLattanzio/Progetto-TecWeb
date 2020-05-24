@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<title>Vendi - PhotoStock</title>
 		<meta name="title" content="Aggiungi foto - PhotoStock" />
@@ -9,7 +10,7 @@
 	<body>
 		<div id="header"></div>
 		<div id="breadcrumb">
-			<p><a href="home.php"><span xml:lang="en">Home</span></a> &#124; Nuova foto </p>
+			<p><a href="home.php"><span xml:lang="en" lang="en">Home</span></a> &#124; Nuova foto </p>
 		</div>
 			<div id="content">
 				<div id="Form">
@@ -19,25 +20,25 @@
 							<h2 error/>
 							<div class="inputContactwide">
 								<label for="titolo">Titolo</label>
-								<input type="text" name="titolo" id="titolo" placeholder="Inserire titolo" value="%titleVal%">
+								<input type="text"  id="titolo" placeholder="Inserire titolo" value="%titleVal%">
 								<div id="errore-titolo" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
 								<label for="prezzo">Prezzo</label>
-								<input type="text" name="prezzo" id="prezzo" placeholder="Inserire prezzo" value="%priceVal%">
+								<input type="text" id="prezzo" placeholder="Inserire prezzo" value="%priceVal%">
 								<div id="errore-prezzo" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
 								<label for="tag1">Tag 1</label>
-								<input type="text" name="tag1" id="tag1" placeholder="Inserire primo tag" value="%tag1Val%">
+								<input type="text" id="tag1" placeholder="Inserire primo tag" value="%tag1Val%">
 							</div>
 							<div class="inputContactwide">
 								<label for="tag2">Tag 2</label>
-								<input type="text" name="tag2" id="tag2" placeholder="Inserire secondo tag" value="%tag2Val%">
+								<input type="text" id="tag2" placeholder="Inserire secondo tag" value="%tag2Val%">
 							</div>
 							<div class="inputContactwide">
 								<label for="tag3">Tag 3</label>
-								<input type="text" name="tag3" id="tag3" placeholder="Inserire terzo tag" value="%tag3Val%">
+								<input type="text" id="tag3" placeholder="Inserire terzo tag" value="%tag3Val%">
 							</div>
 							<div class="inputContactwide">
 								<label for="Categoria">Categoria</label>
@@ -46,10 +47,10 @@
 							</div>
 							<div class="inputContactwide">
 								<label for="File">File</label>
-								<input type="file" name="file" id="File"></input>
+								<input type="file" id="File">
 								<div id="errore-file" class="erroreInput"></div>
 							</div>
-							<button class="submitButton" type="submit" name="carica_img">Invia</button>
+							<button class="submitButton" type="submit" id="carica_img">Invia</button>
 						</fieldset>
 					</form>
 				</div>
