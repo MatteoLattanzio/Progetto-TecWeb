@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<title>Login - PhotoStock</title>
@@ -12,17 +12,17 @@
 	<body>
 		<div id="header"></div>
 		<div id="breadcrumb">
-			<p><a href="home.php"><span xml:lang="en">Home</a> &#124; Login </span></p>
+			<p><a href="home.php"><span xml:lang="en" lang="en">Home</span></a> &#124; Login</p>
 		</div>
 			<div id="content">
 				<div id="gridContainer">
 					<div id="login">
-						<h1 id="title-color" xml:lang="en">Login</h1>
+						<h1 class="title-color" xml:lang="en" lang="en">Login</h1>
 						%err%
 						<form class="formLogin" method="post" name="login" onSubmit="return validaLogin()">
 							<fieldset>
 							<div class="inputContactwide">
-								<label for="Username" xml:lang="en">Username</label>
+								<label for="Username" xml:lang="en" lang="en">Username</label>
 								<input type="text" name="usernameLog" id="Username" placeholder="Username" value="%userLogVal%">
 								<div id="errore-usernameL" class="erroreInput"></div> 
 							</div>
@@ -36,7 +36,7 @@
 						</form>
 					</div>
 					<div id="register">
-						<h1 id="title-color">Registrati</h1>
+						<h1 class="title-color">Registrati</h1>
 						%err2%
 						<form class="formLogin" method="post" onSubmit="return validaRegistrazione()">
 							<fieldset>						
@@ -52,7 +52,7 @@
 							</div>
 							<div class="inputContactwide">
 								<label for="data">Data di nascita</label>
-								<input id="data" type="date" name="data" max="2003-01-01" min="1920-01-01" placeholder="Data di nascita"/>
+								<input id="data" type="date" name="data" max="2003-01-01" min="1920-01-01" />
 						 		<div id="errore-data" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
@@ -61,34 +61,28 @@
 							 	<div id="errore-indirizzo" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
-								<label for="email" xml:lang="en">E-mail</label>
+								<label for="email" xml:lang="en" lang="en">E-mail</label>
 								<input id="email" type="email" name="email" placeholder="E-mail" value="%mailVal%"/>
 						 		<div id="errore-email" class="erroreInput"></div>
 							</div>
 							<div class="inputContactwide">
-								<label for="usernameR" xml:lang="en">Username</label>
+								<label for="usernameR" xml:lang="en" lang="en">Username</label>
 								<input id="usernameR" type="text" name="username" placeholder="Username" value="%userVal%"/>			
 							 	<div id="errore-usernameR" class="erroreInput"></div>
 							</div>
 							<div class="styled-input">
-								<label for="passwordR" xml:lang="en">Password</label>
+								<label for="passwordR" xml:lang="en" lang="en">Password</label>
 								<input id="passwordR" type="password" name="password"  placeholder="Password"/>
 							 	<div id="errore-passwordR" class="erroreInput"></div>
 							</div>
 							<div class="styled-input" style="float:right;">
-								<label for="passwordR2" >Ripeti <span xml:lang="en">password</span></label>
+								<label for="passwordR2" >Ripeti <span xml:lang="en" lang="en">password</span></label>
 								<input id="passwordR2" type="password" name="passwordR" placeholder="Ripeti password"/>
 							 	<div id="errore-password2R" class="erroreInput"></div>
 							</div>
 							<button class="submitButton" type="submit" name="registrazione">Registrati</button>
 						</fieldset>
 						</form>
-						 	<div id="errore-nome"></div>
-							
-						
-
-							
-
 					</div>
 				</div>
 			</div>
