@@ -991,6 +991,8 @@ dd{ margin-left: 0;}
 
 /*---Admin---*/
 
+#newCat{padding:1em;}
+
 #catList{
 	max-width:50em;
 	text-align: center;
@@ -1018,43 +1020,38 @@ dd{ margin-left: 0;}
 }
 
 #imgInApp{
-	max-width:20em;
+	max-width:30em;
 	display: block;
 	margin: 1em auto;
 }
 
 #formApp{
-	width:15em;
+	width:25em;
 	display:block;
 	margin: 0 auto;
 	padding:1em;
 }
 
-#formAppContainer{
-	max-width: 20em;
-	margin:0 auto;
-}
-
 #imgInApp img{
-	margin: 1em auto 0em auto;
+	display: block;
+	margin: 0 auto;
 	padding:0 1em;
 	width:90%;
 	height: auto;
 }
 #formApp .inputContactwide{margin:0;}
 #formApp .inputContactwide input{padding:0.5em;}
-#formApp .inputContactwide label{font-size:0.7em; margin:0; float:left;}
+#formApp .inputContactwide label{font-size: 0.9em; margin:0; float:left;}
+.adminButtons{text-align: center;}
 
 .adminButtons .submitButton{
 	float:none;
-	font-size:0.6em;
+	font-size:0.9em;
+	display: inline-block;
 }
 
 @media screen and (max-width:768px){
-	#formApp{margin:-1.5em 0;}
-	#imgInApp img{
-		width:85%;
-	}
+	#formApp{margin:-1em auto;}
 }
 
 /*--Carrello--*/
