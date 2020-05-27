@@ -84,7 +84,7 @@ function validaUpload(){
   prezzo = document.getElementById("prezzo").value;
   fileLength = document.getElementById("File").files.length;
   filePath = document.getElementById("File").value;
-  extensions = /(\.jpg|\.png)$/i;
+  extensions = /(\.jpg|\.jpeg|\.png)$/i;
   sel = document.getElementById("Categoria");
   for(var i = 0,len = sel.options.length;i<len;i++) {
         opt = sel.options[i];
@@ -111,7 +111,7 @@ function validaUpload(){
     x=false;
   }
   else if (!extensions.exec(filePath)) {
-    document.getElementById("errore-file").innerHTML = "<p>Sono ammessi solo file .jpg e .png</p>"
+    document.getElementById("errore-file").innerHTML = "<p>Sono ammessi solo file .jpg, .jpeg e .png</p>"
   }
   else document.getElementById("errore-file").innerHTML ="";
 

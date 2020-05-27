@@ -14,7 +14,7 @@
 		$temp_name=$_FILES["file"]["name"];
 		$ext = pathinfo($temp_name, PATHINFO_EXTENSION);
 		$temp_name=$_FILES["file"]["tmp_name"];
-		$estensioni = array('jpg','png','gif');
+		$estensioni = array('jpg','png','jpeg');
 		$data=date('Y-m-d');
 		if(empty($tag1)){
 			$tag1='';
@@ -34,7 +34,7 @@
 		else if(!isset($_POST['selectCategoria']) || $_POST['selectCategoria']==""){
 			$errors['categoria']="Seleziona una categoria per la tua foto";
 		}else if( ! in_array( $ext, $estensioni ) ) {
-    			$errors['file']="Sono ammessi solo file .jpg, .png, .gif";			
+    			$errors['file']="Sono ammessi solo file .jpg, .jpeg e .png";			
 		}
 		else{
 			$categoria=mysqli_real_escape_string($connessione,sanitizeString($_POST['selectCategoria']));
@@ -65,9 +65,9 @@
 	  if ($info['mime'] == 'image/jpeg' || $info['mime'] == 'image/jpg'){
 		$image = imagecreatefromjpeg($source);
 		imagejpeg($image, $destination, $quality);
-	  }elseif ($info['mime'] == 'image/png'){
+	  }elseif ($info['mime'] == 'image/png' || $info['mime'] == 'image/PNG'){
 		$image = imagecreatefrompng($source);
-		imagepng($image,$destination,$quality);
+		imagepng($image,$destination);
 	  }
 	}
 
