@@ -23,7 +23,7 @@
 		$img="<div id=\"gridContainer\"><div class=\"fotoCarrello\"><ul>";
 		$tot=0;
 		if(!$carrello || mysqli_num_rows($carrello)==0){
-			$img.="<p id=\"center\">Il tuo carrello è vuoto!</p></div></div>";
+			$img.="<li class=\"center\">Il tuo carrello è vuoto!</li></ul></div></div>";
 		}else{
 			$prices=array();
 			while($foto=$carrello->fetch_assoc()){
@@ -40,8 +40,8 @@
 				$prezzo=$getImg["prezzo"];
 				$titolo=$getImg["titolo"];
 				$venditore=$getImg["venditore"];
-				$img.="<form method=\"post\" ><button class=\"removeButton\" type=\"submit\" name=\"rimuovi-immagine\" aria-label=\"Rimuovi oggetto dal carrello\"><i class=\"fa fa-times\"></i></button></form>";
-				$img.="<li><img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/></a>
+				$img.="<li><form method=\"post\" ><button class=\"removeButton\" type=\"submit\" name=\"rimuovi-immagine\" aria-label=\"Rimuovi oggetto dal carrello\"><i class=\"fa fa-times\"></i></button></form>";
+				$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"".$titolo."\"/>
 					<div id=\"parag\">
 							<p> <strong>Titolo: </strong>".$titolo."</p>
 							<p> <strong>Venditore: </strong>".$venditore."</p>
