@@ -47,7 +47,7 @@
 						<a href=\"imgDet.php?img=".urlencode($idImg)."\">
 							<img class=\"imgElement\" src=\"".$url."\" alt=\"".$titleImg."\"/>
 						</a>
-						<div id=\"parag\">
+						<div class=\"parag\">
 							<p> <strong>Titolo: </strong>".$titleImg."</p>	
 							<p>	<strong>Prezzo: </strong>".$priceImg." &euro;</p>						
 						</div>

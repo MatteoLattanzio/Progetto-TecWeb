@@ -67,7 +67,7 @@
 				}else if(file_exists("upload/".$idImg.'.jpeg')){
 					$url="upload/".$id.'.jpeg';
 				}
-				$img.="<div class=\"listImg\"><p><span name=\"titolo\">".$titolo."</span></p>
+				$img.="<div class=\"listImg\"><p><span class=\"titolo\">".$titolo."</span></p>
 				<a href=\"imgDet.php?img=".urlencode($id)."\">
 					<img class=\"transiction\" src=\"".$url."\" alt=\"".$titolo."\"/>
 				</a></div>";

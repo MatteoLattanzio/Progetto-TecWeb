@@ -33,12 +33,14 @@
 			}else if(file_exists("upload/".$idImg.'.jpeg')){
 					$url="upload/".$idImg.'.jpeg';
 			}
-			$titolo=$immagine["titolo"];
-			$autore=$immagine["venditore"];
-			$img.="<div class=\"listImg\"><p><span title=\"titolo\">".$titolo."</span> di <span title=\"autore\">".$autore."</span></p>
-				<a href=\"imgDet.php?img=".urlencode($idImg)."\">
-					<img class=\"transiction\" src=\"".$url."\" alt=\"link per visualizzare informazioni dell'immagine ".$titolo."\"/>
-				</a></div>";
+			if(isset($url)){
+				$titolo=$immagine["titolo"];
+				$autore=$immagine["venditore"];
+				$img.="<div class=\"listImg\"><p><span title=\"titolo\">".$titolo."</span> di <span title=\"autore\">".$autore."</span></p>
+					<a href=\"imgDet.php?img=".urlencode($idImg)."\">
+						<img class=\"transiction\" src=\"".$url."\" alt=\"link per visualizzare informazioni dell'immagine ".$titolo."\"/>
+					</a></div>";
+			}
 		}
 		return $img;
 	}

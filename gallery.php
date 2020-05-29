@@ -16,20 +16,34 @@
 		while($categoria=$categorie->fetch_assoc()){
 			$idCat=$categoria["catId"];
 			$nomeCat=$categoria["nome"];
-			$trovate=$connessione->query("SELECT * FROM foto WHERE categoria='$idCat' AND stato='approvata' ORDER BY data DESC LIMIT 1;");
-			$trovate=$trovate->fetch_assoc();
-			$idImg=$trovate["id"];
-			if(file_exists("upload/".$idImg.'.png')){
-				$url="upload/".$idImg.'.png';
-			}else if(file_exists("upload/".$idImg.'.jpg')){
-				$url="upload/".$idImg.'.jpg';
-			}else if(file_exists("upload/".$idImg.'.jpeg')){
-				$url="upload/".$idImg.'.jpeg';
+			$total=$connessione->query("SELECT COUNT(*) AS tot FROM foto WHERE categoria='$idCat' AND stato='approvata';");
+			$totale=$total->fetch_assoc();
+			$totale=$totale['tot'];
+			$count=0;
+			while(!isset($url) && $count<$totale){
+				$query="SELECT * FROM foto WHERE categoria='$idCat' AND stato='approvata' ORDER BY data DESC LIMIT ".($count+1)." OFFSET ".$count.";";
+				$trovate=$connessione->query($query);
+				if($trovate){
+					$trovate=$trovate->fetch_assoc();
+					$idImg=$trovate["id"];
+					if(file_exists("upload/".$idImg.'.png')){
+						$url="upload/".$idImg.'.png';
+					}else if(file_exists("upload/".$idImg.'.jpg')){
+						$url="upload/".$idImg.'.jpg';
+					}else if(file_exists("upload/".$idImg.'.jpeg')){
+						$url="upload/".$idImg.'.jpeg';
+					}
+					if(isset($url)){
+						$output.="<div class=\"catImg\"><p>".$nomeCat."</p>
+							<a href=\"catGallery.php?photo=".urlencode($idCat)."\">
+								<img class=\"transiction\" src=\"".$url."\" alt=\"link per vedere immagini relative a ".$nomeCat." \"/>
+							</a></div>";
+					}else
+						$count=$count+1;
+				}else
+					$count=$totale;
 			}
-			$output.="<div class=\"catImg\"><p>".$nomeCat."</p>
-				<a href=\"catGallery.php?photo=".urlencode($idCat)."\">
-					<img class=\"transiction\" src=\"".$url."\" alt=\"link per vedere immagini relative a".$nomeCat." \"/>
-				</a></div>";
+			unset($url);
 		}
 		return $output;
 	}
