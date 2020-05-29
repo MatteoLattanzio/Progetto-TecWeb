@@ -53,23 +53,26 @@
 				}else if(file_exists("upload/".$idImg.'.jpeg')){
 						$url="upload/".$idImg.'.jpeg';
 				}
-				$titoloImg=$foto["titolo"];
-				$prezzoImg=$foto["prezzo"];
-				$statoImg=$foto["stato"];
-				$img.="<li>";
-				if($foto['stato']=='approvata')
-					$img.="<a href=\"imgDet.php?img=".urlencode($idImg)."\">";
+				if(isset($url)){
+					$titoloImg=$foto["titolo"];
+					$prezzoImg=$foto["prezzo"];
+					$statoImg=$foto["stato"];
+					$img.="<li>";
+					if($foto['stato']=='approvata')
+						$img.="<a href=\"imgDet.php?img=".urlencode($idImg)."\">";
 
-				$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$foto["titolo"]."\"/>";
-				if($foto['stato']=='approvata')
-					$img.="</a>";
-				$img.="<div id=\"parag\">
-							<p><strong>Titolo: </strong>".$titoloImg."</p>
-							<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
-							<p>	<strong>Stato: </strong>".$statoImg."</p>
-					</div>
+					$img.="<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$foto["titolo"]."\"/>";
+					if($foto['stato']=='approvata')
+						$img.="</a>";
+					$img.="<div class=\"parag\">
+								<p><strong>Titolo: </strong>".$titoloImg."</p>
+								<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
+								<p>	<strong>Stato: </strong>".$statoImg."</p>
+						</div>
 					
-				</li>";
+					</li>";
+					unset($url);
+				}
 			}
 		}
 		$img.="</ul></div>";
@@ -80,13 +83,14 @@
 		$connessione=connessione();
 		$username=$_SESSION['username'];
 		$wishList=$connessione->query("SELECT * FROM preferiti WHERE utente='$username' ");
-		$img="<div class=\"foto\"><ul>";
+		$img="<div class=\"foto\">";
 		$rows=0;
 		if($wishList)
 			$rows=mysqli_num_rows($wishList);
 		if($rows==0){
 			$img.="<p>La tua lista desideri è vuota. Esplora la <a href=\"gallery.php\">galleria</a> per aggiungere foto ai preferiti</p>";
 		}else{
+			$img.="<ul>";
 			while($row=$wishList->fetch_assoc()){
 				$idImg=$row["foto"];
 				if(file_exists("upload/".$idImg.'.png')){
@@ -105,14 +109,15 @@
 				$img.="<li><a href=\"imgDet.php?img=".urlencode($idImg)."\">
 								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
 							</a>
-							<div id=\"parag\">
+							<div class=\"parag\">
 									<p><strong>Titolo: </strong>".$titoloImg."</p>
 									<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
 							</div>
 						</li>";
 			}
+			$img.="</ul>";
 		}
-		$img.="</ul></div>";
+		$img.="</div>";
 		return $img;
 	}
 
@@ -120,13 +125,14 @@
 		$connessione=connessione();
 		$username=$_SESSION['username'];
 		$buyed=$connessione->query("SELECT * FROM carrello JOIN foto ON carrello.foto=foto.id WHERE utente='$username' AND carrello.stato='concluso';");
-		$img="<div class=\"foto acquistate\"><ul>";
+		$img="<div class=\"foto acquistate\">";
 		$rows=0;
 		if($buyed)
 			$rows=mysqli_num_rows($buyed);
 		if($rows==0){
 			$img.="<p>Da qui potrai accedere ai tuoi acquisti completati. Esplora la <a href=\"gallery.php\">galleria</a> per acquistare.</p>";
 		}else{
+			$img.="<ul>";
 			while($row=$buyed->fetch_assoc()){
 				$idImg=$row["foto"];
 				if(file_exists("upload/".$idImg.'.png')){
@@ -147,15 +153,16 @@
 				$img.="<li><a href=\"".$urlFull."\" target=\"_blank\" download>
 								<img class=\"imgElement\" src=\"".$url."\" alt=\"immagine ".$titoloImg."\"/>
 							</a>
-							<div id=\"parag\">
+							<div class=\"parag\">
 									<p><strong>Titolo: </strong>".$titoloImg."</p>
 									<p>	<strong>Prezzo: </strong>".$prezzoImg." &euro;</p>
 									<p> <strong>Data acquisto: </strong>".$dataAcquisto."</p>
 							</div>
 						</li>";
 			}
+			$img.="</ul>";
 		}
-		$img.="</ul></div>";
+		$img.="</div>";
 		return $img;
 	}
 	
