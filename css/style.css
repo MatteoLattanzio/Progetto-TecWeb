@@ -763,6 +763,13 @@ textarea{
 	list-style-type: none;
 }
 
+.foto ul li a{
+	overflow: hidden;
+	display: block;
+	width:20em;
+	margin: 0 auto;
+}
+
 .imgElement{
 	width: 15em;
 	height: 10em;
@@ -787,6 +794,12 @@ textarea{
 	padding: 1.5em;
 	flex: 25%;
 }
+.catImg a{
+	margin: 0 auto;
+	overflow: hidden;
+	display: block;
+	max-width: 20em;
+}
 
 .catImg img {
 	display:block;
@@ -806,6 +819,7 @@ textarea{
 		width: 17em;
 		height: 12em;
 	}
+	.catImg a{max-width: 17em;}
 }
 
 /*---Login---*/
@@ -868,6 +882,13 @@ textarea{
 	flex: 25%;
 }
 
+.listImg a{
+	margin: 0 auto;
+	max-width: 20em;
+	display: block;
+	overflow: hidden;
+}
+
 .listImg img {
 	display:block;
 	margin: auto;
@@ -881,6 +902,9 @@ textarea{
 	text-align: center;
 }
 
+@media screen and (max-width: 768px){
+	.listImg a{max-width: 17em;}
+}
 
 /*---imgDet---*/
 
@@ -1006,7 +1030,7 @@ dd{ margin-left: 0;}
 #catList ul{margin-top: 5em;}
 
 #catList p{
-	display: inline-block;
+	display: block;
 	font-weight: 600;
 }
 
@@ -1016,34 +1040,34 @@ dd{ margin-left: 0;}
 	margin:0.3em;
 }
 
-#boxFormApp{
+.boxFormApp{
 	flex-wrap: wrap;
 	display: flex;
 }
 
-#imgInApp{
+.imgInApp{
 	max-width:30em;
 	display: block;
 	margin: 1em auto;
 }
 
-#formApp{
+.formApp{
 	width:25em;
 	display:block;
 	margin: 0 auto;
 	padding:1em;
 }
 
-#imgInApp img{
+.imgInApp img{
 	display: block;
 	margin: 0 auto;
 	padding:0 1em;
 	width:90%;
 	height: auto;
 }
-#formApp .inputContactwide{margin:0;}
-#formApp .inputContactwide input{padding:0.5em;}
-#formApp .inputContactwide label{font-size: 0.9em; margin:0; float:left;}
+.formApp .inputContactwide{margin:0;}
+.formApp .inputContactwide input{padding:0.5em;}
+.formApp .inputContactwide label{font-size: 0.9em; margin:0; float:left;}
 .adminButtons{text-align: center;}
 
 .adminButtons .submitButton{
