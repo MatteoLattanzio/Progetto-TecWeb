@@ -68,6 +68,8 @@ a:visited{
 #backgroundContent h1{color:black; font-size: 2em;}
 #homeContent{margin:0;}
 
+#homeContent h1{text-shadow:none;}
+
 #backgroundContent #homeContent form{
 	display:none;
 	margin:0;
