@@ -582,7 +582,6 @@ textarea{
 	border:none;
     float: right;
 	padding: 0.5em 1em;
-    display: inline-block;
     background-color: #ff9900;
     color: black;
     font-size: 1.1em;
@@ -1023,15 +1022,18 @@ dd{ margin-left: 0;}
 	max-width:50em;
 	text-align: center;
 	display: block;
-	margin: 0 auto;
+	margin: auto;
 	font-size:1.1em;
+	height: 2em;
 }
 
 #catList ul{margin-top: 5em;}
 
 #catList p{
-	display: block;
 	font-weight: 600;
+	float:left;
+	vertical-align: middle;
+	line-height: 2em;
 }
 
 #catList li{
@@ -1054,7 +1056,7 @@ dd{ margin-left: 0;}
 .formApp{
 	width:25em;
 	display:block;
-	margin: 0 auto;
+	margin: -1em auto;
 	padding:1em;
 }
 
@@ -1067,7 +1069,7 @@ dd{ margin-left: 0;}
 }
 .formApp .inputContactwide{margin:0;}
 .formApp .inputContactwide input{padding:0.5em;}
-.formApp .inputContactwide label{font-size: 0.9em; margin:0; float:left;}
+.formApp .inputContactwide label{font-size: 0.9em;margin:0;}
 .adminButtons{text-align: center;}
 
 .adminButtons .submitButton{
@@ -1077,7 +1079,7 @@ dd{ margin-left: 0;}
 }
 
 @media screen and (max-width:768px){
-	#formApp{margin:-1em auto;}
+	.formApp{margin:-1em auto;}
 }
 
 /*--Carrello--*/
