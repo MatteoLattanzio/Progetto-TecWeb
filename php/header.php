@@ -20,7 +20,7 @@ class Header{
 		if(isset($_SESSION["username"]) && $_SESSION["type"]=="user") {
 			$nav['Profilo']='profile.php';
 		}else if(isset($_SESSION["username"]) && $_SESSION["type"] == "admin") {
-			$nav['Gestione']='admin.php';
+			$nav['Amministrazione']='admin.php';
 			$nav['Inbox']='inbox.php';
 		}else{
 			$nav['Accedi']='login.php';
