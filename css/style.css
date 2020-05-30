@@ -1069,6 +1069,7 @@ dd{ margin-left: 0;}
 }
 .formApp .inputContactwide{margin:0;}
 .formApp .inputContactwide input{padding:0.5em;}
+.formApp .inputContactwide select{padding: 0.5em;}
 .formApp .inputContactwide label{font-size: 0.9em;margin:0;}
 .adminButtons{text-align: center;}
 
@@ -1180,6 +1181,8 @@ dd{ margin-left: 0;}
 .messaggio form .removeButton{
 	float: right;
 }
+
+.messaggi p{margin-top: 5em;}
 
 /*---Pagina venditore---*/
 
