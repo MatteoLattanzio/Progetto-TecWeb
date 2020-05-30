@@ -36,8 +36,7 @@
 					</div>";
 			}
 		}else
-		$output.="<p>Non sono presenti messaggi</p></div>";
-		$output.="</div>";
+		$output.="<p class=\"center\">Non sono presenti messaggi</p></div>";
 		return $output;
 	}
 
