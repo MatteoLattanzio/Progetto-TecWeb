@@ -35,7 +35,7 @@
 		$result=$connessione->query("SELECT * FROM foto WHERE stato='in attesa' ORDER BY data");
 		$count=0;
 		if(mysqli_num_rows($result)==0)
-				$list.="<p>Non ci sono immagini da approvare.</p>";
+				$list.="<p class=\"center\">Non ci sono immagini da approvare.</p>";
 		else{
 			while($img=$result->fetch_assoc()){
 				$idC=$img["categoria"];
