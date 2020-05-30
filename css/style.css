@@ -790,7 +790,7 @@ textarea{
 
 .catImg {
 	box-sizing: border-box;
-	padding: 1.5em;
+	padding: 0.5em;
 	flex: 25%;
 }
 .catImg a{
@@ -1022,7 +1022,8 @@ dd{ margin-left: 0;}
 	display: block;
 	margin: auto;
 	font-size:1em;
-	height: 2em;
+	height: 10%;
+	background-color: lightblue;
 }
 
 #catList ul{margin-top: 5em;}
@@ -1030,9 +1031,8 @@ dd{ margin-left: 0;}
 #catList p{
 	font-weight: 600;
 	float:left;
-	vertical-align: middle;
-	line-height: 2em;
-	text-align: center;
+	line-height: 10%;
+	margin: 0.8em 0 0 0.3em;
 }
 
 #catList li{
