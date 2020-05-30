@@ -257,7 +257,7 @@ a:visited{
 
 #backgroundContent{
 	background-image: url(../images/backgroundImage3.jpg);
-	height: 40em;
+	height: 35em;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -373,8 +373,8 @@ a:visited{
 
 .homeParagraph{
 	width: 33%;
-	margin: 3em 1em 1em 1em;
-  	padding: 1em 1em 3em 1em;
+	margin: 1em;
+  	padding: 1em;
 	text-align: center;
 }
 
@@ -390,11 +390,9 @@ a:visited{
 
 	.homeParagraph{
 		width: 100%;
-		margin-top:0;
-		margin-bottom: 0;
+		margin:0;
+		padding:0.5em;
 	}
-
-	 /*---menu Hamburger---*/  
 	 
 	#header{
 		position: fixed;
@@ -402,7 +400,6 @@ a:visited{
 		width: 100%;
 		z-index:5;
 	}
-
 
 	#content{margin-top: 5em;}
 
@@ -417,7 +414,6 @@ a:visited{
 		  text-align: center;
 		  font-size: 1.3em;
     }
-
     
     .topnav {
        	height: 100%;
@@ -429,22 +425,17 @@ a:visited{
         background-color: #2e2c2c;
         overflow-x: hidden;
 		transition: 0.5s;
-		
 	}
 	
-	.topnav li{
-		font-size: 1.1em;
-	}
+	.topnav li{font-size: 1.1em;}
 
     .topnav li a {
 		display: block;
 		margin: 2em 0;
-
 		color: white;
 		-webkit-transition-duration: 0.2s;
 		transition-duration: 0.2s;
 	}
-
 	
     #header .icon{
       	position: absolute;
@@ -455,10 +446,7 @@ a:visited{
       	text-decoration: none;
     }
 
-
-	#header .icon:hover{
-		color: #ff9900;
-	}
+	#header .icon:hover{color: #ff9900;}
 
     .topnav .closebtn {
       	position: absolute;
@@ -469,10 +457,7 @@ a:visited{
       	text-decoration: none;
     }
 
-    .topnav .closebtn:hover{
-		color: #ff9900;
-	}
-
+    .topnav .closebtn:hover{color: #ff9900;}
 }
 
 /*---Contatti---*/
@@ -781,16 +766,16 @@ textarea{
 /*---Acquista---*/
 
 #categoryContainer {
+	margin-top:1em;
 	display: flex;
 	flex-wrap: wrap;
 }
-#categoryContainer h2 {
-	text-align: center;
-}
+
+#categoryContainer h2 {text-align: center;}
 
 .catImg {
 	box-sizing: border-box;
-	padding: 0.5em;
+	padding: 2em;
 	flex: 25%;
 }
 .catImg a{
@@ -808,12 +793,13 @@ textarea{
 }
 
 .catImg p {
-	padding: 1em 0em;
+	padding: 0.3em;
 	font-size: 1.5em;
 	text-align: center;
 }
 
 @media all and (max-width:786px){
+	.catImg{padding:0.75em;}
 	.catImg img {
 		width: 17em;
 		height: 12em;
@@ -1023,7 +1009,6 @@ dd{ margin-left: 0;}
 	margin: auto;
 	font-size:1em;
 	height: 10%;
-	background-color: lightblue;
 }
 
 #catList ul{margin-top: 5em;}
@@ -1092,6 +1077,7 @@ dd{ margin-left: 0;}
 	margin:0 auto 3em;
 }
 .fotoCarrello p{text-align: center;}
+
 .fotoCarrello ul{list-style-type: none;}
 
 #prezziContainer{
@@ -1204,7 +1190,6 @@ dd{ margin-left: 0;}
 /*---Controlli input---*/
 
 .erroreInput{color: red; font-weight: 600; font-size: 1.1em;}
-
 
 /*---Bad Search---*/
 
