@@ -22,8 +22,15 @@
 		$list="<div id=\"catList\">
 		<p>Lista categorie: </p><ul>";
 		$categorie=$connessione->query("SELECT nome FROM categorie ORDER BY nome;");
-		while($cat=$categorie->fetch_assoc()){
-			$list.="<li>".$cat["nome"]."</li>";
+		$row=mysqli_num_rows($categorie);
+		$count=0;
+		while($count<$row){
+			$cat=$categorie->fetch_assoc();
+			if($count==$row-1)
+				$list.="<li>".$cat["nome"]."</li>";
+			else
+				$list.="<li>".$cat["nome"]." &#124;</li>";
+			$count=$count+1;
 		}
 		$list.="</ul></div>";
 		return $list;
@@ -39,9 +46,9 @@
 		else{
 			while($img=$result->fetch_assoc()){
 				$idC=$img["categoria"];
-				$find=$connessione->query("SELECT nome from categorie WHERE id='$idC'");
-				$res=$find->fetch_assoc();
-				$idC=$res["nome"];
+				//$find=$connessione->query("SELECT nome from categorie WHERE id='$idC'");
+				//$res=$find->fetch_assoc();
+				//$nameC=$res["nome"];
 				$idImg=$img["id"];
 				if(file_exists("upload/".$idImg.'.png')){
 					$url="upload/".$idImg.'.png';
@@ -68,10 +75,8 @@
 												<label>Autore
 												<input class=\"autore\" type=\"text\" name=\"autore\" value=\"".$img["venditore"]."\" readonly=\"readonly\"/></label>
 											</div>
-											<div class=\"inputContactwide\">
-												<label>Categoria
-												<input class=\"categoria\" type=\"text\" name=\"categoria\" value=\"".$idC."\" readonly=\"readonly\"/></label>
-											</div>
+											<div class=\"inputContactwide\"><label>Categoria".getCategory($idC)."
+											</label></div>
 											<div class=\"inputContactwide\">
 												<label>Tag1
 												<input class=\"tag1\" type=\"text\" name=\"tag1\" value=\"".$img["tag1"]."\"/></label>
@@ -100,6 +105,20 @@
 				$list.="<p>Non ci sono immagini da approvare.</p>";
 		}
 		$list.="</div>";
+		return $list;
+	}
+
+	function getCategory($id){
+		global $connessione;
+		$list="<select name=\"selectCatApp\" class=\"Categoria\">";
+		$result=$connessione->query("SELECT * FROM categorie;");
+		while($cat=$result->fetch_assoc()){
+			$list.="<option class=\"".$cat["nome"]."\" value=\"".$cat["id"]."\"";
+			if($cat["id"]==$id)
+				$list.=" selected=\"selected\"";
+			$list.=">".$cat["nome"]."</option>";
+		}
+		$list.="</select>";
 		return $list;
 	}
 

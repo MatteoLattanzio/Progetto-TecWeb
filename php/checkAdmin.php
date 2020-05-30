@@ -11,10 +11,11 @@
 	}
 	if(isset($_POST["alter"])){
 		$id=mysqli_real_escape_string($connessione,sanitizeString($_POST['id']));
+		$cat=$_POST['selectCategoria'];
 		$tag1=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag1']));
 		$tag2=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag2']));
 		$tag3=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag3']));
-		$result=$connessione->query("UPDATE foto SET tag1='$tag1',tag2='$tag2',tag3='$tag3',stato='approvata' WHERE id='$id';");
+		$result=$connessione->query("UPDATE foto SET categoria='$cat',tag1='$tag1',tag2='$tag2',tag3='$tag3',stato='approvata' WHERE id='$id';");
 		if(!$result)
 			header("Location: 404.php");
 		else
