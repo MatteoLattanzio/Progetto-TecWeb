@@ -23,16 +23,16 @@
 		if(mysqli_num_rows($messaggi)>0){
 			while($messaggio = $messaggi->fetch_assoc()) {
 				$output .= "<div class=\"messaggio\">
-						<strong>Data: </strong>".$messaggio["data"]."<br/>
-						<strong>Categoria: </strong>".$messaggio["oggetto"]."<br/>
-						<strong>Mittente: </strong>".$messaggio["cognome"]." ".$messaggio["nome"]."<br/>
-						<strong>E-mail mittente: </strong>".$messaggio["email"]."<br/>
-						<strong>Messaggio: </strong>".$messaggio["testo"]."<br/><br/>
 						<form method=\"post\">
 							<input type=\"hidden\" value=\"".$messaggio["id"]."\" name=\"id\"/>
 							<button class=\"removeButton\" type=\"submit\" name=\"rimuovi-messaggio\" aria-label=\"Rimuovi oggetto dal carrello\"><i class=\"fa fa-times\"></i>
 							</button>
 						</form>
+						<strong>Data: </strong>".$messaggio["data"]."<br/>
+						<strong>Categoria: </strong>".$messaggio["oggetto"]."<br/>
+						<strong>Mittente: </strong>".$messaggio["cognome"]." ".$messaggio["nome"]."<br/>
+						<strong>E-mail mittente: </strong>".$messaggio["email"]."<br/>
+						<strong>Messaggio: </strong>".$messaggio["testo"]."<br/><br/>
 					</div>";
 			}
 		}else
