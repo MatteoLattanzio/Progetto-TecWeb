@@ -11,15 +11,8 @@ html, body{
 	background-image: url(../images/photography.png);
 }
 
-a{
-	color: #004000;
-}
-
-a:visited{
-	color: #8a1111;
-}
-
-
+a{color: #004000;}
+a:visited{color: #8a1111;}
 
 .hidden{
 	position:absolute;
@@ -49,6 +42,10 @@ a:visited{
 #content h2{
 	text-align: center;
 	margin: 1em 0;
+}
+
+@media all and (max-width:768px){
+	#content>h1{padding-top: 1em;}
 }
 
 /*---Header---*/
@@ -385,8 +382,15 @@ a:visited{
 		flex-wrap: wrap;
 		display: flex;
 	}
-	#searchForm input[type=text]{width: 60%;}
-	#searchForm select{display:none;}
+	#searchForm input[type=text]{
+		width: 45%;
+		font-size:0.9em;
+		padding:1.2em;
+	}
+	#searchForm select{
+		font-size:0.9em; 
+		width:25%;
+	}
 
 	.homeParagraph{
 		width: 100%;
@@ -694,7 +698,8 @@ textarea{
 }
 
 @media screen and (max-width:768px){
-	#backgroundVendi-sample{height: 30em;}
+	#breadcrumb{display: none;}
+	#backgroundVendi-sample{margin:0;height: 30em;}
 	#vendiSample{margin-top:5em;}
 	#vendiSample h1{font-size: 2.3em;}
 	#vendiSample p{font-size: 1.5em;}
