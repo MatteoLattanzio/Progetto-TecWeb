@@ -102,7 +102,7 @@
 				}
 			}
 			if($count==0)
-				$list.="<p>Non ci sono immagini da approvare.</p>";
+				$list.="<p class=\"center\">Non ci sono immagini da approvare.</p>";
 		}
 		$list.="</div>";
 		return $list;
