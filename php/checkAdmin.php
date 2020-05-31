@@ -3,11 +3,10 @@
 	$connessione=connessione();
 	if(isset($_POST["add"])){
 		$newC=mysqli_real_escape_string($connessione,sanitizeString($_POST['newCat']));
-		$result=$connessione->query("INSERT INTO categorie(nome) VALUES ('$newC');");
-		if(!$result)
-			header("Location: 404.php");
-		else
-			header("Location: admin.php");
+		if(!empty($newC)){		
+			$result=$connessione->query("INSERT INTO categorie(nome) VALUES ('$newC');");
+		}
+		
 	}
 	if(isset($_POST["alter"])){
 		$id=mysqli_real_escape_string($connessione,sanitizeString($_POST['id']));
