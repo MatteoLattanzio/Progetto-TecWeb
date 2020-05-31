@@ -169,6 +169,9 @@ label{display:none;}
 
 /*--Login--*/
 
-#login{display: none;}
-#register{display: none;}
+#gridContainer{display: inherit; flex-wrap: nowrap;}
+#login form{display: none;}
+#register form{display: none;}
+#login h1{text-align: center;}
+#register h1{text-align: center;}
 .formLogin{display: none;margin:0;}
