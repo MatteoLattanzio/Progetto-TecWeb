@@ -10,7 +10,7 @@
 	}
 	if(isset($_POST["alter"])){
 		$id=mysqli_real_escape_string($connessione,sanitizeString($_POST['id']));
-		$cat=$_POST['selectCategoria'];
+		$cat=$_POST['selectCatApp'];
 		$tag1=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag1']));
 		$tag2=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag2']));
 		$tag3=mysqli_real_escape_string($connessione,sanitizeString($_POST['tag3']));
