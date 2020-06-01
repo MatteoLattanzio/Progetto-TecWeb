@@ -51,6 +51,7 @@
 				$connessione->query($query);
 				$_SESSION['username']=$username;
 				$_SESSION['type']='user';
+				setcookie('done',true);
 				if(isset($_SESSION["currPage"]))
 					header("Location: ".$_SESSION["currPage"]);
 				else	            

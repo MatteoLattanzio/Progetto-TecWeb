@@ -57,6 +57,11 @@
 	$output=str_replace("<div id=\"footer\"></div>", Footer::build(), $output);
 	$output=paramMemory($output);
 	$output=str_replace("%err%",getErrorLogin($errors),$output);
+	if(isset($_COOKIE['done'])){
+		$output=str_replace("%done%","<h2>Registrazione avvenuta! Effettua il login per accedere al tuo profilo</h2>",$output);
+		setcookie('done', null, -1);
+	}else
+		$output=str_replace("%done%","",$output);
 	$output=str_replace("%err2%",getErrorReg($errors),$output);
 	
 	echo $output;
