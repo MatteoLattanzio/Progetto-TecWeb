@@ -42,10 +42,16 @@
 		if(count($errors)==0){
 			$result=$connessione->query("SELECT * FROM `utenti` WHERE Username='$username';");
 			$rows=mysqli_num_rows($result);
+			$resultEmail=$connessione->query("SELECT * FROM `utenti` WHERE email='$email';");
+			$rowsEmail=mysqli_num_rows($resultEmail);
 			if($rows>0){
 				$errors['username']="Username non disponibile";
 			
-			}else if($password==$password_2){
+			}else if($rowsEmail>0){
+				$errors['email']="Email già associata ad un account";
+
+			}
+				else if($password==$password_2){
 				$query="INSERT INTO `utenti` (nome, cognome, data, indirizzo, username, password, email, tipo) 
 					VALUES('$nome','$cognome', '$data', '$indirizzo', '$username', '$password', '$email', 'user')";
 				$connessione->query($query);
