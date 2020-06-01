@@ -15,7 +15,7 @@
 		$list="<select name=\"selectCategoria\" id=\"Categoria\"><option value=\"\" disabled selected>Scegli una categoria</option>";
 		$result=$connessione->query("SELECT * FROM categorie;");
 		while($cat=$result->fetch_assoc()){
-			$list.="<option id=\"".$cat["nome"]."\" value=\"".$cat["id"]."\">".$cat["nome"]."</option>";
+			$list.="<option class=\"".$cat["nome"]."\" value=\"".$cat["id"]."\">".$cat["nome"]."</option>";
 		}
 		$list.="</select>";
 		return $list;
