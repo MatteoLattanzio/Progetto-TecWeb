@@ -1078,9 +1078,8 @@ dd{ margin-left: 0;}
 
 .fotoCarrello{
 	width:100%;
-	max-width: 30em;
-	padding:1em 3em;
-	margin:0 auto 3em;
+	max-width: 20em;
+	margin:0 auto 2em;
 }
 .fotoCarrello p{text-align: center;}
 
@@ -1123,16 +1122,15 @@ dd{ margin-left: 0;}
 
 .removeButton{
 	border:0;
-	font-size: 1.2em;
+	font-size: 1.6em;
 	background: none;
-	margin-left: 20%;
 	cursor: pointer;
 }
 
 @media screen and (max-width:768px){
+	#pro{padding-top: 1em;}
 	.fotoCarrello{margin:0 auto;}
 	.prezziContainer{margin:2em auto;}
-	.removeButton{margin-left: 10%;}
 }
 
 /*---FotoOk---*/
