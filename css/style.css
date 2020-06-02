@@ -741,6 +741,7 @@ textarea{
 .foto{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .foto p{
@@ -750,8 +751,8 @@ textarea{
 .foto ul{
 	display: flex;
 	flex-wrap: wrap;
-	margin:0 0 1em 0;
 	width: 100%;
+	justify-content: center;
 }
 
 .foto ul li{
@@ -764,7 +765,6 @@ textarea{
 .foto ul li a{
 	overflow: hidden;
 	display: block;
-	width:20em;
 	margin: 0 auto;
 }
 
@@ -780,9 +780,9 @@ textarea{
 /*---Acquista---*/
 
 #categoryContainer {
-	margin-top:1em;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 #categoryContainer h2 {text-align: center;}
@@ -790,7 +790,7 @@ textarea{
 .catImg {
 	box-sizing: border-box;
 	padding: 2em;
-	flex: 25%;
+	flex: 0 25%;
 }
 .catImg a{
 	margin: 0 auto;
@@ -803,7 +803,7 @@ textarea{
 	display:block;
 	margin: auto;
 	width: 20em;
-	height: 13em;
+	height: 14em;
 }
 
 .catImg p {
