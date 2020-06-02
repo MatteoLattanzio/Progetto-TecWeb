@@ -230,8 +230,16 @@ a:visited{color: #8a1111;}
 }
 
 #validatorIcons{
-	margin-top: 0.75em;
+	margin-top: 0.5em;
+	display: block;
+	margin:0.75em auto 0;
 }
+
+#validatorIcons p a:first-child img{
+	width: 60%;
+	height: auto;
+}
+
 
 @media all and (max-width:768px){
 	#topUp{bottom:3.5em; right:0.5em;}
