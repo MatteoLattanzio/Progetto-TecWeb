@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2020 at 12:43 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- Creato il: Giu 02, 2020 alle 12:28
+-- Versione del server: 10.4.11-MariaDB
+-- Versione PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -26,27 +27,30 @@ USE `photo`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carrello`
+-- Struttura della tabella `carrello`
 --
 
 CREATE TABLE `carrello` (
   `utente` varchar(255) NOT NULL,
   `foto` int(11) NOT NULL,
   `data` date NOT NULL,
-  `stato` enum('in corso','concluso','','') NOT NULL
+  `stato` enum('in corso','concluso') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `carrello`
+-- Dump dei dati per la tabella `carrello`
 --
 
 INSERT INTO `carrello` (`utente`, `foto`, `data`, `stato`) VALUES
-('userBuy', 1, '2020-05-11', 'concluso');
+('user00', 11, '2020-06-02', 'concluso'),
+('user00', 20, '2020-06-02', 'concluso'),
+('user01', 12, '2020-06-02', 'in corso'),
+('user01', 13, '2020-06-02', 'in corso');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie`
+-- Struttura della tabella `categorie`
 --
 
 CREATE TABLE `categorie` (
@@ -55,7 +59,7 @@ CREATE TABLE `categorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `categorie`
+-- Dump dei dati per la tabella `categorie`
 --
 
 INSERT INTO `categorie` (`id`, `nome`) VALUES
@@ -63,12 +67,13 @@ INSERT INTO `categorie` (`id`, `nome`) VALUES
 (2, 'Paesaggi'),
 (3, 'Animali'),
 (4, 'Macro'),
-(5, 'Piante');
+(5, 'Bianco e nero'),
+(6, 'Still Life');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foto`
+-- Struttura della tabella `foto`
 --
 
 CREATE TABLE `foto` (
@@ -76,7 +81,7 @@ CREATE TABLE `foto` (
   `titolo` varchar(255) NOT NULL,
   `venditore` varchar(255) NOT NULL,
   `prezzo` double NOT NULL,
-  `stato` enum('in attesa','approvata','rifiutata','') NOT NULL,
+  `stato` enum('in attesa','approvata') NOT NULL,
   `categoria` int(11) NOT NULL,
   `data` date NOT NULL,
   `tag1` varchar(255) NOT NULL,
@@ -85,45 +90,60 @@ CREATE TABLE `foto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `foto`
+-- Dump dei dati per la tabella `foto`
 --
 
 INSERT INTO `foto` (`id`, `titolo`, `venditore`, `prezzo`, `stato`, `categoria`, `data`, `tag1`, `tag2`, `tag3`) VALUES
-(1, 'Venezia di notte', 'user', 20, 'approvata', 2, '2020-03-02', '', '', ''),
-(2, 'Compleanno', 'user', 10, 'in attesa', 1, '2020-01-12', 'bambini', '', ''),
-(3, 'Animali selvatici', 'user', 10, 'approvata', 3, '2018-02-04', 'fenicottero', 'zoo', ''),
-(4, 'Casa sul lago', 'user', 15, 'approvata', 2, '2017-04-22', 'lago', 'acqua', 'legno');
+(1, 'Il riposo del guerriero', 'user00', 15, 'approvata', 3, '2020-06-02', 'leone', 'savana', 'africa'),
+(2, 'Innamorati', 'user00', 8, 'approvata', 3, '2020-06-02', 'pappagalli', 'inseparabili', ''),
+(3, 'Singer', 'user00', 12, 'in attesa', 5, '2020-06-02', 'cantante', 'donna', ''),
+(4, 'Braies con Fede', 'user00', 10, 'approvata', 2, '2020-06-02', 'lago', 'montagna', 'acqua'),
+(5, 'Reflection', 'user00', 5, 'in attesa', 2, '2020-06-02', 'lago', 'montagna', 'riflessi'),
+(6, 'Donna afgana', 'user01', 20, 'approvata', 5, '2020-06-02', 'burqa', 'madre', ''),
+(7, 'Thinking', 'user01', 12, 'approvata', 2, '2020-06-02', 'lago', 'ponte', 'montagna'),
+(8, 'Astro', 'user01', 12, 'approvata', 2, '2020-06-02', 'astrofotografia', 'stelle', 'notte'),
+(9, 'Sopravvivenza', 'user01', 15, 'approvata', 4, '2020-06-02', 'ape', 'insetto', 'fiore'),
+(10, 'Intenso', 'user01', 8, 'approvata', 1, '2020-06-02', 'donna', 'sguardo', 'occhi'),
+(11, 'Cherries', 'user01', 11, 'approvata', 6, '2020-06-02', 'ciliegie', 'frutta', 'cibo'),
+(12, 'Cadere e rialzarsi', 'user00', 20, 'approvata', 4, '2020-06-02', 'acqua', 'fiore', 'goccia'),
+(13, 'Petaloso', 'user00', 6, 'approvata', 4, '2020-06-02', 'fiore', 'viola', ''),
+(14, 'Estate tropicale', 'user00', 15, 'approvata', 6, '2020-06-02', 'ananas', 'frutta', 'giallo'),
+(15, 'Idee', 'user00', 22, 'approvata', 6, '2020-06-02', 'lampadina', 'luce', 'buio'),
+(16, 'Kerchak', 'user00', 10, 'in attesa', 3, '2020-06-02', 'gorilla', 'zoo', ''),
+(17, 'Drop', 'user00', 7, 'approvata', 4, '2020-06-02', 'acqua', 'goccia', ''),
+(18, 'Portrait', 'user00', 5, 'approvata', 1, '2020-06-02', 'donna', 'moda', ''),
+(19, 'Husky', 'user01', 10, 'approvata', 3, '2020-06-02', 'cane', 'ghiaccio', 'neve'),
+(20, 'Tornare a scuola', 'user01', 20, 'approvata', 6, '2020-06-02', 'frutta', 'mela', 'libri');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messaggi`
+-- Struttura della tabella `messaggi`
 --
 
 CREATE TABLE `messaggi` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `data` date NOT NULL,
-  `oggetto` text NOT NULL,
+  `oggetto` enum('informazioni ordine','problemi con un acquisto','problemi con una vendita','segnalazione utenti','altro') NOT NULL,
   `testo` text NOT NULL,
   `nome` varchar(255) NOT NULL,
   `cognome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `messaggi`
+-- Dump dei dati per la tabella `messaggi`
 --
 
 INSERT INTO `messaggi` (`id`, `email`, `data`, `oggetto`, `testo`, `nome`, `cognome`) VALUES
-(1, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
-(2, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
-(3, 'user@photostock.com', '0000-00-00', 'segnalazione utenti', 'swswsw', 'user', 'user'),
-(9, 'user@photostock.com', '0000-00-00', 'problemi con un acquisto', 'hahahaha', 'user', 'user');
+(1, 'user00@photostock.com', '2020-06-02', 'informazioni ordine', 'Buongiorno! Non mi risulta chiaro come accedere alle immagini acquistate. Grazie e buona giornata.', 'userName', 'userSurname'),
+(2, 'user01@photostock.com', '2020-04-02', 'problemi con una vendita', 'Buongiorno! Vorrei alcune precisazioni su quanto guadagno posso ottenere dalle mie foto. Grazie.', 'userName', 'userSurname'),
+(3, 'ombretta.gaggi@photostock.com', '2020-05-26', 'segnalazione utenti', 'Buongiorno, ho dimenticato la mia password e non riesco ad accedere al  mio account ombretta.gaggi. Potreste aiutarmi? Grazie!', 'Ombretta', 'Gaggi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `piaciuti`
+-- Struttura della tabella `piaciuti`
 --
 
 CREATE TABLE `piaciuti` (
@@ -132,19 +152,21 @@ CREATE TABLE `piaciuti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `piaciuti`
+-- Dump dei dati per la tabella `piaciuti`
 --
 
 INSERT INTO `piaciuti` (`foto`, `utente`) VALUES
-(2, 'user'),
-(3, 'userBuy'),
-(4, 'user'),
-(4, 'userBuy');
+(1, 'user01'),
+(7, 'user00'),
+(8, 'user00'),
+(13, 'user01'),
+(18, 'user01'),
+(19, 'user00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `preferiti`
+-- Struttura della tabella `preferiti`
 --
 
 CREATE TABLE `preferiti` (
@@ -153,16 +175,19 @@ CREATE TABLE `preferiti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `preferiti`
+-- Dump dei dati per la tabella `preferiti`
 --
 
 INSERT INTO `preferiti` (`foto`, `utente`) VALUES
-(3, 'userBuy');
+(11, 'user00'),
+(19, 'user00'),
+(12, 'user01'),
+(13, 'user01');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utenti`
+-- Struttura della tabella `utenti`
 --
 
 CREATE TABLE `utenti` (
@@ -173,37 +198,38 @@ CREATE TABLE `utenti` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `tipo` enum('user','admin','','') NOT NULL
+  `tipo` enum('user','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `utenti`
+-- Dump dei dati per la tabella `utenti`
 --
 
 INSERT INTO `utenti` (`nome`, `cognome`, `data`, `indirizzo`, `username`, `password`, `email`, `tipo`) VALUES
-('admin', 'admin', '1995-01-01', 'via amministratore', 'admin', 'admin', 'admin@photostock.com', 'admin'),
-('user', 'user', '1997-11-30', 'via prova', 'user', 'user', 'user@photostock.com', 'user'),
-('userBuy', 'userBuy', '1987-12-18', 'via acquisti', 'userBuy', 'buy', 'userBuy@photostock.com', 'user');
+('admin', 'admin', '1997-11-30', 'via admin', 'admin', 'admin', 'admin@photostock.com', 'admin'),
+('userName', 'userSurname', '1997-12-14', 'via user 1', 'user00', 'user00', 'user00@photostock.com', 'user'),
+('userName', 'userSurname', '1956-01-25', 'via user 2', 'user01', 'user01', 'user01@photostock.com', 'user');
 
 --
--- Indexes for dumped tables
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indexes for table `carrello`
+-- Indici per le tabelle `carrello`
 --
 ALTER TABLE `carrello`
+  ADD PRIMARY KEY (`utente`,`foto`),
   ADD KEY `utente` (`utente`),
   ADD KEY `foto` (`foto`);
 
 --
--- Indexes for table `categorie`
+-- Indici per le tabelle `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `foto`
+-- Indici per le tabelle `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`id`),
@@ -211,13 +237,13 @@ ALTER TABLE `foto`
   ADD KEY `categoria` (`categoria`);
 
 --
--- Indexes for table `messaggi`
+-- Indici per le tabelle `messaggi`
 --
 ALTER TABLE `messaggi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `piaciuti`
+-- Indici per le tabelle `piaciuti`
 --
 ALTER TABLE `piaciuti`
   ADD PRIMARY KEY (`foto`,`utente`),
@@ -225,7 +251,7 @@ ALTER TABLE `piaciuti`
   ADD KEY `utente` (`utente`);
 
 --
--- Indexes for table `preferiti`
+-- Indici per le tabelle `preferiti`
 --
 ALTER TABLE `preferiti`
   ADD PRIMARY KEY (`utente`,`foto`),
@@ -233,60 +259,61 @@ ALTER TABLE `preferiti`
   ADD KEY `foto` (`foto`);
 
 --
--- Indexes for table `utenti`
+-- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT for table `categorie`
+-- AUTO_INCREMENT per la tabella `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `foto`
+-- AUTO_INCREMENT per la tabella `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `messaggi`
+-- AUTO_INCREMENT per la tabella `messaggi`
 --
 ALTER TABLE `messaggi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Limiti per le tabelle scaricate
 --
 
 --
--- Constraints for table `carrello`
+-- Limiti per la tabella `carrello`
 --
 ALTER TABLE `carrello`
   ADD CONSTRAINT `carrello_ibfk_1` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `carrello_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`);
 
 --
--- Constraints for table `foto`
+-- Limiti per la tabella `foto`
 --
 ALTER TABLE `foto`
   ADD CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`venditore`) REFERENCES `utenti` (`username`),
   ADD CONSTRAINT `foto_ibfk_2` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`id`);
 
 --
--- Constraints for table `piaciuti`
+-- Limiti per la tabella `piaciuti`
 --
 ALTER TABLE `piaciuti`
   ADD CONSTRAINT `piaciuti_ibfk_1` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`),
   ADD CONSTRAINT `piaciuti_ibfk_2` FOREIGN KEY (`utente`) REFERENCES `utenti` (`username`);
 
 --
--- Constraints for table `preferiti`
+-- Limiti per la tabella `preferiti`
 --
 ALTER TABLE `preferiti`
   ADD CONSTRAINT `preferiti_ibfk_2` FOREIGN KEY (`foto`) REFERENCES `foto` (`id`),
