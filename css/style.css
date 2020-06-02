@@ -1036,6 +1036,11 @@ dd{ margin-left: 0;}
 .boxFormApp{
 	flex-wrap: wrap;
 	display: flex;
+	padding-top:1.5em;
+	margin: 0.5em auto;
+	max-width:80%;
+	box-shadow: 0 0 0.5em #777;
+	background-color: #f5f5f5;
 }
 
 .imgInApp{
