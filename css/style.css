@@ -46,6 +46,7 @@ a:visited{color: #8a1111;}
 
 @media all and (max-width:768px){
 	#content>h1{padding-top: 1em;}
+	#content>h2{padding-top: 1em;}
 }
 
 /*---Header---*/
@@ -997,6 +998,7 @@ dd{ margin-left: 0;}
 .fa-heart-o{color:red;}
 
 @media screen and (max-width:768px){
+	.descriptionImage{margin-top: 2em;}
 	.descriptionParagraph{font-size: 1em;}
 	#descriptionContainer{margin:1em auto 0 auto;}
 	.buttonsContainer>#acquisto-button{
